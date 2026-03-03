@@ -1,11 +1,8 @@
 :root {
-  color-scheme: light;
-  --bg: #d1d0c8;
-  --bg-strong: #bcbab0;
-  --surface: #e8e7df;
+  --bg: #111111;
   --ink: #1b1b1b;
   --ink-soft: #4f5336;
-  --accent: #4f5336;
+  --accent:  white;
   --accent-strong: #1b1b1b;
   --accent-warm: #c4c5ba;
   --line: rgba(27, 27, 27, 0.12);
@@ -34,10 +31,7 @@ body {
 
 body {
   color: var(--ink);
-  background:
-    radial-gradient(circle at 15% -10%, rgba(79, 83, 54, 0.18), transparent 48%),
-    radial-gradient(circle at 85% 0%, rgba(27, 27, 27, 0.06), transparent 45%),
-    linear-gradient(180deg, var(--bg) 0%, #d6d5cd 45%, #efeee6 100%);
+  background: var(--bg);
   font-family: var(--font-body, "Source Sans 3", sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
