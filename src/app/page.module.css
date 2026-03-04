@@ -18,8 +18,8 @@
   gap: 16px;
   height: var(--topbar-h);
   padding: 8px 6vw;
-  background: rgba(79, 83, 54, 0.92);
-  color: var(--bg);
+  background:var(--bg);
+  color: var(--accent);
   font-size: 14px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -33,12 +33,11 @@
 }
 
 .topBar a {
-  color: #ffffff;
   transition: color 180ms ease;
 }
 
 .topBar a:hover {
-  color: var(--bg);
+  opacity: 0.8;
 }
 
 .topBarContact {
@@ -73,9 +72,7 @@
 }
 
 .topBarRight a:not(.topBarContact):hover {
-  background: rgba(246, 243, 239, 0.2);
-  border-color: rgba(246, 243, 239, 0.35);
-  transform: translateY(-1px);
+  opacity: 0.8;
 }
 
 .header {
@@ -90,7 +87,7 @@
   right: 0;
   z-index: 15;
   backdrop-filter: blur(16px);
-  background: rgba(246, 243, 239, 0.92);
+  background: var(--accent);
   border-bottom: 1px solid var(--line);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
@@ -117,7 +114,7 @@
 }
 
 .nav a:hover {
-  color: var(--accent);
+  opacity: 0.8;
 }
 
 .navCta {
@@ -143,7 +140,7 @@
   place-items: center;
   cursor: pointer;
   list-style: none;
-  background: var(--surface);
+  background: var(--accent);
   position: relative;
 }
 
@@ -175,7 +172,7 @@
   right: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(232, 231, 223, 0.99);
+  background: var(--accent);
   border-left: 1px solid var(--line);
   box-shadow: -18px 0 40px rgba(27, 27, 27, 0.18);
   padding: 96px 24px 24px;
@@ -227,7 +224,7 @@
   top: 18px;
   right: 18px;
   z-index: 50;
-  background: var(--surface);
+  background: var(--accent);
 }
 
 .mobileMenu[open] .hamburger span:nth-child(1) {
@@ -275,7 +272,7 @@
   text-transform: none;
   letter-spacing: 0.06em;
   font-size: 18px;
-  color: rgba(232, 231, 223, 0.8);
+  color: var(--accent);
 }
 
 .heroTitle {
@@ -285,14 +282,6 @@
   line-height: 0.95;
   font-weight: 400;
   color: var(--accent);
-  color: var(--bg);
-}
-
-.heroSub {
-  font-size: 16px;
-  color: rgba(232, 231, 223, 0.78);
-  max-width: 520px;
-  line-height: 1.6;
 }
 
 .heroActions {
@@ -304,7 +293,7 @@
 .primaryBtn {
   background: var(--accent);
   background-image: none;
-  color: #ffffff;
+  color: var(--bg);
   padding: 14px 28px;
   border-radius: 999px;
   font-size: 12px;
@@ -317,19 +306,22 @@
 }
 
 .primaryBtn:hover {
-  transform: translateY(-2px);
-  background: #3d4029;
+  opacity: 0.8;
   box-shadow: 0 6px 16px rgba(79, 83, 54, 0.35);
 }
 
 .secondaryBtn {
-  border: 1px solid rgba(232, 231, 223, 0.6);
-  color: var(--bg);
+  border: 1px solid var(--accent);
+  color: var(--accent);
   padding: 14px 28px;
   border-radius: 999px;
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: none;
+}
+
+.secondaryBtn:hover {
+  opacity: 0.8;
 }
 
 .heroMedia {
@@ -369,13 +361,7 @@
   text-transform: none;
   letter-spacing: 0.08em;
   font-size: 12px;
-  color: var(--ink-soft);
-}
-
-.sectionCopy {
-  max-width: 420px;
-  color: var(--ink-soft);
-  line-height: 1.6;
+  color: var(--accent);
 }
 
 .sectionTitle {
@@ -386,10 +372,31 @@
   text-transform: none;
 }
 
-.servicesGrid {
+.aboutInfo {
+  color: var(--accent);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.aboutImageWrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.aboutImage {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .serviceCard {
@@ -615,7 +622,7 @@
 }
 
 .reviewCard {
-  background: var(--surface);
+  background: var(--accent);
   border-radius: var(--radius-md);
   padding: 26px;
   border: 1px solid var(--line);
@@ -639,7 +646,7 @@
 
 .coverageCard {
   grid-column: span 7;
-  background: var(--surface);
+  background: var(--accent);
   border-radius: var(--radius-lg);
   padding: 36px;
   border: 1px solid var(--line);
@@ -691,7 +698,7 @@
 }
 
 .contactInfoBox {
-  background: var(--accent);
+  background: var(--ink-soft);
   color: #ffffff;
   padding: 40px;
   display: flex;
@@ -728,7 +735,6 @@
   letter-spacing: 0.06em;
   font-weight: 600;
   opacity: 0.95;
-  color: rgb(22, 21, 42);
 }
 
 .contactInfoSection p {
@@ -759,6 +765,27 @@
   opacity: 0.85;
 }
 
+.contactSocialRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contactSocialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 300;
+  text-decoration: none;
+  transition: opacity 180ms ease;
+}
+
+.contactSocialLink:hover {
+  opacity: 0.75;
+}
+
 .contactFormBox {
   background: #ffffff;
   padding: 40px;
@@ -787,7 +814,6 @@
 
 .contactForm {
   grid-column: span 7;
-  background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 32px;
   border: 1px solid var(--line);
@@ -821,7 +847,6 @@
   padding: 14px 16px;
   border-radius: 8px;
   border: 1px solid var(--line);
-  background: var(--bg);
   font-family: inherit;
   font-size: 15px;
 }
@@ -898,19 +923,41 @@
 
 .footer {
   padding: 40px 6vw 60px;
-  border-top: 1px solid var(--line);
+  border-top: 0.5px solid var(--accent);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 24px;
   font-size: 14px;
-  color: var(--ink-soft);
+  color: var(--accent);
 }
 
 .footerLinks {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
+  background: none;
+}
+
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerContactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-size: 14px;
+  text-decoration: none;
+  transition: opacity 180ms ease;
+}
+
+.footerLinks a:hover,
+.footerContactLink:hover {
+  opacity: 0.8;
 }
 
 @keyframes float {
@@ -934,8 +981,9 @@
     bottom: 64px;
   }
 
-  .servicesGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .aboutInfo {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 
   .projectsGrid {
@@ -988,8 +1036,34 @@
 
 @media (max-width: 720px) {
   .topBar {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    gap: 8px;
+    padding: 8px 4vw;
+    font-size: 11px;
+  }
+
+  .topBarContact {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .topBarContact svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .topBarRight {
+    gap: 8px;
+  }
+
+  .topBarRight a:not(.topBarContact) {
+    width: 24px;
+    height: 24px;
+  }
+
+  .topBarRight a:not(.topBarContact) svg {
+    width: 13px;
+    height: 13px;
   }
 
   .header {
@@ -1011,7 +1085,6 @@
     max-width: 100%;
   }
 
-  .servicesGrid,
   .reviewsGrid,
   .teamGrid {
     grid-template-columns: 1fr;
