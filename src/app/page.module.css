@@ -336,7 +336,7 @@
 }
 
 .mobilePanel > a + a {
-  border-top: 1px solid var(--accent);
+  border-top: 0.3px solid var(--accent);
 }
 
 .mobilePanel .navCta {
@@ -351,7 +351,7 @@
 }
 
 .mobilePanel .navCta, .mobileSocials {
-  border-top: 1px solid var(--accent);
+  border-top: 0.3px solid var(--accent);
 }
 
 .mobileMenu[open] .mobilePanel {
