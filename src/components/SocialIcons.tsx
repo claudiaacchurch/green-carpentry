@@ -12,14 +12,14 @@ export default function SocialIcons() {
           <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </a>
-      <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+      <a href="https://instagram.com/_greencarpentry" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.6"/>
           <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6"/>
           <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>
         </svg>
       </a>
-      <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.facebook.com/Green-Carpentry-100049023407614/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M14 8.5V7.2c0-1 .5-1.7 1.7-1.7h1.3V3h-2c-2.5 0-4 1.6-4 4v1.5H8.5v3H11V21h3v-9.5h2.7l.3-3H14Z" fill="currentColor"/>
         </svg>

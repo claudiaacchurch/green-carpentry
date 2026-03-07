@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HeroVideo from "@/components/HeroVideo";
 import LazyVideo from "@/components/LazyVideo";
 import SocialIcons from "@/components/SocialIcons";
@@ -6,9 +5,10 @@ import styles from "./page.module.css";
 
 const projects = [
   {
-    title: "Project 1",
-    meta: "Project Description",
-    image: "/placeholders/project-1.svg",
+    title: "Full House Renovation",
+    meta: "Glastonbury",
+    description: "This four bed house in Glastonbury got a top to bottom modern finish.",
+    image: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/glasto-kitchen.png`,
   },
   {
     title: "Project 2",
@@ -16,9 +16,10 @@ const projects = [
     image: "/placeholders/project-2.svg",
   },
   {
-    title: "Project 3",
-    meta: "Project Description",
-    image: "/placeholders/project-3.svg",
+    title: "Kitchen Renovation",
+    meta: "Taunton",
+    description: "Full kitchen renovation.",
+    image: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/taunton-kitchen.png`
   },
 ];
 
@@ -148,20 +149,20 @@ export default function Home() {
             {projects.map((project) => (
               <article key={project.title} className={styles.projectCard}>
                 <div className={styles.projectMedia}>
-                  <Image
+                  <img
                     src={project.image}
                     alt={`${project.title} placeholder`}
                     width={1200}
                     height={800}
                     className={styles.projectImage}
                   />
+
                 </div>
                 <div className={styles.projectBody}>
                   <span className={styles.projectMeta}>{project.meta}</span>
                   <h3 className={styles.projectTitle}>{project.title}</h3>
                   <p>
-                    Placeholder summary of scope, materials, and timeline details
-                    for this project.
+                   {project.description}
                   </p>
                 </div>
               </article>
@@ -183,7 +184,7 @@ export default function Home() {
               <p>A closing line about getting in touch or inviting people to browse your projects.</p>
             </div>
             <div className={styles.aboutImageWrap}>
-              <Image
+              <img
                 src="/placeholders/project-1.svg"
                 alt="About Green Carpentry"
                 width={600}
@@ -205,13 +206,13 @@ export default function Home() {
             {team.map((member, index) => (
               <article className={styles.teamCard} key={`${member.role}-${index}`}>
                 <div className={styles.teamAvatar}>
-                  <Image
+                  <img
                     src={member.image}
                     alt={member.name}
                     width={120}
                     height={120}
                     className={styles.teamAvatarImage}
-                  />
+              />
                 </div>
                 <div>
                   <h3 className={styles.teamName}>{member.name}</h3>
@@ -280,7 +281,7 @@ export default function Home() {
               <div className={styles.contactInfoSection}>
                 <strong>Follow Us:</strong>
                 <div className={styles.contactSocialRow}>
-                  <a href="https://instagram.com" aria-label="Instagram" className={styles.contactSocialLink}>
+                  <a href="https://instagram.com/_greencarpentry" aria-label="Instagram" className={styles.contactSocialLink}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.6"/>
                       <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6"/>
@@ -288,7 +289,7 @@ export default function Home() {
                     </svg>
                     Instagram
                   </a>
-                  <a href="https://facebook.com" aria-label="Facebook" className={styles.contactSocialLink}>
+                  <a href="https://www.facebook.com/Green-Carpentry-100049023407614/" aria-label="Facebook" className={styles.contactSocialLink}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M14 8.5V7.2c0-1 .5-1.7 1.7-1.7h1.3V3h-2c-2.5 0-4 1.6-4 4v1.5H8.5v3H11V21h3v-9.5h2.7l.3-3H14Z" fill="currentColor"/>
                     </svg>
