@@ -66,11 +66,10 @@ export default function Home() {
     <div className={styles.page}>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <Image
-            src="/media/green-carpentry-logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/green-carpentry-logo.png`}
             alt="Green Carpentry Logo"
-            width={600}
-            height={500}
             className={styles.logoImage}
           />
         </div>
