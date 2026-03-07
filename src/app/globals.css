@@ -1,7 +1,8 @@
 :root {
   --bg: #111111;
+  --logo-bg: #000000;
   --ink: #1b1b1b;
-  --ink-soft: #4f5336;
+  --green-toned: #3d6b0c;
   --accent:  white;
   --accent-strong: #1b1b1b;
   --accent-warm: #c4c5ba;

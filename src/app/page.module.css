@@ -3,8 +3,9 @@
   flex-direction: column;
   min-height: 100vh;
   color: var(--ink);
-  --topbar-h: 44px;
-  --header-h: 72px;
+  --topbar-h: 110px;
+  --header-h: 50px;
+  --logo-area: 160px;
 }
 
 .page main {
@@ -15,21 +16,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
   height: var(--topbar-h);
-  padding: 8px 6vw;
-  background:var(--bg);
+  padding: 0 6vw;
+  background: var(--logo-bg);
   color: var(--accent);
-  font-size: 14px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 0.04em;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 20;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  font-weight: 300;
 }
 
 .topBar a {
@@ -44,26 +43,70 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 15px;
-  font-weight: 500;
 }
 
 .topBarContact svg {
   opacity: 0.8;
+  flex-shrink: 0;
+  display: block;
+}
+
+.topBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topBarSocials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topBar svg {
+  width: 20px;
+  height: 20px;
+}
+
+.topBarSocials svg {
+  width: 23px;
+  height: 23px;
 }
 
 .topBarRight {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 50px;
+}
+
+.navSocials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 4px;
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
+}
+
+.navSocials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  opacity: 0.7;
+  transition: opacity 180ms ease;
+}
+
+.navSocials a:hover {
+  opacity: 1;
 }
 
 .topBarRight a:not(.topBarContact) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: rgba(246, 243, 239, 0.12);
   border: 1px solid rgba(246, 243, 239, 0.2);
@@ -78,38 +121,58 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: var(--header-h);
-  padding: 12px 6vw;
+  padding: 0 6vw;
   position: fixed;
   top: var(--topbar-h);
   left: 0;
   right: 0;
-  z-index: 15;
-  backdrop-filter: blur(16px);
+  z-index: 21;
   background: var(--accent);
-  border-bottom: 1px solid var(--line);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  opacity: 0.9;
 }
 
 .logo {
-  font-family: var(--font-display, "Bebas Neue", sans-serif);
-  font-size: 28px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.logoImage {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.navPhone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  transition: opacity 180ms ease;
+}
+
+.navPhone:hover {
+  opacity: 0.7;
 }
 
 .nav {
   display: flex;
   align-items: center;
   gap: 22px;
-  font-size: 16px;
+  font-size: 18px;
   text-transform: none;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
 }
 
 .nav a {
-  color: var(--ink);
+  color: var(--bg);
   transition: color 180ms ease;
 }
 
@@ -698,7 +761,7 @@
 }
 
 .contactInfoBox {
-  background: var(--ink-soft);
+  background: var(--green-toned);
   color: #ffffff;
   padding: 40px;
   display: flex;
@@ -1040,6 +1103,7 @@
     gap: 8px;
     padding: 8px 4vw;
     font-size: 11px;
+    justify-content: flex-end;
   }
 
   .topBarContact {
@@ -1068,6 +1132,22 @@
 
   .header {
     gap: 12px;
+    padding: 0 16px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    background: transparent;
+  }
+
+  .logoImage {
+    height: auto;
+    width: auto;
   }
 
   .nav {
