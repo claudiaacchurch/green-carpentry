@@ -24,6 +24,12 @@ html {
   scroll-padding-top: 116px;
 }
 
+@media (max-width: 926px) {
+  html {
+    scroll-padding-top: 92px;
+  }
+}
+
 html,
 body {
   max-width: 100vw;
@@ -33,7 +39,7 @@ body {
 body {
   color: var(--ink);
   background: var(--bg);
-  font-family: var(--font-body, "Source Sans 3", sans-serif);
+  font-family: var(--font-nav, "Raleway", var(--font-body, "Source Sans 3", sans-serif));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeroVideo from "@/components/HeroVideo";
 import LazyVideo from "@/components/LazyVideo";
+import SocialIcons from "@/components/SocialIcons";
 import styles from "./page.module.css";
 
 const projects = [
@@ -63,7 +64,7 @@ const team = [
 export default function Home() {
   return (
     <div className={styles.page}>
-      <div className={styles.topBar}>
+      <header className={styles.header}>
         <div className={styles.logo}>
           <Image
             src="/media/green-carpentry-logo.png"
@@ -73,46 +74,21 @@ export default function Home() {
             className={styles.logoImage}
           />
         </div>
-        <div className={styles.topBarRight}>
-          <a href="tel:0000000000" className={styles.topBarContact}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            000 000 0000
-          </a>
-          <a href="mailto:email@greencarpentry.com" className={styles.topBarContact}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            email@greencarpentry.com
-          </a>
-          <div className={styles.topBarSocials}>
-            <a href="https://instagram.com" aria-label="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.6"/>
-                <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6"/>
-                <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>
-              </svg>
-            </a>
-            <a href="https://facebook.com" aria-label="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M14 8.5V7.2c0-1 .5-1.7 1.7-1.7h1.3V3h-2c-2.5 0-4 1.6-4 4v1.5H8.5v3H11V21h3v-9.5h2.7l.3-3H14Z" fill="currentColor"/>
-              </svg>
-            </a>
+        <div className={styles.headerRight}>
+          <div className={styles.headerRows}>
+          <div className={styles.headerContact}>
+            <SocialIcons />
+          </div>
+          <nav className={styles.nav}>
+            <a href="#top">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#team">Meet the Team</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Get in Touch</a>
+          </nav>
           </div>
         </div>
-      </div>
-
-      <header className={styles.header}>
-        <nav className={styles.nav}>
-          <a href="#top">Home</a>
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#team">Meet the Team</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#contact">Get in Touch</a>
-        </nav>
         <details className={styles.mobileMenu}>
           <summary className={styles.hamburger} aria-label="Open menu">
             <span />
@@ -125,10 +101,10 @@ export default function Home() {
             <a href="#about">About</a>
             <a href="#team">Meet the Team</a>
             <a href="#reviews">Reviews</a>
-            <a href="tel:0000000000">000 000 0000</a>
-            <a href="#contact" className={styles.navCta}>
-              Get in Touch
-            </a>
+            <a href="#contact" className={styles.navCta}>Get in Touch</a>
+            <div className={styles.mobileSocials}>
+              <SocialIcons />
+            </div>
           </div>
         </details>
       </header>
@@ -142,9 +118,9 @@ export default function Home() {
           <div className={styles.heroContent}>
             <span className={styles.heroKicker}>Green Carpentry</span>
             <h1 className={styles.heroTitle}>
-              Commercial<br />
-              Domestic<br />
-              Maintenance
+              Construction<br />
+              services across<br />
+              the South West
             </h1>
             <div className={styles.heroActions}>
               <a href="#contact" className={styles.primaryBtn}>
