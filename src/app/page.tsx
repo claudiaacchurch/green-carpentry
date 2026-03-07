@@ -112,7 +112,12 @@ export default function Home() {
       <main>
         <section className={styles.hero} id="top">
           <div className={styles.heroMedia}>
-            <HeroVideo src="/media/hero-drone.mp4" className={styles.heroVideo} />
+            <iframe
+              src="https://iframe.mediadelivery.net/embed/610237/c2092ea8-24b7-4f3b-86bb-8841770dee43?autoplay=true&loop=true&muted=true&preload=true&background=true"
+              className={styles.heroVideo}
+              allow="autoplay"
+              loading="lazy"
+            />
             <div className={styles.heroOverlay} />
           </div>
           <div className={styles.heroContent}>
