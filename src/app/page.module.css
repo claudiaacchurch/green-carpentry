@@ -513,9 +513,10 @@
 }
 
 .sectionTitle {
-	font-family: var(---font-nav, "Bebas Neue", sans-serif);
-	font-size: clamp(36px, 4vw, 60px);
-	letter-spacing: 0.08em;
+	font-family: var(--font-nav);
+	font-size: clamp(20px, 2.5vw, 34px);
+	font-weight: 600;
+	letter-spacing: 0;
 	color: var(--accent);
 	text-transform: none;
 }
@@ -1287,28 +1288,40 @@
 		font-size: 10px;
 	}
 	.section {
-		padding: 40px 4vw;
+		padding: 32px 5vw;
 	}
 
-  .sectionTitle {
-    font-size: 6.2vw
-  }
+	.sectionTitle {
+		font-size: 4.5vw;
+	}
+
+	.sectionHeader {
+		margin-bottom: 24px;
+		justify-content: center;
+	}
 
 	.projectsGrid {
-		gap: 10px;
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.projectMedia {
+		aspect-ratio: 16 / 9;
+		margin: 0 10px;
 	}
 
 	.projectBody {
 		padding: 8px 2px 0;
 		gap: 2px;
+		align-items: center;
 	}
 
 	.projectTitle {
-		font-size: 13px;
+		font-size: 14px;
 	}
 
 	.projectMeta {
-		font-size: 11px;
+		font-size: 12px;
 	}
 
 	.reviewsGrid {
