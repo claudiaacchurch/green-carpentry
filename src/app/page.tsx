@@ -64,7 +64,6 @@ export default function Home() {
 						<div className={styles.heroOverlay} />
 					</div>
 					<div className={styles.heroContent}>
-						<span className={styles.heroKicker}>Green Carpentry</span>
 						<h1 className={styles.heroTitle}>
 							Construction
 							<br />

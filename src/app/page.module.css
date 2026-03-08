@@ -416,13 +416,6 @@
 	color: var(--bg);
 }
 
-.heroKicker {
-	text-transform: none;
-	letter-spacing: 0.06em;
-	font-size: 18px;
-	color: var(--accent);
-}
-
 .heroTitle {
 	font-family: var(--font-display, "Bebas Neue", sans-serif);
 	font-size: clamp(40px, 4.6vw, 72px);
@@ -1230,6 +1223,11 @@
 		max-width: 100%;
 	}
 
+  .heroTitle {
+    font-size: 32px;
+    left: 7vw;
+    bottom: 32px;
+  }
 	.section {
 		padding: 40px 4vw;
 	}

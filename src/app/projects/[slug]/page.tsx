@@ -40,7 +40,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </div>
           <div className={styles.heroOverlay} />
           <div className={styles.heroContent}>
-            <span className={styles.heroKicker}>{project.meta}</span>
             <h1 className={styles.heroTitle}>{project.title}</h1>
           </div>
         </section>
