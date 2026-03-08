@@ -1,14 +1,13 @@
 export interface Project {
   slug: string;
   title: string;
-  meta: string;        // location shown on card
-  type: string;        // e.g. "Full Renovation"
+  meta: string;     
   location: string;
   year: string;
   description: string[];
-  image: string;       // card thumbnail — use NEXT_PUBLIC_BASE_PATH prefix where needed
+  image: string;      
   heroImage: string;
-  buildVideoEmbed?: string; // Bunny embed URL
+  buildVideoEmbed?: string; 
 }
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -18,7 +17,6 @@ export const projects: Project[] = [
     slug: "full-house-renovation-glastonbury",
     title: "Full House Renovation",
     meta: "Glastonbury",
-    type: "Full House Renovation",
     location: "Glastonbury, Somerset",
     year: "2025",
     description: [
@@ -34,7 +32,6 @@ export const projects: Project[] = [
     slug: "triple-flat-conversion-watchet",
     title: "Triple Flat Conversion",
     meta: "Watchet",
-    type: "Flat Conversion",
     location: "Watchet, Somerset",
     year: "2025",
     description: [
@@ -50,7 +47,6 @@ export const projects: Project[] = [
     slug: "kitchen-renovation-taunton",
     title: "Kitchen Renovation",
     meta: "Taunton",
-    type: "Kitchen Renovation",
     location: "Taunton, Somerset",
     year: "2025",
     description: [

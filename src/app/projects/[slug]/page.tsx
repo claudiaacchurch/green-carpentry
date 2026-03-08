@@ -55,10 +55,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <span className={styles.infoLabel}>Location</span>
             <span className={styles.infoValue}>{project.location}</span>
           </div>
-          <div className={styles.infoItem}>
-            <span className={styles.infoLabel}>Type</span>
-            <span className={styles.infoValue}>{project.type}</span>
-          </div>
         </div>
 
         {/* Description */}
