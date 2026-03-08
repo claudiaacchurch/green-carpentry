@@ -479,7 +479,7 @@
   transform: translate(-50%, -50%);
   width: 100vw;
   height: 56.25vw;
-  min-height: 90%;
+  min-height: 100%;
   min-width: 177.78vh;
   border: none;
   object-fit: cover;
@@ -523,7 +523,7 @@
 .aboutText {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
+  text-align: center;
   gap: 20px;
   font-size: 16px;
   line-height: 1.8;
@@ -691,8 +691,8 @@
 .teamName {
   font-size: 22px;
   font-weight: 600;
-  color: var(--accent);
-  margin-top: 4px;
+  color: var(--bg);
+  margin: 6px;
 }
 
 .teamRole {
@@ -1189,7 +1189,7 @@
 
 @media (max-width: 926px) {
   .page {
-    --header-h: 90px;
+    --header-h: 100px;
   }
 
   .header {
@@ -1207,6 +1207,11 @@
 }
 
 @media (max-width: 720px) {
+  .hero {
+    height: 65vh;
+    min-height: unset;
+  }
+
   .heroContent {
     left: 8vw;
     right: 8vw;
@@ -1214,8 +1219,11 @@
     max-width: 100%;
   }
 
-  .reviewsGrid,
-  .teamGrid {
+  .section {
+    padding: 40px 4vw;
+  }
+
+  .reviewsGrid {
     grid-template-columns: 1fr;
   }
 
@@ -1226,6 +1234,20 @@
   .mediaTileLarge,
   .mediaTileSmall {
     grid-column: span 1;
+  }
+
+    .teamGrid {
+    gap: 20px;
+  }
+
+  .teamCard {
+    gap: 10px;
+    padding: 26px 18px;
+  }
+
+  .teamAvatar {
+    width: 90px; 
+    height: 90px;
   }
 
   .projectsGrid {

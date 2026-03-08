@@ -111,13 +111,6 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.aboutInfo}>
-            <div className={styles.aboutText}>
-              <p>Placeholder blurb about what you offer — your experience, your approach, the types of projects you take on. Why clients choose you over others, what makes your work stand out.</p>
-              <p>A second paragraph here about your values, or something.</p>
-              <p>A closing line about getting in touch or inviting people to browse your projects.</p>
-              <p>A closing line about getting in touch or inviting people to browse your projects.</p>
-             <p>A closing line about getting in touch or inviting people to browse your projects.</p>
-            </div>
             <div className={styles.aboutImageWrap}>
               <img
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/about.JPG`}
@@ -126,6 +119,11 @@ export default function Home() {
                 height={500}
                 className={styles.aboutImage}
               />
+            </div>
+            <div className={styles.aboutText}>
+              <p>Placeholder blurb about what you offer — your experience, your approach, the types of projects you take on. Why clients choose you over others, what makes your work stand out.</p>
+              <p>A second paragraph here about your values, or something.</p>
+              <p>A closing line about getting in touch or inviting people to browse your projects.</p>
             </div>
           </div>
         </section>

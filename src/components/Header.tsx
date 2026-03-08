@@ -1,8 +1,33 @@
+"use client";
+
 import Link from "next/link";
 import SocialIcons from "./SocialIcons";
 import styles from "@/app/page.module.css";
+import { useRef, useState } from "react";
 
 export default function Header() {
+  const detailsRef = useRef<HTMLDetailsElement>(null);
+  const [closing, setClosing] = useState(false);
+
+  function startClose() {
+    if (!detailsRef.current?.open || closing) return;
+    setClosing(true);
+  }
+
+  function handleTransitionEnd(e: React.TransitionEvent<HTMLDivElement>) {
+    if (closing && e.propertyName === "transform" && e.target === e.currentTarget) {
+      setClosing(false);
+      if (detailsRef.current) detailsRef.current.open = false;
+    }
+  }
+
+  function handleSummaryClick(e: React.MouseEvent) {
+    if (detailsRef.current?.open) {
+      e.preventDefault();
+      startClose();
+    }
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -28,13 +53,21 @@ export default function Header() {
         </nav>
       </div>
 
-      <details className={styles.mobileMenu}>
-        <summary className={styles.hamburger} aria-label="Open menu">
+      <details ref={detailsRef} className={styles.mobileMenu}>
+        <summary
+          className={styles.hamburger}
+          aria-label="Open menu"
+          onClick={handleSummaryClick}
+        >
           <span />
           <span />
           <span />
         </summary>
-        <div className={styles.mobilePanel}>
+        <div
+          className={`${styles.mobilePanel}${closing ? ` ${styles.mobilePanelClosing}` : ""}`}
+          onClick={startClose}
+          onTransitionEnd={handleTransitionEnd}
+        >
           <Link href="/#top">Home</Link>
           <Link href="/#projects">Projects</Link>
           <Link href="/#about">About</Link>
