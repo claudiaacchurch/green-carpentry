@@ -177,11 +177,10 @@ export default function Home() {
 
 				<section className={styles.section} id="reviews">
 					<div className={styles.sectionHeader}>
-						<div>
 							<h2 className={styles.sectionTitle}>Reviews</h2>
-						</div>
-					</div>
-					<div className={styles.reviewsGrid}>
+          </div>
+					<div className={styles.placeholderReviewTxt}>Placeholder to link up with Google Reviews.</div>
+					{/* <div className={styles.reviewsGrid}>
 						{reviews.map((review, index) => (
 							<article
 								className={styles.reviewCard}
@@ -191,7 +190,7 @@ export default function Home() {
 								<strong>{review.name}</strong>
 							</article>
 						))}
-					</div>
+					</div> */}
 				</section>
 
 				<section className={styles.section} id="contact">
@@ -199,7 +198,7 @@ export default function Home() {
 						<div className={styles.contactInfoBox}>
 							<h2 className={styles.contactInfoTitle}>Contact us</h2>
 							<p className={styles.contactInfoText}>
-								We want to hear about your next carpentry project. Call us today
+								We want to hear about your next project. Call us today
 								for a consultation and a free quote on our services.
 							</p>
 

@@ -18,7 +18,7 @@ export const projects: Project[] = [
     title: "Full House Renovation",
     meta: "Glastonbury",
     location: "Glastonbury, Somerset",
-    year: "2025",
+    year: "2026",
     description: [
       "A complete top-to-bottom renovation of a four-bedroom house in Glastonbury, bringing every room up to a modern, high-quality finish while retaining the character of the original building.",
       "The scope covered full kitchen installation, bathroom suite replacements across three rooms, new internal doors and architrave throughout, and bespoke fitted joinery in the living and dining areas.",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     title: "Kitchen Renovation",
     meta: "Taunton",
     location: "Taunton, Somerset",
-    year: "2025",
+    year: "2026",
     description: [
       "A full kitchen renovation for a family home in Taunton, replacing an outdated galley layout with a spacious open-plan kitchen and dining area that makes the most of the available footprint.",
       "Custom cabinetry was designed and fitted by our joinery team, complemented by quartz worktops, integrated appliances, and under-cabinet lighting. Structural work included the removal of a load-bearing wall to open the space.",
