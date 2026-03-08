@@ -5,6 +5,7 @@ const basePath = isProd ? "/green-carpentry" : "";
 
 const nextConfig: NextConfig = {
   output: "export",
+  distDir: "docs",
   basePath,
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
