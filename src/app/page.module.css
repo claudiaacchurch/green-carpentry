@@ -368,6 +368,10 @@
 	transform: translateX(0);
 }
 
+.mobileMenu[open] .mobilePanel.mobilePanelClosing {
+	transform: translateX(100%);
+}
+
 .mobileMenu[open] .hamburger {
 	position: fixed;
 	top: 18px;
