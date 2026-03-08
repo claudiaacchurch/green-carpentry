@@ -85,7 +85,7 @@ export default function Home() {
 				<section className={styles.section} id="projects">
 					<div className={styles.sectionHeader}>
 						<div>
-							<h2 className={styles.sectionTitle}>Projects</h2>
+							<h2 className={styles.sectionTitle}>Recent Projects</h2>
 						</div>
 					</div>
 					<div className={styles.projectsGrid}>

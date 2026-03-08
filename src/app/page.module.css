@@ -1213,8 +1213,35 @@
 		align-items: center;
 	}
 
+	/* Show only social icons between logo and hamburger */
 	.headerRight {
+		display: flex;
+		align-items: center;
+		flex: 1;
+    padding-bottom: 0;
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+	}
+
+	.nav > a {
 		display: none;
+	}
+
+	.navSocials {
+		display: flex;
+		align-items: center;
+		border-left: none;
+	}
+
+	.navSocials a {
+		padding: 0 10px;
+	}
+
+	.navSocials a + a {
+		border-left: 1px solid var(--accent);
 	}
 
 	.mobileMenu {
@@ -1240,7 +1267,7 @@
 	}
 
 	.heroContent {
-		left: 6vw;
+		left: 4vw;
 		right: 6vw;
 		bottom: 14px;
 		max-width: 100%;
@@ -1248,10 +1275,10 @@
 	}
 
 	.heroTitle {
-		font-size: 5.2vw;
+		font-size: 6.2vw;
 	}
 
-	.heroActions .primaryBtn {
+	.heroActions .primaryBtn, .heroActions .secondaryBtn {
 		display: none;
 	}
 
@@ -1264,8 +1291,25 @@
 	}
 
   .sectionTitle {
-    font-size: 5.2vw
+    font-size: 6.2vw
   }
+
+	.projectsGrid {
+		gap: 10px;
+	}
+
+	.projectBody {
+		padding: 8px 2px 0;
+		gap: 2px;
+	}
+
+	.projectTitle {
+		font-size: 13px;
+	}
+
+	.projectMeta {
+		font-size: 11px;
+	}
 
 	.reviewsGrid {
 		grid-template-columns: 1fr;
@@ -1324,6 +1368,36 @@
 
 	.contactInfoBox,
 	.contactFormBox {
-		padding: 28px;
+		padding: 24px;
+	}
+
+	.contactInfoBox {
+		gap: 20px;
+	}
+
+	.contactInfoTitle {
+		font-size: 22px;
+	}
+
+	.contactInfoText {
+		font-size: 14px;
+	}
+
+	.contactInfoSection strong {
+		font-size: 14px;
+		margin-bottom: 4px;
+	}
+
+	.contactInfoSection p {
+		font-size: 14px;
+	}
+
+	.contactSocialLink {
+		font-size: 13px;
+	}
+
+	.contactFormTitle {
+		font-size: 17px;
+		margin-bottom: 16px;
 	}
 }
