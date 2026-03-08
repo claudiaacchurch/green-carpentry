@@ -81,10 +81,7 @@
 .navSocials {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-left: 4px;
-  padding-left: 16px;
-  border-left: 1px solid var(--line);
+  border-left: 1px solid var(--accent);
 }
 
 .navSocials a {
@@ -92,12 +89,16 @@
   align-items: center;
   justify-content: center;
   color: var(--accent);
-  opacity: 0.7;
+  padding: 0 16px;
   transition: opacity 180ms ease;
 }
 
+.navSocials a + a {
+  border-left: 1px solid var(--accent);
+}
+
 .navSocials a:hover {
-  opacity: 1;
+  opacity: 0.65;
 }
 
 .topBarRight a:not(.topBarContact),
@@ -124,7 +125,7 @@
   align-items: stretch;
   justify-content: space-between;
   height: var(--header-h);
-  padding: 0 6vw;
+  padding: 0 4vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -138,13 +139,10 @@
 
 .headerRight {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   align-items: flex-end;
-  gap: 10px;
+  justify-content: flex-end;
   flex: 1;
-  padding: 12px 0;
-  transition: gap 280ms ease, padding 280ms ease;
+  padding-bottom: 18px;
 }
 
 .headerRows {
@@ -192,24 +190,28 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
 }
 
 .headerContact a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(246, 243, 239, 0.12);
-  border: 1px solid rgba(246, 243, 239, 0.2);
   color: var(--accent);
+  opacity: 0.65;
+  padding: 0 11px;
   transition: opacity 180ms ease;
 }
 
+.headerContact a:first-child {
+  padding-left: 0;
+}
+
+.headerContact a + a {
+  border-left: 1px solid var(--accent);
+}
+
 .headerContact a:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .logo {
@@ -253,6 +255,7 @@
 .nav a {
   color: var(--accent);
   transition: color 180ms ease;
+  cursor: pointer;
 }
 
 .nav a:hover {
@@ -466,21 +469,19 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--bg);
 }
 
 .heroVideo {
-  /* covers the container regardless of aspect ratio */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100vw;
-  height: 56.25vw; /* 16:9 based on width */
-  min-height: 100%;
-  min-width: 177.78vh; /* 16:9 based on height */
+  height: 56.25vw;
+  min-height: 90%;
+  min-width: 177.78vh;
   border: none;
-  /* for native <video> elements */
   object-fit: cover;
 }
 
@@ -503,15 +504,8 @@
   margin-bottom: 36px;
 }
 
-.sectionEyebrow {
-  text-transform: none;
-  letter-spacing: 0.08em;
-  font-size: 12px;
-  color: var(--accent);
-}
-
 .sectionTitle {
-  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-family: var(---font-nav, "Bebas Neue", sans-serif);
   font-size: clamp(36px, 4vw, 60px);
   letter-spacing: 0.08em;
   color: var(--accent);
@@ -529,13 +523,13 @@
 .aboutText {
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
   gap: 20px;
   font-size: 16px;
   line-height: 1.8;
 }
 
 .aboutImageWrap {
-  border-radius: var(--radius-md);
   overflow: hidden;
 }
 
@@ -641,8 +635,12 @@
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+}
+
+.projectsGrid:hover {
+  cursor: pointer;
 }
 
 .teamGrid {
@@ -714,51 +712,51 @@
 }
 
 .projectCard {
-  grid-column: span 4;
-  background: #ffffff;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(79, 83, 54, 0.15);
-  overflow: hidden;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
-  min-height: 320px;
-  box-shadow: 0 8px 24px rgba(79, 83, 54, 0.08);
-  transition: all 240ms ease;
+  gap: 0;
+  cursor: pointer;
 }
 
-.projectCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(79, 83, 54, 0.14);
+.projectCard:hover .projectImage {
+  transform: scale(1.04);
 }
 
 .projectMedia {
   position: relative;
-  min-height: 200px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--accent);
 }
 
 .projectImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  transition: transform 500ms ease;
 }
 
 .projectBody {
-  padding: 22px;
+  padding: 14px 4px 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
 }
 
 .projectTitle {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
+  color: var(--accent);
 }
 
 .projectMeta {
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: none;
-  color: var(--ink-soft);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .reviewsGrid {
@@ -1136,10 +1134,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .projectCard {
-    grid-column: span 6;
-  }
-
   .reviewsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1178,74 +1172,22 @@
   .contactWrapper {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 926px) {
-  .page {
-    --header-h: 92px;
-  }
-
-  .headerRight {
-    gap: 4px;
-    padding: 6px 0;
-  }
-
-  .headerRows {
-    gap: 12px;
+  .header {
+    padding: 0 2vw;
   }
 
   .nav {
     font-size: 14px;
-    gap: 12px;
-    white-space: nowrap;
+    gap: 14px;
   }
 
-
-
-  .headerContact a {
-    width: 26px;
-    height: 26px;
-  }
-
-  .headerContact a svg {
-    width: 14px;
-    height: 14px;
+  .navSocials a {
+    padding: 0 10px;
   }
 }
 
-@media (max-width: 720px) {
-  .topBar {
-    flex-direction: row;
-    gap: 8px;
-    padding: 8px 4vw;
-    font-size: 11px;
-    justify-content: flex-end;
-  }
-
-  .topBarContact {
-    font-size: 11px;
-    gap: 4px;
-  }
-
-  .topBarContact svg {
-    width: 11px;
-    height: 11px;
-  }
-
-  .topBarRight {
-    gap: 8px;
-  }
-
-  .topBarRight a:not(.topBarContact) {
-    width: 24px;
-    height: 24px;
-  }
-
-  .topBarRight a:not(.topBarContact) svg {
-    width: 13px;
-    height: 13px;
-  }
-
+@media (max-width: 926px) {
   .page {
     --header-h: 90px;
   }
@@ -1255,28 +1197,16 @@
     align-items: center;
   }
 
-  .logo {
-    height: 100%;
-    width: auto;
-  }
-
-  .logoImage {
-    height: 100%;
-    width: auto;
-  }
-
   .headerRight {
-    display: none;
-  }
-
-  .nav {
     display: none;
   }
 
   .mobileMenu {
     display: block;
   }
+}
 
+@media (max-width: 720px) {
   .heroContent {
     left: 8vw;
     right: 8vw;
@@ -1300,10 +1230,6 @@
 
   .projectsGrid {
     grid-template-columns: 1fr;
-  }
-
-  .projectCard {
-    grid-column: span 1;
   }
 
   .formRow {

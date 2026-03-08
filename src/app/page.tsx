@@ -1,27 +1,8 @@
-import HeroVideo from "@/components/HeroVideo";
-import LazyVideo from "@/components/LazyVideo";
-import SocialIcons from "@/components/SocialIcons";
+import Header from "@/components/Header";
+import Link from "next/link";
+import { PHONE_DISPLAY, PHONE_HREF, EMAIL, EMAIL_HREF, INSTAGRAM_URL, FACEBOOK_URL } from "@/lib/constants";
+import { projects } from "@/lib/projects";
 import styles from "./page.module.css";
-
-const projects = [
-  {
-    title: "Full House Renovation",
-    meta: "Glastonbury",
-    description: "This four bed house in Glastonbury got a top to bottom modern finish.",
-    image: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/glasto-kitchen.png`,
-  },
-  {
-    title: "Project 2",
-    meta: "Project Description",
-    image: "/placeholders/project-2.svg",
-  },
-  {
-    title: "Kitchen Renovation",
-    meta: "Taunton",
-    description: "Full kitchen renovation.",
-    image: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/taunton-kitchen.png`
-  },
-];
 
 const reviews = [
   {
@@ -65,55 +46,13 @@ const team = [
 export default function Home() {
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <div className={styles.logo}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/green-carpentry-logo.png`}
-            alt="Green Carpentry Logo"
-            className={styles.logoImage}
-          />
-        </div>
-        <div className={styles.headerRight}>
-          <div className={styles.headerRows}>
-          <div className={styles.headerContact}>
-            <SocialIcons />
-          </div>
-          <nav className={styles.nav}>
-            <a href="#top">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
-            <a href="#team">Meet the Team</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#contact">Get in Touch</a>
-          </nav>
-          </div>
-        </div>
-        <details className={styles.mobileMenu}>
-          <summary className={styles.hamburger} aria-label="Open menu">
-            <span />
-            <span />
-            <span />
-          </summary>
-          <div className={styles.mobilePanel}>
-            <a href="#top">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
-            <a href="#team">Meet the Team</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#contact" className={styles.navCta}>Get in Touch</a>
-            <div className={styles.mobileSocials}>
-              <SocialIcons />
-            </div>
-          </div>
-        </details>
-      </header>
+      <Header />
 
       <main>
         <section className={styles.hero} id="top">
           <div className={styles.heroMedia}>
             <iframe
-              src="https://iframe.mediadelivery.net/embed/610237/c2092ea8-24b7-4f3b-86bb-8841770dee43?autoplay=true&loop=true&muted=true&preload=true&background=true"
+              src="https://iframe.mediadelivery.net/embed/610237/71858d3d-4c6f-4a88-bae3-5de046b33908?autoplay=true&loop=true&muted=true&preload=true&background=true"
               className={styles.heroVideo}
               allow="autoplay"
               loading="lazy"
@@ -128,44 +67,39 @@ export default function Home() {
               the South West
             </h1>
             <div className={styles.heroActions}>
-              <a href="#contact" className={styles.primaryBtn}>
+              <a href="#projects" className={styles.primaryBtn}>
                 View Projects
               </a>
-              <a href="#gallery" className={styles.secondaryBtn}>
+              <a href="#contact" className={styles.secondaryBtn}>
                 Get in Touch
               </a>
             </div>
           </div>
         </section>
 
-                <section className={styles.section} id="projects">
+        <section className={styles.section} id="projects">
           <div className={styles.sectionHeader}>
             <div>
-              <p className={styles.sectionEyebrow}>Projects</p>
-              <h2 className={styles.sectionTitle}>Featured builds</h2>
+              <h2 className={styles.sectionTitle}>Projects</h2>
             </div>
           </div>
           <div className={styles.projectsGrid}>
             {projects.map((project) => (
-              <article key={project.title} className={styles.projectCard}>
+              <Link key={project.slug} href={`/projects/${project.slug}`} className={styles.projectCard}>
                 <div className={styles.projectMedia}>
                   <img
                     src={project.image}
-                    alt={`${project.title} placeholder`}
+                    alt={project.title}
                     width={1200}
                     height={800}
                     className={styles.projectImage}
                   />
-
                 </div>
                 <div className={styles.projectBody}>
                   <span className={styles.projectMeta}>{project.meta}</span>
                   <h3 className={styles.projectTitle}>{project.title}</h3>
-                  <p>
-                   {project.description}
-                  </p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </section>
@@ -173,8 +107,7 @@ export default function Home() {
         <section className={styles.section} id="about">
           <div className={styles.sectionHeader}>
             <div>
-              <p className={styles.sectionEyebrow}>About</p>
-              <h2 className={styles.sectionTitle}>Green Carpentry</h2>
+              <h2 className={styles.sectionTitle}>About </h2>
             </div>
           </div>
           <div className={styles.aboutInfo}>
@@ -182,10 +115,12 @@ export default function Home() {
               <p>Placeholder blurb about what you offer — your experience, your approach, the types of projects you take on. Why clients choose you over others, what makes your work stand out.</p>
               <p>A second paragraph here about your values, or something.</p>
               <p>A closing line about getting in touch or inviting people to browse your projects.</p>
+              <p>A closing line about getting in touch or inviting people to browse your projects.</p>
+             <p>A closing line about getting in touch or inviting people to browse your projects.</p>
             </div>
             <div className={styles.aboutImageWrap}>
               <img
-                src="/placeholders/project-1.svg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/about.JPG`}
                 alt="About Green Carpentry"
                 width={600}
                 height={500}
@@ -198,8 +133,7 @@ export default function Home() {
         <section className={styles.section} id="team">
           <div className={styles.sectionHeader}>
             <div>
-              <p className={styles.sectionEyebrow}>Meet the Team</p>
-              <h2 className={styles.sectionTitle}>Who we Are</h2>
+              <h2 className={styles.sectionTitle}>Meet the Team</h2>
             </div>
           </div>
           <div className={styles.teamGrid}>
@@ -227,14 +161,13 @@ export default function Home() {
         <section className={styles.section} id="reviews">
           <div className={styles.sectionHeader}>
             <div>
-              <p className={styles.sectionEyebrow}>Reviews</p>
-              <h2 className={styles.sectionTitle}>What our Customers Say</h2>
+              <h2 className={styles.sectionTitle}>Reviews</h2>
             </div>
           </div>
           <div className={styles.reviewsGrid}>
             {reviews.map((review, index) => (
               <article className={styles.reviewCard} key={`${review.name}-${index}`}>
-                <p className={styles.reviewQuote}>“{review.quote}”</p>
+                <p className={styles.reviewQuote}>"{review.quote}"</p>
                 <strong>{review.name}</strong>
               </article>
             ))}
@@ -251,14 +184,13 @@ export default function Home() {
 
               <div className={styles.contactInfoSection}>
                 <strong>Business Hours:</strong>
-                <p>Monday-Friday: 8am-6pm</p>
-                <p>Saturday: 8am-12pm</p>
-                <p>Sunday: Closed</p>
+                <p>Monday-Friday: 9am-5pm</p>
+                <p>Saturday-Sunday: Closed</p>
               </div>
 
               <div className={styles.contactInfoSection}>
                 <strong>Our Address:</strong>
-                <p>123 Example Street, City Name, County, AB12 3CD</p>
+                <p>Taunton, Somerset, UK</p>
               </div>
 
               <div className={styles.contactInfoSection}>
@@ -267,21 +199,21 @@ export default function Home() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  <a href="tel:0000000000">000 000 0000</a>
+                  <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
                 </p>
                 <p className={styles.contactInfoItem}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  <a href="mailto:email@greencarpentry.com">email@greencarpentry.com</a>
+                  <a href={EMAIL_HREF}>{EMAIL}</a>
                 </p>
               </div>
 
               <div className={styles.contactInfoSection}>
                 <strong>Follow Us:</strong>
                 <div className={styles.contactSocialRow}>
-                  <a href="https://instagram.com/_greencarpentry" aria-label="Instagram" className={styles.contactSocialLink}>
+                  <a href={INSTAGRAM_URL} aria-label="Instagram" className={styles.contactSocialLink}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.6"/>
                       <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6"/>
@@ -289,7 +221,7 @@ export default function Home() {
                     </svg>
                     Instagram
                   </a>
-                  <a href="https://www.facebook.com/Green-Carpentry-100049023407614/" aria-label="Facebook" className={styles.contactSocialLink}>
+                  <a href={FACEBOOK_URL} aria-label="Facebook" className={styles.contactSocialLink}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M14 8.5V7.2c0-1 .5-1.7 1.7-1.7h1.3V3h-2c-2.5 0-4 1.6-4 4v1.5H8.5v3H11V21h3v-9.5h2.7l.3-3H14Z" fill="currentColor"/>
                     </svg>
@@ -303,7 +235,7 @@ export default function Home() {
               <h3 className={styles.contactFormTitle}>Send us a message</h3>
               <form
                 className={styles.contactFormFields}
-                action="mailto:email@greencarpentry.com"
+                action={EMAIL_HREF}
                 method="POST"
                 encType="text/plain"
               >
@@ -341,7 +273,7 @@ export default function Home() {
       <footer className={styles.footer}>
         <div>
           <strong>Green Carpentry</strong>
-          <p>Construction & renovation partners for ambitious builds.</p>
+          <p>Construction services across the South West.</p>
         </div>
         <div className={styles.footerLinks}>
           <a href="#projects">Projects</a>
@@ -350,18 +282,18 @@ export default function Home() {
           <a href="#top">Back to top</a>
         </div>
         <div className={styles.footerContact}>
-          <a href="mailto:email@greencarpentry.com" className={styles.footerContactLink}>
+          <a href={EMAIL_HREF} className={styles.footerContactLink}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            email@greencarpentry.com
+            {EMAIL}
           </a>
-          <a href="tel:0000000000" className={styles.footerContactLink}>
+          <a href={PHONE_HREF} className={styles.footerContactLink}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            000 000 0000
+            {PHONE_DISPLAY}
           </a>
         </div>
       </footer>
