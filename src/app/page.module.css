@@ -1251,6 +1251,10 @@
 		font-size: 5.2vw;
 	}
 
+	.heroActions .primaryBtn {
+		display: none;
+	}
+
 	.heroActions a {
 		padding: 7px 14px;
 		font-size: 10px;
@@ -1258,6 +1262,10 @@
 	.section {
 		padding: 40px 4vw;
 	}
+
+  .sectionTitle {
+    font-size: 5.2vw
+  }
 
 	.reviewsGrid {
 		grid-template-columns: 1fr;
@@ -1296,10 +1304,6 @@
 
 	.teamBio {
 		font-size: 10px;
-	}
-
-	.projectsGrid {
-		grid-template-columns: 1fr;
 	}
 
 	.formRow {
