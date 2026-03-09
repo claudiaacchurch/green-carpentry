@@ -1276,7 +1276,8 @@
 	}
 
 	.heroTitle {
-		font-size: 6.2vw;
+		font-size: 6.6vw;
+        letter-spacing: 0.05em;
 	}
 
 	.heroActions .primaryBtn, .heroActions .secondaryBtn {
@@ -1303,17 +1304,21 @@
 	.projectsGrid {
 		grid-template-columns: 1fr;
 		gap: 16px;
+		margin: 0 10px;
+	}
+
+	.projectCard {
+		width: 100%;
+		overflow: hidden;
 	}
 
 	.projectMedia {
 		aspect-ratio: 16 / 9;
-		margin: 0 10px;
 	}
 
 	.projectBody {
 		padding: 8px 2px 0;
 		gap: 2px;
-		align-items: center;
 	}
 
 	.projectTitle {
