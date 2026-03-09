@@ -8,4 +8,4 @@
 :HL["/green-carpentry/media/taunton-kitchen.png","image"]
 :HL["/green-carpentry/media/about.JPG","image"]
 :HL["/placeholders/person-placeholder.jpg","image"]
-0:{"buildId":"RW52Kw_5bJoXPHe09Udjg","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"eBDyfcneRlKeu4iqN7cFw","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
