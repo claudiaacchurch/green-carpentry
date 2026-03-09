@@ -521,14 +521,6 @@
 	text-transform: none;
 }
 
-.aboutInfo {
-	color: var(--accent);
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 60px;
-	align-items: center;
-}
-
 .aboutText {
 	display: flex;
 	flex-direction: column;
@@ -536,6 +528,7 @@
 	gap: 20px;
 	font-size: 16px;
 	line-height: 1.8;
+	color: var(--accent);
 }
 
 .aboutImageWrap {
@@ -775,7 +768,7 @@
 }
 
 .placeholderReviewTxt {
-  color: var(--accent);
+	color: var(--accent);
 }
 
 .reviewCard {
@@ -1138,9 +1131,9 @@
 		bottom: 64px;
 	}
 
-  .section {
-    padding: 80px 2vw;
-  }
+	.section {
+		padding: 80px 2vw;
+	}
 
 	.aboutInfo {
 		grid-template-columns: 1fr;
@@ -1219,7 +1212,7 @@
 		display: flex;
 		align-items: center;
 		flex: 1;
-    padding-bottom: 0;
+		padding-bottom: 0;
 	}
 
 	.nav {
@@ -1277,10 +1270,11 @@
 
 	.heroTitle {
 		font-size: 6.6vw;
-        letter-spacing: 0.05em;
+		letter-spacing: 0.05em;
 	}
 
-	.heroActions .primaryBtn, .heroActions .secondaryBtn {
+	.heroActions .primaryBtn,
+	.heroActions .secondaryBtn {
 		display: none;
 	}
 
@@ -1299,6 +1293,19 @@
 	.sectionHeader {
 		margin-bottom: 24px;
 		justify-content: center;
+	}
+
+	.aboutHeader {
+		display: none;
+	}
+
+	.aboutText {
+		gap: 11px;
+		font-size: 14px;
+		line-height: 1.4;
+		text-align: justify;
+		padding: 0 10px;
+		color: var(--accent);
 	}
 
 	.projectsGrid {
@@ -1366,6 +1373,10 @@
 
 	.teamBio {
 		font-size: 10px;
+	}
+
+	.placeholderReviewTxt {
+		font-size: 14px;
 	}
 
 	.formRow {
