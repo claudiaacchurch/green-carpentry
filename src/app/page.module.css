@@ -515,7 +515,7 @@
 .sectionTitle {
 	font-family: var(--font-nav);
 	font-size: clamp(20px, 2.5vw, 34px);
-	font-weight: 600;
+	font-weight: 400;
 	letter-spacing: 0;
 	color: var(--accent);
 	text-transform: none;
