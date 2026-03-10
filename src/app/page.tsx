@@ -82,20 +82,19 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className={`${styles.section} ${styles.aboutSection}`} id="about">
-					<div className={`${styles.sectionHeader} ${styles.aboutHeader}`}>
+				<div className={styles.mobileHeroTitle}>
+					<h1 className={styles.heroTitle}>
+						Construction services across the South West
+					</h1>
+					<div className={styles.heroActions}>
+						<a href="#projects" className={styles.primaryBtn}>
+							View Projects
+						</a>
+						<a href="#contact" className={styles.secondaryBtn}>
+							Get in Touch
+						</a>
 					</div>
-					<div className={styles.aboutInfo}>
-						<div className={styles.aboutText}>
-							<p>
-								Placeholder blurb about what you offer — your experience, your
-								approach, the types of projects you take on. Why clients choose
-								you over others, what makes your work stand out.
-							</p>
-							<p>A second paragraph here about your values, or something.</p>
-						</div>
-					</div>
-				</section>
+				</div>
 
 				<section className={styles.section} id="projects">
 					<div className={styles.sectionHeader}>
@@ -125,6 +124,37 @@ export default function Home() {
 								</div>
 							</Link>
 						))}
+					</div>
+				</section>
+
+				<section className={`${styles.section} ${styles.aboutSection}`} id="about">
+					<div className={`${styles.sectionHeader} ${styles.aboutHeader}`}>
+						<div>
+							<h2 className={styles.sectionTitle}>About</h2>
+						</div>
+					</div>
+					<div className={styles.aboutInfo}>
+						<div className={styles.aboutImageWrap}>
+							<img
+								src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/about.JPG`}
+								alt="About Green Carpentry"
+								width={600}
+								height={500}
+								className={styles.aboutImage}
+							/>
+						</div>
+						<div className={styles.aboutText}>
+							<p>
+								Placeholder blurb about what you offer — your experience, your
+								approach, the types of projects you take on. Why clients choose
+								you over others, what makes your work stand out.
+							</p>
+							<p>A second paragraph here about your values, or something.</p>
+							<p>
+								A closing line about getting in touch or inviting people to
+								browse your projects.
+							</p>
+						</div>
 					</div>
 				</section>
 

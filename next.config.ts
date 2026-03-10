@@ -4,8 +4,7 @@ const isProd = process.env.NODE_ENV === "production";
 const basePath = isProd ? "/green-carpentry" : "";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  distDir: "docs",
+  ...(isProd ? { output: "export", distDir: "docs" } : {}),
   basePath,
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,

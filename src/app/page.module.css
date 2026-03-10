@@ -420,6 +420,10 @@
 	color: var(--bg);
 }
 
+.mobileHeroTitle {
+	display: none;
+}
+
 .heroTitle {
 	font-family: var(--font-display, "Bebas Neue", sans-serif);
 	font-size: clamp(40px, 4.6vw, 72px);
@@ -1268,19 +1272,37 @@
 		gap: 8px;
 	}
 
-	.heroTitle {
-		font-size: 6.6vw;
-		letter-spacing: 0.05em;
-	}
-
-	.heroActions .primaryBtn,
-	.heroActions .secondaryBtn {
+	.heroContent .heroTitle {
 		display: none;
 	}
 
-	.heroActions a {
-		padding: 7px 14px;
-		font-size: 10px;
+	.mobileHeroTitle {
+		display: block;
+		padding: 24px 5vw 0;
+	}
+
+	.mobileHeroTitle .heroTitle {
+		font-size: 8vw;
+		letter-spacing: 0.02em;
+		text-align: center;
+	}
+
+	.heroContent .heroActions .primaryBtn,
+	.heroContent .heroActions .secondaryBtn {
+		display: none;
+		padding: 8px 18px;
+	}
+
+	.mobileHeroTitle .heroActions {
+		margin-top: 16px;
+		justify-content: center;
+	}
+
+	.mobileHeroTitle .heroActions .primaryBtn,
+	.mobileHeroTitle .heroActions .secondaryBtn {
+		display: inline-flex;
+		padding: 10px 20px;
+		font-size: 11px;
 	}
 	.section {
 		padding: 32px 5vw;
