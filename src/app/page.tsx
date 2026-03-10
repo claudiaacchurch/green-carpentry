@@ -134,15 +134,6 @@ export default function Home() {
 						</div>
 					</div>
 					<div className={styles.aboutInfo}>
-						<div className={styles.aboutImageWrap}>
-							<img
-								src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/about.JPG`}
-								alt="About Green Carpentry"
-								width={600}
-								height={500}
-								className={styles.aboutImage}
-							/>
-						</div>
 						<div className={styles.aboutText}>
 							<p>
 								Placeholder blurb about what you offer — your experience, your
@@ -154,6 +145,15 @@ export default function Home() {
 								A closing line about getting in touch or inviting people to
 								browse your projects.
 							</p>
+						</div>
+						<div className={styles.aboutImageWrap}>
+							<img
+								src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/about.JPG`}
+								alt="About Green Carpentry"
+								width={600}
+								height={500}
+								className={styles.aboutImage}
+							/>
 						</div>
 					</div>
 				</section>
