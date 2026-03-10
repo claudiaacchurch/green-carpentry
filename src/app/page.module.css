@@ -506,6 +506,7 @@
 
 .section {
 	padding: 80px 6vw;
+	border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .sectionHeader {
@@ -519,15 +520,16 @@
 .sectionTitle {
 	font-family: var(--font-nav);
 	font-size: clamp(20px, 2.5vw, 34px);
-	font-weight: 400;
+	font-weight: 600;
 	letter-spacing: 0;
 	color: var(--accent);
 	text-transform: none;
 }
 
 .aboutSection {
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 48px;
+	padding-bottom: 48px;
+	border-top: none;
 }
 
 .aboutInfo {
@@ -544,19 +546,6 @@
 	font-size: 16px;
 	line-height: 1.8;
 	color: var(--accent);
-}
-
-.aboutImageWrap {
-	overflow: hidden;
-	max-width: 720px;
-}
-
-.aboutImage {
-	width: 100%;
-	height: auto;
-	display: block;
-	aspect-ratio: 16 / 9;
-	object-fit: cover;
 }
 
 .serviceCard {
@@ -670,36 +659,35 @@
 }
 
 .teamCard {
-	background: #ffffff;
+	background: rgba(255, 255, 255, 0.05);
 	border-radius: var(--radius-lg);
 	padding: 36px 28px;
-	border: 1px solid rgba(79, 83, 54, 0.15);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
 	gap: 20px;
-	box-shadow: 0 8px 24px rgba(79, 83, 54, 0.08);
 	transition: all 240ms ease;
 }
 
 .teamCard:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 12px 32px rgba(79, 83, 54, 0.14);
+	background: rgba(255, 255, 255, 0.08);
+	border-color: rgba(255, 255, 255, 0.18);
 }
 
 .teamAvatar {
 	width: 120px;
 	height: 120px;
 	border-radius: 50%;
-	background: var(--accent-warm);
+	background: rgba(255, 255, 255, 0.12);
 	display: grid;
 	place-items: center;
 	font-family: var(--font-display, "Bebas Neue", sans-serif);
 	font-size: 20px;
 	letter-spacing: 0.12em;
 	overflow: hidden;
-	border: 4px solid rgba(79, 83, 54, 0.1);
+	border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .teamAvatarImage {
@@ -709,26 +697,25 @@
 }
 
 .teamName {
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 600;
-	color: var(--bg);
-	margin: 6px;
+	color: white;
+	margin: 4px 0 0;
 }
 
 .teamRole {
-	font-size: 13px;
+	font-size: 12px;
 	text-transform: uppercase;
-	letter-spacing: 0.08em;
-	color: var(--ink-soft);
+	letter-spacing: 0.1em;
+	color: rgba(255, 255, 255, 0.5);
 	font-weight: 500;
-	opacity: 0.85;
+	margin-top: 4px;
 }
 
 .teamBio {
-	color: var(--ink);
+	color: rgba(255, 255, 255, 0.7);
 	line-height: 1.7;
-	font-size: 15px;
-	opacity: 0.9;
+	font-size: 14px;
 }
 
 .projectCard {
@@ -955,10 +942,9 @@
 }
 
 .contactFormBox {
-	background: #ffffff;
+	background: rgba(255, 255, 255, 0.05);
 	padding: 40px;
-	border: 1px solid rgba(79, 83, 54, 0.15);
-	box-shadow: 0 8px 24px rgba(79, 83, 54, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contactFormTitle {
@@ -966,6 +952,7 @@
 	font-weight: 600;
 	margin-bottom: 24px;
 	letter-spacing: 0.02em;
+	color: white;
 }
 
 .contactFormFields {
@@ -998,9 +985,9 @@
 	display: block;
 	font-size: 13px;
 	letter-spacing: 0.04em;
-	color: var(--ink);
+	color: rgba(255, 255, 255, 0.7);
 	margin-bottom: 8px;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 .contactForm input,
@@ -1014,9 +1001,17 @@
 	width: 100%;
 	padding: 14px 16px;
 	border-radius: 8px;
-	border: 1px solid var(--line);
+	border: 1px solid rgba(255, 255, 255, 0.15);
 	font-family: inherit;
 	font-size: 15px;
+	background: rgba(255, 255, 255, 0.07);
+	color: white;
+}
+
+.contactForm input::placeholder,
+.contactFormFields input::placeholder,
+.contactFormFields textarea::placeholder {
+	color: rgba(255, 255, 255, 0.3);
 }
 
 .contactForm textarea,
@@ -1150,7 +1145,7 @@
 	}
 
 	.section {
-		padding: 80px 2vw;
+		padding: 80px 5vw;
 	}
 
 	.projectsGrid {
@@ -1328,16 +1323,12 @@
 	}
 
 	.sectionTitle {
-		font-size: 4.5vw;
+		font-size: clamp(18px, 4.5vw, 22px);
 	}
 
 	.sectionHeader {
 		margin-bottom: 24px;
 		justify-content: center;
-	}
-
-	.aboutHeader {
-		display: none;
 	}
 
 	.aboutInfo {
@@ -1393,29 +1384,34 @@
 	}
 
 	.teamGrid {
-		gap: 20px;
+		grid-template-columns: 1fr;
+		gap: 16px;
 	}
 
 	.teamCard {
-		gap: 10px;
-		padding: 26px 18px;
+		flex-direction: row;
+		text-align: left;
+		gap: 16px;
+		padding: 20px;
+		align-items: center;
 	}
 
 	.teamAvatar {
-		width: 90px;
-		height: 90px;
+		width: 72px;
+		height: 72px;
+		flex-shrink: 0;
 	}
 
 	.teamName {
-		font-size: 14px;
+		font-size: 16px;
 	}
 
 	.teamRole {
-		font-size: 10px;
+		font-size: 11px;
 	}
 
 	.teamBio {
-		font-size: 10px;
+		font-size: 13px;
 	}
 
 	.placeholderReviewTxt {
@@ -1471,5 +1467,15 @@
 	.contactFormTitle {
 		font-size: 17px;
 		margin-bottom: 16px;
+	}
+
+	.footer {
+		flex-direction: column;
+		gap: 20px;
+		padding: 32px 5vw 40px;
+	}
+
+	.footerLinks {
+		gap: 14px;
 	}
 }

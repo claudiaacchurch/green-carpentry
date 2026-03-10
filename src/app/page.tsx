@@ -153,26 +153,6 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className={styles.section} id="reviews">
-					<div className={styles.sectionHeader}>
-						<h2 className={styles.sectionTitle}>Reviews</h2>
-					</div>
-					<div className={styles.placeholderReviewTxt}>
-						Placeholder to link up with Google Reviews.
-					</div>
-					{/* <div className={styles.reviewsGrid}>
-						{reviews.map((review, index) => (
-							<article
-								className={styles.reviewCard}
-								key={`${review.name}-${index}`}
-							>
-								<p className={styles.reviewQuote}>{review.quote}</p>
-								<strong>{review.name}</strong>
-							</article>
-						))}
-					</div> */}
-				</section>
-
 				<section className={styles.section} id="contact">
 					<div className={styles.contactWrapper}>
 						<div className={styles.contactInfoBox}>
