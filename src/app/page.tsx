@@ -45,6 +45,12 @@ const team = [
 		bio: "A small bio",
 		image: "/placeholders/person-placeholder.jpg",
 	},
+	{
+		name: "Member Name",
+		role: "Member Role",
+		bio: "A small bio",
+		image: "/placeholders/person-placeholder.jpg",
+	},
 ];
 
 export default function Home() {
@@ -71,21 +77,40 @@ export default function Home() {
 							<br />
 							the South West
 						</h1>
+						<div className={styles.heroActions}>
+							<a href="#projects" className={styles.primaryBtn}>View Projects</a>
+							<a href="#contact" className={styles.secondaryBtn}>Contact Us</a>
+						</div>
 					</div>
 				</section>
 
-				<section className={`${styles.section} ${styles.aboutSection}`} id="about">
+				<div className={styles.mobileHeroBlock}>
+					<h1 className={styles.heroTitle}>
+						Construction services across the South West
+					</h1>
+					<div className={styles.heroActions}>
+						<a href="#projects" className={styles.primaryBtn}>View Projects</a>
+						<a href="#contact" className={styles.secondaryBtn}>Contact Us</a>
+					</div>
+				</div>
+
+				<section
+					className={`${styles.section} ${styles.aboutSection}`}
+					id="about"
+				>
 					<div className={styles.aboutInfo}>
 						<div className={styles.aboutText}>
 							<p>
-								Placeholder blurb about what you offer — your experience, your
-								approach, the types of projects you take on. Why clients choose
-								you over others, what makes your work stand out.
+								Green Carpentry offers a full range of construction services
+								with years of experience delivering quality craftsmanship across
+								the South West. From bespoke joinery and extensions to full
+								renovations and roofing services, we take pride in doing the job
+								right.
 							</p>
-							<p>A second paragraph here about your values, or something.</p>
 							<p>
-								A closing line about getting in touch or inviting people to
-								browse your projects.
+								We work closely with every client from first consultation
+								through to completion. Get in touch to talk through your ideas
+								and get a free quote.
 							</p>
 						</div>
 					</div>

@@ -1,4 +1,10 @@
 :root {
+	--fs-heading: clamp(2rem, 5vw, 3.5rem);
+	--fs-subhead: 1.125rem;
+	--fs-body: 1rem;
+	--fs-sub: 0.875rem;
+	--fs-small: 0.8125rem;
+
 	--bg: #111111;
 	--logo-bg: #000000;
 	--ink: #1b1b1b;

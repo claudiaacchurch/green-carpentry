@@ -3,11 +3,18 @@
 import Link from "next/link";
 import SocialIcons from "./SocialIcons";
 import styles from "@/app/page.module.css";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function Header() {
 	const detailsRef = useRef<HTMLDetailsElement>(null);
 	const [closing, setClosing] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const onScroll = () => setScrolled(window.scrollY > 40);
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
 
 	function startClose() {
 		if (!detailsRef.current?.open || closing) return;
@@ -33,7 +40,7 @@ export default function Header() {
 	}
 
 	return (
-		<header className={styles.header}>
+		<header className={`${styles.header}${scrolled ? ` ${styles.headerScrolled}` : ""}`}>
 			<div className={styles.logo}>
 				{/* eslint-disable-next-line @next/next/no-img-element */}
 				<img

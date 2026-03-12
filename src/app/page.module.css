@@ -91,6 +91,7 @@
 	color: var(--accent);
 	padding: 0 16px;
 	transition: opacity 180ms ease;
+	font-size: 17px;
 }
 
 .navSocials a + a {
@@ -137,6 +138,14 @@
 	transition:
 		padding 280ms ease,
 		height 280ms ease;
+}
+
+.headerScrolled {
+	padding: 0 2vw;
+}
+
+.headerScrolled .headerRight {
+	padding-bottom: 10px;
 }
 
 .headerRight {
@@ -248,7 +257,7 @@
 	display: flex;
 	align-items: center;
 	gap: 22px;
-	font-size: 18px;
+	font-size: 17px;
 	text-transform: none;
 	letter-spacing: 0.04em;
 	transition:
@@ -424,6 +433,10 @@
 	display: none;
 }
 
+.mobileHeroBlock {
+	display: none;
+}
+
 .heroTitle {
 	font-family: var(--font-display, "Bebas Neue", sans-serif);
 	font-size: clamp(40px, 4.6vw, 72px);
@@ -445,7 +458,7 @@
 	color: var(--bg);
 	padding: 14px 28px;
 	border-radius: 999px;
-	font-size: 12px;
+	font-size: 13px;
 	letter-spacing: 0.1em;
 	text-transform: none;
 	border: none;
@@ -519,7 +532,7 @@
 
 .sectionTitle {
 	font-family: var(--font-nav);
-	font-size: clamp(20px, 2.5vw, 34px);
+	font-size: clamp(20px, 2vw, 34px);
 	font-weight: 600;
 	letter-spacing: 0;
 	color: var(--accent);
@@ -530,13 +543,15 @@
 	padding-top: 48px;
 	padding-bottom: 48px;
 	border-top: none;
+	display: flex;
+	justify-content: center;
 }
 
 .aboutInfo {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-	max-width: 680px;
+	max-width: 55vw;
 }
 
 .aboutText {
@@ -546,6 +561,7 @@
 	font-size: 16px;
 	line-height: 1.8;
 	color: var(--accent);
+	text-align: center;
 }
 
 .serviceCard {
@@ -654,7 +670,7 @@
 
 .teamGrid {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 32px;
 }
 
@@ -697,15 +713,14 @@
 }
 
 .teamName {
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 600;
 	color: white;
 	margin: 4px 0 0;
 }
 
 .teamRole {
-	font-size: 12px;
-	text-transform: uppercase;
+	font-size: 14px;
 	letter-spacing: 0.1em;
 	color: rgba(255, 255, 255, 0.5);
 	font-weight: 500;
@@ -715,7 +730,7 @@
 .teamBio {
 	color: rgba(255, 255, 255, 0.7);
 	line-height: 1.7;
-	font-size: 14px;
+	font-size: 13px;
 }
 
 .projectCard {
@@ -755,7 +770,7 @@
 }
 
 .projectTitle {
-	font-size: 17px;
+	font-size: 16px;
 	font-weight: 600;
 	color: var(--accent);
 }
@@ -862,7 +877,7 @@
 }
 
 .contactInfoTitle {
-	font-size: clamp(28px, 3.5vw, 36px);
+	font-size: clamp(20px, 2vw, 34px);
 	letter-spacing: 0.02em;
 	line-height: 1.2;
 	font-weight: 600;
@@ -948,7 +963,7 @@
 }
 
 .contactFormTitle {
-	font-size: 20px;
+	font-size: clamp(20px, 2vw, 34px);
 	font-weight: 600;
 	margin-bottom: 24px;
 	letter-spacing: 0.02em;
@@ -1133,6 +1148,17 @@
 	}
 }
 
+@media (max-width: 1180px) {
+	.header {
+		padding: 0 2vw;
+	}
+
+	.nav {
+		font-size: 15px;
+		gap: 16px;
+	}
+}
+
 @media (max-width: 1100px) {
 	.hero {
 		min-height: 92vh;
@@ -1250,6 +1276,10 @@
 		display: block;
 	}
 
+	.aboutInfo {
+		max-width: 85vw;
+	}
+
 	/* Hero: collapse to 16:9 and move title below video */
 	.hero {
 		height: auto;
@@ -1281,7 +1311,7 @@
 
 	/* Font scaling between hamburger and mobile */
 	.sectionTitle {
-		font-size: clamp(14px, 2.5vw, 24px);
+		font-size: clamp(14px, 3vw, 24px);
 	}
 
 	.section {
@@ -1307,15 +1337,32 @@
 	}
 
 	.heroContent {
-		left: 4vw;
-		right: 6vw;
-		bottom: 14px;
-		max-width: 100%;
-		gap: 8px;
+		display: none;
 	}
 
-	.heroContent .heroTitle {
-		font-size: clamp(16px, 5.5vw, 28px);
+	.mobileHeroBlock {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		background: var(--logo-bg);
+		color: var(--accent);
+		padding: 28px 5vw;
+	}
+
+	.mobileHeroBlock .heroTitle {
+		font-size: clamp(28px, 8vw, 42px);
+		color: var(--accent);
+		text-align: center;
+	}
+
+	.heroActions {
+		justify-content: center;
+	}
+
+.mobileHeroBlock .primaryBtn,
+	.mobileHeroBlock .secondaryBtn {
+		padding: 9px 18px;
+		font-size: 13px;
 	}
 
 	.section {
@@ -1324,6 +1371,7 @@
 
 	.sectionTitle {
 		font-size: clamp(18px, 4.5vw, 22px);
+		padding: 20px 0;
 	}
 
 	.sectionHeader {
@@ -1337,15 +1385,14 @@
 
 	.aboutText {
 		gap: 10px;
-		font-size: 13px;
-		line-height: 1.5;
+		font-size: 14px;
 		color: var(--accent);
 	}
 
 	.projectsGrid {
 		grid-template-columns: 1fr;
 		gap: 16px;
-		margin: 0 10px;
+		margin: 0 20px;
 	}
 
 	.projectCard {
@@ -1384,12 +1431,11 @@
 	}
 
 	.teamGrid {
-		grid-template-columns: 1fr;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 16px;
 	}
 
 	.teamCard {
-		flex-direction: row;
 		text-align: left;
 		gap: 16px;
 		padding: 20px;
@@ -1403,15 +1449,15 @@
 	}
 
 	.teamName {
-		font-size: 16px;
+		font-size: 14px;
 	}
 
 	.teamRole {
-		font-size: 11px;
+		font-size: 13px;
 	}
 
 	.teamBio {
-		font-size: 13px;
+		font-size: 12px;
 	}
 
 	.placeholderReviewTxt {
@@ -1452,7 +1498,7 @@
 	}
 
 	.contactInfoSection strong {
-		font-size: 14px;
+		font-size: 16px;
 		margin-bottom: 4px;
 	}
 
