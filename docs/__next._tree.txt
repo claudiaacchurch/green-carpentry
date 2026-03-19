@@ -1,8 +1,8 @@
-:HL["/green-carpentry/_next/static/chunks/043b8872b663a05f.css","style"]
+:HL["/green-carpentry/_next/static/chunks/afde1379b099686d.css","style"]
 :HL["/green-carpentry/_next/static/media/47df9ba1c7236d3b-s.p.7bbb93ea.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/green-carpentry/_next/static/media/c825fd02acae0153-s.p.1692d83b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/green-carpentry/_next/static/media/fabcf92ba1ccea36-s.p.19f28380.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/green-carpentry/_next/static/chunks/c07f676dd71af232.css","style"]
+:HL["/green-carpentry/_next/static/chunks/da3224f766d7d08c.css","style"]
 :HL["/green-carpentry/media/glasto-kitchen.png","image"]
 :HL["/green-carpentry/media/watchet-flats.png","image"]
 :HL["/green-carpentry/media/taunton-kitchen.png","image"]
@@ -11,4 +11,4 @@
 :HL["/green-carpentry/media/partnerlogos/cityguilds.jpeg","image"]
 :HL["/green-carpentry/media/partnerlogos/tekkwise.jpeg","image"]
 :HL["/green-carpentry/media/partnerlogos/nethercottdrones.jpeg","image"]
-0:{"buildId":"jhnFPn4p8yS_VWnevH_Od","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"Lq6QXfSNfNqUwEoE__pTs","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

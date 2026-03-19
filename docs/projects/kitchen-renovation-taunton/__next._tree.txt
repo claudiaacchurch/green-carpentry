@@ -1,6 +1,6 @@
-:HL["/green-carpentry/_next/static/chunks/043b8872b663a05f.css","style"]
+:HL["/green-carpentry/_next/static/chunks/afde1379b099686d.css","style"]
 :HL["/green-carpentry/_next/static/media/47df9ba1c7236d3b-s.p.7bbb93ea.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/green-carpentry/_next/static/media/c825fd02acae0153-s.p.1692d83b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/green-carpentry/_next/static/media/fabcf92ba1ccea36-s.p.19f28380.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/green-carpentry/_next/static/chunks/c07f676dd71af232.css","style"]
-0:{"buildId":"jhnFPn4p8yS_VWnevH_Od","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"projects","paramType":null,"paramKey":"projects","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"kitchen-renovation-taunton","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/green-carpentry/_next/static/chunks/da3224f766d7d08c.css","style"]
+0:{"buildId":"Lq6QXfSNfNqUwEoE__pTs","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"projects","paramType":null,"paramKey":"projects","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"kitchen-renovation-taunton","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
