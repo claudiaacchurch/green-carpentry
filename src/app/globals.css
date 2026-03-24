@@ -8,7 +8,7 @@
 	--bg: #111111;
 	--logo-bg: #000000;
 	--ink: #1b1b1b;
-	--green-toned: #315708;
+	--green-toned: #5a932a;
 	--accent: white;
 	--accent-strong: #1b1b1b;
 	--accent-warm: #c4c5ba;
@@ -30,9 +30,9 @@ html {
 	scroll-padding-top: 116px;
 }
 
-@media (max-width: 926px) {
+@media (max-width: 954px) {
 	html {
-		scroll-padding-top: 90px;
+		scroll-padding-top: 100px;
 	}
 }
 

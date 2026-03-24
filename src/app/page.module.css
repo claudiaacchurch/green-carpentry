@@ -131,7 +131,7 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 21;
+	z-index: 50;
 	background: var(--logo-bg);
 	color: var(--accent);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -140,13 +140,7 @@
 		height 280ms ease;
 }
 
-.headerScrolled {
-	padding: 0 2vw;
-}
 
-.headerScrolled .headerRight {
-	padding-bottom: 10px;
-}
 
 .headerRight {
 	display: flex;
@@ -382,9 +376,6 @@
 }
 
 .mobileMenu[open] .hamburger {
-	position: fixed;
-	top: 18px;
-	right: 18px;
 	z-index: 50;
 }
 
@@ -539,19 +530,48 @@
 	text-transform: none;
 }
 
+.sectionSubtitle {
+	font-size: var(--fs-sub);
+	color: var(--accent-warm);
+	margin-top: 6px;
+}
+
 .aboutSection {
 	padding-top: 48px;
 	padding-bottom: 48px;
 	border-top: none;
-	display: flex;
-	justify-content: center;
 }
 
-.aboutInfo {
+.servicesGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0;
+}
+
+.serviceCol {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-	max-width: 55vw;
+	padding: 0 40px;
+	border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.serviceCol:first-child {
+	padding-left: 0;
+	border-left: none;
+}
+
+.serviceColTitle {
+	font-size: var(--fs-subhead);
+	font-weight: 600;
+	color: var(--accent);
+	letter-spacing: 0.02em;
+}
+
+.serviceCol p {
+	font-size: var(--fs-body);
+	line-height: 1.75;
+	color: var(--accent-warm);
 }
 
 .aboutText {
@@ -781,30 +801,108 @@
 	color: rgba(255, 255, 255, 0.5);
 }
 
-.reviewsGrid {
+.reviewsCarousel {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.reviewsTrack {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
 }
 
-.placeholderReviewTxt {
-	color: var(--accent);
-}
-
 .reviewCard {
-	background: var(--accent);
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	border-radius: var(--radius-md);
-	padding: 26px;
-	border: 1px solid var(--line);
+	padding: 28px;
 	display: flex;
 	flex-direction: column;
 	gap: 14px;
 }
 
-.reviewQuote {
-	font-size: 16px;
-	line-height: 1.6;
-	color: var(--ink-soft);
+.reviewStars {
+	display: flex;
+	gap: 3px;
+}
+
+.reviewText {
+	font-size: var(--fs-body);
+	line-height: 1.7;
+	color: var(--accent-warm);
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	flex: 1;
+}
+
+.reviewMeta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+	margin-top: auto;
+}
+
+.reviewName {
+	font-size: var(--fs-sub);
+	font-weight: 600;
+	color: var(--accent);
+}
+
+.reviewDate {
+	font-size: var(--fs-small);
+	color: var(--accent-warm);
+	opacity: 0.7;
+}
+
+.reviewSource {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: var(--fs-small);
+	color: var(--accent-warm);
+	opacity: 0.6;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	padding-top: 12px;
+}
+
+.reviewsControls {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.reviewsBtn {
+	width: 40px;
+	height: 40px;
+	border-radius: 999px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: transparent;
+	color: var(--accent);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 180ms ease;
+}
+
+.reviewsBtn:hover:not(:disabled) {
+	border-color: var(--accent);
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.reviewsBtn:disabled {
+	opacity: 0.25;
+	cursor: default;
+}
+
+.reviewsCount {
+	font-size: var(--fs-small);
+	color: var(--accent-warm);
 }
 
 .coverage {
@@ -869,11 +967,12 @@
 
 .contactInfoBox {
 	background: var(--green-toned);
-	color: #ffffff;
+	color: var(--bg);
 	padding: 40px;
 	display: flex;
 	flex-direction: column;
 	gap: 28px;
+	font-weight: 400;
 }
 
 .contactInfoTitle {
@@ -881,7 +980,6 @@
 	letter-spacing: 0.02em;
 	line-height: 1.2;
 	font-weight: 600;
-	color: #ffffff;
 	text-transform: none;
 }
 
@@ -889,7 +987,6 @@
 	font-size: 16px;
 	line-height: 1.7;
 	opacity: 0.9;
-	font-weight: 300;
 }
 
 .contactInfoSection {
@@ -911,11 +1008,9 @@
 	font-size: 16px;
 	line-height: 1.6;
 	margin: 0;
-	font-weight: 300;
 }
 
 .contactInfoSection a {
-	color: #ffffff;
 	text-decoration: none;
 	transition: opacity 180ms ease;
 }
@@ -945,9 +1040,7 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	color: #ffffff;
 	font-size: 15px;
-	font-weight: 300;
 	text-decoration: none;
 	transition: opacity 180ms ease;
 }
@@ -965,7 +1058,7 @@
 .contactFormTitle {
 	font-size: clamp(20px, 2vw, 34px);
 	font-weight: 600;
-	margin-bottom: 24px;
+	margin-bottom: 28px;
 	letter-spacing: 0.02em;
 	color: white;
 }
@@ -973,7 +1066,7 @@
 .contactFormFields {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 30px;
 }
 
 .contactGrid {
@@ -1110,6 +1203,33 @@
 	color: var(--accent);
 }
 
+.partnerBar {
+	background: #fff;
+	padding: 20px 6vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+	flex-wrap: wrap;
+}
+
+.partnerLogo {
+	display: flex;
+	align-items: center;
+	opacity: 0.75;
+	transition: opacity 180ms ease;
+}
+
+.partnerLogo:hover {
+	opacity: 1;
+}
+
+.partnerLogo img {
+	height: 40px;
+	width: auto;
+	object-fit: contain;
+}
+
 .footerLinks {
 	display: flex;
 	gap: 18px;
@@ -1178,8 +1298,8 @@
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
-	.reviewsGrid {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+	.reviewsTrack {
+		grid-template-columns: repeat(2, 1fr);
 	}
 
 	.teamGrid {
@@ -1276,8 +1396,21 @@
 		display: block;
 	}
 
-	.aboutInfo {
-		max-width: 85vw;
+	.servicesGrid {
+		grid-template-columns: 1fr;
+		gap: 32px;
+	}
+
+	.serviceCol {
+		padding: 0;
+		border-left: none;
+		border-top: 1px solid rgba(255, 255, 255, 0.12);
+		padding-top: 32px;
+	}
+
+	.serviceCol:first-child {
+		border-top: none;
+		padding-top: 0;
 	}
 
 	/* Hero: collapse to 16:9 and move title below video */
@@ -1312,6 +1445,14 @@
 	/* Font scaling between hamburger and mobile */
 	.sectionTitle {
 		font-size: clamp(14px, 3vw, 24px);
+	}
+
+	.serviceColTitle {
+		font-size: clamp(14px, 1.8vw, 18px);
+	}
+
+	.serviceCol p {
+		font-size: clamp(13px, 1.6vw, 16px);
 	}
 
 	.section {
@@ -1359,7 +1500,7 @@
 		justify-content: center;
 	}
 
-.mobileHeroBlock .primaryBtn,
+	.mobileHeroBlock .primaryBtn,
 	.mobileHeroBlock .secondaryBtn {
 		padding: 9px 18px;
 		font-size: 13px;
@@ -1374,25 +1515,22 @@
 		padding: 20px 0;
 	}
 
+	.serviceColTitle {
+		font-size: 15px;
+	}
+
+	.serviceCol p {
+		font-size: 14px;
+	}
+
 	.sectionHeader {
 		margin-bottom: 24px;
-		justify-content: center;
-	}
-
-	.aboutInfo {
-		gap: 14px;
-	}
-
-	.aboutText {
-		gap: 10px;
-		font-size: 14px;
-		color: var(--accent);
+		justify-content: flex-start;
 	}
 
 	.projectsGrid {
 		grid-template-columns: 1fr;
 		gap: 16px;
-		margin: 0 20px;
 	}
 
 	.projectCard {
@@ -1417,7 +1555,7 @@
 		font-size: 12px;
 	}
 
-	.reviewsGrid {
+	.reviewsTrack {
 		grid-template-columns: 1fr;
 	}
 
@@ -1517,7 +1655,7 @@
 
 	.footer {
 		flex-direction: column;
-		gap: 20px;
+		gap: 25px;
 		padding: 32px 5vw 40px;
 	}
 

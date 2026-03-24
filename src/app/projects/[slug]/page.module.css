@@ -126,6 +126,28 @@
   opacity: 0.8;
 }
 
+/* ── Instagram callout ─────────────────────── */
+.instaCallout {
+  padding: 0 6vw 48px;
+  max-width: 820px;
+}
+
+.instaCallout p {
+  font-size: 15px;
+  color: var(--accent-warm);
+  line-height: 1.6;
+}
+
+.instaCallout a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.instaCallout a:hover {
+  opacity: 0.7;
+}
+
 /* ── Back bar ──────────────────────────────── */
 .backBar {
   padding: 36px 6vw;

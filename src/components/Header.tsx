@@ -54,7 +54,7 @@ export default function Header() {
 				<nav className={styles.nav}>
 					<Link href="/#top">Home</Link>
 					<Link href="/#projects">Projects</Link>
-					<Link href="/#about">About</Link>
+					<Link href="/about">About</Link>
 					<Link href="/#team">Meet the Team</Link>
 					<Link href="/#reviews">Reviews</Link>
 					<Link href="/#contact">Get in Touch</Link>
@@ -81,7 +81,7 @@ export default function Header() {
 				>
 					<Link href="/#top" onClick={startClose}>Home</Link>
 					<Link href="/#projects" onClick={startClose}>Projects</Link>
-					<Link href="/#about" onClick={startClose}>About</Link>
+					<Link href="/about" onClick={startClose}>About</Link>
 					<Link href="/#team" onClick={startClose}>Meet the Team</Link>
 					<Link href="/#reviews" onClick={startClose}>Reviews</Link>
 					<Link href="/#contact" className={styles.navCta} onClick={startClose}>

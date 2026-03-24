@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/Header";
 import { projects, getProject } from "@/lib/projects";
-import { EMAIL, EMAIL_HREF, PHONE_DISPLAY, PHONE_HREF } from "@/lib/constants";
+import { EMAIL, EMAIL_HREF, PHONE_DISPLAY, PHONE_HREF, INSTAGRAM_URL } from "@/lib/constants";
 import styles from "./page.module.css";
 
 export function generateStaticParams() {
@@ -63,6 +63,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <p key={i}>{para}</p>
             ))}
           </div>
+        </div>
+
+        {/* Instagram callout */}
+        <div className={styles.instaCallout}>
+          <p>
+            For full start-to-finish pictures of this project, head over to our{" "}
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+              Instagram highlights.
+            </a>
+          </p>
         </div>
 
         {/* Back to projects */}

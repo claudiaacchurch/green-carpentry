@@ -9,22 +9,8 @@ import {
 	FACEBOOK_URL,
 } from "@/lib/constants";
 import { projects } from "@/lib/projects";
+import ReviewsCarousel from "@/components/ReviewsCarousel";
 import styles from "./page.module.css";
-
-const reviews = [
-	{
-		quote: "Placeholder testimonial.....",
-		name: "Client Name",
-	},
-	{
-		quote: "Placeholder testimonial.....",
-		name: "Client Name",
-	},
-	{
-		quote: "Placeholder testimonial.....",
-		name: "Client Name",
-	},
-];
 
 const team = [
 	{
@@ -78,8 +64,12 @@ export default function Home() {
 							the South West
 						</h1>
 						<div className={styles.heroActions}>
-							<a href="#projects" className={styles.primaryBtn}>View Projects</a>
-							<a href="#contact" className={styles.secondaryBtn}>Contact Us</a>
+							<a href="#projects" className={styles.primaryBtn}>
+								View Projects
+							</a>
+							<a href="#contact" className={styles.secondaryBtn}>
+								Contact Us
+							</a>
 						</div>
 					</div>
 				</section>
@@ -89,37 +79,24 @@ export default function Home() {
 						Construction services across the South West
 					</h1>
 					<div className={styles.heroActions}>
-						<a href="#projects" className={styles.primaryBtn}>View Projects</a>
-						<a href="#contact" className={styles.secondaryBtn}>Contact Us</a>
+						<a href="#projects" className={styles.primaryBtn}>
+							View Projects
+						</a>
+						<a href="#contact" className={styles.secondaryBtn}>
+							Contact Us
+						</a>
 					</div>
 				</div>
-
-				<section
-					className={`${styles.section} ${styles.aboutSection}`}
-					id="about"
-				>
-					<div className={styles.aboutInfo}>
-						<div className={styles.aboutText}>
-							<p>
-								Green Carpentry offers a full range of construction services
-								with years of experience delivering quality craftsmanship across
-								the South West. From bespoke joinery and extensions to full
-								renovations and roofing services, we take pride in doing the job
-								right.
-							</p>
-							<p>
-								We work closely with every client from first consultation
-								through to completion. Get in touch to talk through your ideas
-								and get a free quote.
-							</p>
-						</div>
-					</div>
-				</section>
 
 				<section className={styles.section} id="projects">
 					<div className={styles.sectionHeader}>
 						<div>
-							<h2 className={styles.sectionTitle}>Recent Projects</h2>
+							<h2
+								className={`${styles.sectionTitle} ${styles.sectionTitleProjects}`}
+							>
+								Recent Projects
+							</h2>
+							<p className={styles.sectionSubtitle}>A selection of our latest completed work</p>
 						</div>
 					</div>
 					<div className={styles.projectsGrid}>
@@ -178,24 +155,33 @@ export default function Home() {
 					</div>
 				</section>
 
+				<section className={styles.section} id="reviews">
+					<div className={styles.sectionHeader}>
+						<div>
+							<h2 className={styles.sectionTitle}>What Our Clients Say</h2>
+						</div>
+					</div>
+					<ReviewsCarousel />
+				</section>
+
 				<section className={styles.section} id="contact">
 					<div className={styles.contactWrapper}>
 						<div className={styles.contactInfoBox}>
 							<h2 className={styles.contactInfoTitle}>Contact us</h2>
 							<p className={styles.contactInfoText}>
-								We want to hear about your next project. Call us today for a
+								We want to hear about your project. Call us today for a
 								consultation and a free quote on our services.
 							</p>
 
 							<div className={styles.contactInfoSection}>
 								<strong>Business Hours:</strong>
-								<p>Monday-Friday: 9am-5pm</p>
+								<p>Monday-Friday: 8am-4pm</p>
 								<p>Saturday-Sunday: Closed</p>
 							</div>
 
 							<div className={styles.contactInfoSection}>
 								<strong>Our Address:</strong>
-								<p>Taunton, Somerset, UK</p>
+								<p>69 Rowlands Rise, Puriton, Somerset, TA7 8BU</p>
 							</div>
 
 							<div className={styles.contactInfoSection}>
@@ -401,6 +387,36 @@ export default function Home() {
 					</a>
 				</div>
 			</footer>
+
+			<div className={styles.partnerBar}>
+				<a href="https://www.citb.co.uk/" className={styles.partnerLogo}>
+					<img
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/citb.jpeg`}
+						alt="CITB"
+					/>
+				</a>
+				<a href="https://www.cityandguilds.com/" className={styles.partnerLogo}>
+					<img
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/cityguilds.jpeg`}
+						alt="City & Guilds"
+					/>
+				</a>
+				<a href="https://www.tekkwise.com/" className={styles.partnerLogo}>
+					<img
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/tekkwise.jpeg`}
+						alt="TeKKWise"
+					/>
+				</a>
+				<a
+					href="https://www.instagram.com/nethercottdrones/"
+					className={styles.partnerLogo}
+				>
+					<img
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/nethercottdrones.jpeg`}
+						alt="Nethercott Drones"
+					/>
+				</a>
+			</div>
 		</div>
 	);
 }
