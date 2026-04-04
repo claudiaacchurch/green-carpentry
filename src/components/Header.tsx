@@ -63,14 +63,14 @@ export default function Header() {
 
 	return (
 		<header className={`${styles.header}${scrolled ? ` ${styles.headerScrolled}` : ""}`}>
-			<div className={styles.logo}>
+			<Link href="/#top" className={styles.logo}>
 				{/* eslint-disable-next-line @next/next/no-img-element */}
 				<img
 					src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/green-carpentry-logo.png`}
 					alt="Green Carpentry Logo"
 					className={styles.logoImage}
 				/>
-			</div>
+			</Link>
 
 			<div className={styles.headerRight}>
 				<nav className={styles.nav}>
