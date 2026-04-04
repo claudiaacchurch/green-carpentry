@@ -35,7 +35,11 @@ export default function Header() {
 		startClose();
 		setTimeout(() => {
 			const el = document.getElementById(hash);
-			if (el) el.scrollIntoView({ behavior: "smooth" });
+			if (el) {
+				const headerHeight = document.querySelector("header")?.offsetHeight ?? 0;
+				const top = el.getBoundingClientRect().top + window.scrollY - headerHeight;
+				window.scrollTo({ top, behavior: "smooth" });
+			}
 		}, 380);
 	}
 
