@@ -34,7 +34,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             ) : (
               /* eslint-disable-next-line @next/next/no-img-element */
               <img
-                src={project.heroImage}
+                src={project.image}
                 alt={project.title}
                 className={styles.heroImage}
               />
