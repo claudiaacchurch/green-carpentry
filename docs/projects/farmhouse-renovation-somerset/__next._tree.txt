@@ -2,5 +2,11 @@
 :HL["/green-carpentry/_next/static/media/47df9ba1c7236d3b-s.p.7bbb93ea.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/green-carpentry/_next/static/media/c825fd02acae0153-s.p.1692d83b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/green-carpentry/_next/static/media/fabcf92ba1ccea36-s.p.19f28380.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/green-carpentry/_next/static/chunks/0540816cf64fe5f6.css","style"]
-0:{"buildId":"5-CBQBDlCRcmJpRmpGG6B","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"projects","paramType":null,"paramKey":"projects","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"farmhouse-renovation-somerset","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/green-carpentry/_next/static/chunks/5d71d875114dfc88.css","style"]
+:HL["/green-carpentry/media/partnerlogos/tekkwise.png","image"]
+:HL["/green-carpentry/media/partnerlogos/nethercott-drones.png","image"]
+:HL["/green-carpentry/media/partnerlogos/city-guilds.png","image"]
+:HL["/green-carpentry/media/partnerlogos/citb.png","image"]
+:HL["/green-carpentry/media/partnerlogos/cscs.png","image"]
+:HL["/green-carpentry/media/partnerlogos/ciat.png","image"]
+0:{"buildId":"4k39PNYCd2MXtBZIrtXje","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"projects","paramType":null,"paramKey":"projects","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"farmhouse-renovation-somerset","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
