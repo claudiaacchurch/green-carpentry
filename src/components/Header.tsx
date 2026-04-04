@@ -25,13 +25,17 @@ export default function Header() {
 		const href = e.currentTarget.getAttribute("href");
 		if (!href?.includes("#")) return;
 		if (!detailsRef.current?.open) return;
+		const [pathPart, hash] = href.split("#");
+		const onTargetPage = !pathPart || window.location.pathname === pathPart || window.location.pathname === pathPart.replace(/\/$/, "");
+		if (!onTargetPage) {
+			startClose();
+			return;
+		}
 		e.preventDefault();
 		startClose();
-		const hash = href.split("#")[1];
 		setTimeout(() => {
 			const el = document.getElementById(hash);
 			if (el) el.scrollIntoView({ behavior: "smooth" });
-			else window.location.hash = hash;
 		}, 380);
 	}
 

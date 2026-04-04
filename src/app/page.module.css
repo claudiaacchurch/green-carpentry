@@ -1800,5 +1800,6 @@
 
 	.accreditationBar {
 		gap: 28px;
+		padding: 25px 5vw;
 	}
 }
