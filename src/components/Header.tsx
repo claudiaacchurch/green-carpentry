@@ -21,6 +21,20 @@ export default function Header() {
 		setClosing(true);
 	}
 
+	function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>) {
+		const href = e.currentTarget.getAttribute("href");
+		if (!href?.includes("#")) return;
+		if (!detailsRef.current?.open) return;
+		e.preventDefault();
+		startClose();
+		const hash = href.split("#")[1];
+		setTimeout(() => {
+			const el = document.getElementById(hash);
+			if (el) el.scrollIntoView({ behavior: "smooth" });
+			else window.location.hash = hash;
+		}, 380);
+	}
+
 	function handleTransitionEnd(e: React.TransitionEvent<HTMLDivElement>) {
 		if (
 			closing &&
@@ -76,15 +90,14 @@ export default function Header() {
 				</summary>
 				<div
 					className={`${styles.mobilePanel}${closing ? ` ${styles.mobilePanelClosing}` : ""}`}
-					onClick={startClose}
 					onTransitionEnd={handleTransitionEnd}
 				>
-					<Link href="/#top" onClick={startClose}>Home</Link>
-					<Link href="/#projects" onClick={startClose}>Projects</Link>
+					<Link href="/#top" onClick={handleNavClick}>Home</Link>
+					<Link href="/#projects" onClick={handleNavClick}>Projects</Link>
 					<Link href="/about" onClick={startClose}>About</Link>
-					<Link href="/#team" onClick={startClose}>Meet the Team</Link>
-					<Link href="/#reviews" onClick={startClose}>Reviews</Link>
-					<Link href="/#contact" className={styles.navCta} onClick={startClose}>
+					<Link href="/#team" onClick={handleNavClick}>Meet the Team</Link>
+					<Link href="/#reviews" onClick={handleNavClick}>Reviews</Link>
+					<Link href="/#contact" className={styles.navCta} onClick={handleNavClick}>
 						Get in Touch
 					</Link>
 					<div className={styles.mobileSocials}>

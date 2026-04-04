@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import Link from "next/link";
+import Footer from "@/components/Footer";
 import { EMAIL, EMAIL_HREF, PHONE_DISPLAY, PHONE_HREF } from "@/lib/constants";
 import styles from "./page.module.css";
 
@@ -72,26 +72,7 @@ export default function AboutPage() {
 				</section>
 			</main>
 
-			<footer className={styles.footer}>
-				<div>
-					<strong>Green Carpentry</strong>
-					<p>Construction services across the South West.</p>
-				</div>
-				<div className={styles.footerLinks}>
-					<Link href="/#projects">Projects</Link>
-					<Link href="/about">About</Link>
-					<Link href="/#contact">Contact</Link>
-					<Link href="/#top">Back to top</Link>
-				</div>
-				<div className={styles.footerContact}>
-					<a href={EMAIL_HREF} className={styles.footerContactLink}>
-						{EMAIL}
-					</a>
-					<a href={PHONE_HREF} className={styles.footerContactLink}>
-						{PHONE_DISPLAY}
-					</a>
-				</div>
-			</footer>
+			<Footer />
 		</div>
 	);
 }
