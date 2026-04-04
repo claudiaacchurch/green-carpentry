@@ -45,11 +45,7 @@ body {
 body {
 	color: var(--ink);
 	background: var(--bg);
-	font-family: var(
-		--font-nav,
-		"Raleway",
-		var(--font-body, "Source Sans 3", sans-serif)
-	);
+	font-family: var(--font-nav, "Raleway", sans-serif);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

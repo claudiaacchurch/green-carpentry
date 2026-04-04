@@ -69,7 +69,6 @@ export default function Home() {
 							src="https://iframe.mediadelivery.net/embed/610237/71858d3d-4c6f-4a88-bae3-5de046b33908?autoplay=true&loop=true&muted=true&preload=true&background=true"
 							className={styles.heroVideo}
 							allow="autoplay"
-							loading="lazy"
 						/>
 						<div className={styles.heroOverlay} />
 					</div>
@@ -89,20 +88,6 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-
-				<div className={styles.mobileHeroBlock}>
-					<h1 className={styles.heroTitle}>
-						Construction services across the South West
-					</h1>
-					<div className={styles.heroActions}>
-						<a href="#projects" className={styles.primaryBtn}>
-							View Projects
-						</a>
-						<a href="#contact" className={styles.secondaryBtn}>
-							Contact Us
-						</a>
-					</div>
-				</div>
 
 				<section className={styles.section} id="projects">
 					<div className={styles.sectionHeader}>
@@ -130,6 +115,7 @@ export default function Home() {
 										alt={project.title}
 										width={1200}
 										height={800}
+										loading="lazy"
 										className={styles.projectImage}
 									/>
 								</div>
@@ -167,6 +153,7 @@ export default function Home() {
 										alt={project.title}
 										width={1200}
 										height={800}
+										loading="lazy"
 										className={styles.projectImage}
 									/>
 								</div>
@@ -206,6 +193,7 @@ export default function Home() {
 										alt={member.name}
 										width={120}
 										height={120}
+										loading="lazy"
 										className={styles.teamAvatarImage}
 									/>
 								</div>

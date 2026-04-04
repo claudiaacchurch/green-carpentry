@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Source_Sans_3, Raleway } from "next/font/google";
+import { Bebas_Neue, Raleway } from "next/font/google";
 import "./globals.css";
 
 const bebas = Bebas_Neue({
   variable: "--font-display",
   weight: "400",
-  subsets: ["latin"],
-});
-
-const sourceSans = Source_Sans_3({
-  variable: "--font-body",
   subsets: ["latin"],
 });
 
@@ -22,7 +17,7 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   title: "Green Carpentry | Construction & Renovation",
   description:
-    "Performance-first construction site blueprint with drone montage, services, and featured projects.",
+    "Green Carpentry — construction and renovation services across Somerset and the South West. Loft conversions, extensions, full house renovations, and commercial refurbishments.",
 };
 
 export default function RootLayout({
@@ -32,7 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bebas.variable} ${sourceSans.variable} ${raleway.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://iframe.mediadelivery.net" />
+      </head>
+      <body className={`${bebas.variable} ${raleway.variable}`}>
         {children}
       </body>
     </html>
