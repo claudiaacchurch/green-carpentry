@@ -1,12 +1,14 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/Header";
-import { projects, getProject } from "@/lib/projects";
+import { projects, ongoingProjects, getProject } from "@/lib/projects";
 import { EMAIL, EMAIL_HREF, PHONE_DISPLAY, PHONE_HREF, INSTAGRAM_URL } from "@/lib/constants";
 import styles from "./page.module.css";
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  const allSlugs = [...projects, ...ongoingProjects].map((p) => p.slug);
+  const unique = [...new Set(allSlugs)];
+  return unique.map((slug) => ({ slug }));
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

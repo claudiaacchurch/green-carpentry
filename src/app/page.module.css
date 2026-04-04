@@ -140,8 +140,6 @@
 		height 280ms ease;
 }
 
-
-
 .headerRight {
 	display: flex;
 	align-items: flex-end;
@@ -410,13 +408,14 @@
 .heroContent {
 	position: absolute;
 	left: 6vw;
-	bottom: 80px;
+	bottom: 100px;
 	z-index: 2;
 	max-width: 520px;
 	padding: 0;
 	display: flex;
 	flex-direction: column;
-	gap: 24px;
+	align-items: flex-start;
+	gap: 32px;
 	color: var(--bg);
 }
 
@@ -430,32 +429,36 @@
 
 .heroTitle {
 	font-family: var(--font-display, "Bebas Neue", sans-serif);
-	font-size: clamp(40px, 4.6vw, 72px);
+	font-size: 59px;
 	letter-spacing: 0.03em;
-	line-height: 0.95;
+	line-height: 1.05;
 	font-weight: 400;
 	color: var(--accent);
+	text-shadow:
+		0 2px 12px rgba(0, 0, 0, 0.5),
+		0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .heroActions {
 	display: flex;
-	gap: 16px;
-	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 12px;
 }
 
 .primaryBtn {
 	background: var(--accent);
 	background-image: none;
 	color: var(--bg);
-	padding: 14px 28px;
+	padding: 16px 34px;
 	border-radius: 999px;
 	font-size: 13px;
 	letter-spacing: 0.1em;
 	text-transform: none;
 	border: none;
-	box-shadow: 0 4px 12px rgba(79, 83, 54, 0.25);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 	cursor: pointer;
 	transition: all 180ms ease;
+	white-space: nowrap;
 }
 
 .primaryBtn:hover {
@@ -466,11 +469,13 @@
 .secondaryBtn {
 	border: 1px solid var(--accent);
 	color: var(--accent);
-	padding: 14px 28px;
+	padding: 16px 34px;
 	border-radius: 999px;
-	font-size: 12px;
+	font-size: 13px;
 	letter-spacing: 0.1em;
 	text-transform: none;
+	white-space: nowrap;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 .secondaryBtn:hover {
@@ -500,12 +505,6 @@
 .heroOverlay {
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(
-		120deg,
-		rgba(27, 27, 27, 0.75) 0%,
-		rgba(27, 27, 27, 0.4) 48%,
-		rgba(27, 27, 27, 0.15) 100%
-	);
 }
 
 .section {
@@ -681,7 +680,7 @@
 .projectsGrid {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 20px;
+	gap: 30px;
 }
 
 .projectsGrid:hover {
@@ -691,19 +690,19 @@
 .teamGrid {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 32px;
+	gap: 24px;
 }
 
 .teamCard {
 	background: rgba(255, 255, 255, 0.05);
-	border-radius: var(--radius-lg);
-	padding: 36px 28px;
+	border-radius: var(--radius-md);
+	padding: 24px 20px 20px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	gap: 20px;
+	gap: 14px;
 	transition: all 240ms ease;
 }
 
@@ -713,15 +712,12 @@
 }
 
 .teamAvatar {
-	width: 120px;
-	height: 120px;
+	width: 140px;
+	height: 140px;
 	border-radius: 50%;
 	background: rgba(255, 255, 255, 0.12);
 	display: grid;
 	place-items: center;
-	font-family: var(--font-display, "Bebas Neue", sans-serif);
-	font-size: 20px;
-	letter-spacing: 0.12em;
 	overflow: hidden;
 	border: 3px solid rgba(255, 255, 255, 0.2);
 }
@@ -733,34 +729,38 @@
 }
 
 .teamName {
-	font-size: 16px;
-	font-weight: 600;
-	color: white;
+	font-size: var(--fs-body);
+	font-weight: 700;
+	color: var(--accent);
+	letter-spacing: 0.04em;
 	margin: 4px 0 0;
 }
 
 .teamRole {
-	font-size: 14px;
-	letter-spacing: 0.1em;
-	color: rgba(255, 255, 255, 0.5);
+	font-size: var(--fs-sub);
+	letter-spacing: 0.06em;
+	color: var(--accent-warm);
 	font-weight: 500;
 	margin-top: 4px;
 }
 
-.teamBio {
-	color: rgba(255, 255, 255, 0.7);
-	line-height: 1.7;
-	font-size: 13px;
-}
-
 .projectCard {
-	background: transparent;
-	border: none;
-	box-shadow: none;
+	background: #1e1e1e;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 	display: flex;
 	flex-direction: column;
 	gap: 0;
 	cursor: pointer;
+	overflow: hidden;
+	transition:
+		box-shadow 240ms ease,
+		transform 240ms ease;
+}
+
+.projectCard:hover {
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+	transform: translateY(-3px);
 }
 
 .projectCard:hover .projectImage {
@@ -769,9 +769,12 @@
 
 .projectMedia {
 	position: relative;
-	aspect-ratio: 4 / 3;
+	aspect-ratio: 16 / 10;
 	overflow: hidden;
 	background: var(--accent);
+	flex-shrink: 0;
+	margin: 16px 16px 0;
+	border-radius: 2px;
 }
 
 .projectImage {
@@ -783,22 +786,27 @@
 }
 
 .projectBody {
-	padding: 14px 4px 0;
+	padding: 22px 20px 24px;
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: 6px;
+	align-items: center;
+	text-align: center;
+	background: #1e1e1e;
 }
 
 .projectTitle {
-	font-size: 16px;
-	font-weight: 600;
+	font-size: 14px;
+	font-weight: 700;
 	color: var(--accent);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
 }
 
 .projectMeta {
 	font-size: 13px;
 	letter-spacing: 0.02em;
-	color: rgba(255, 255, 255, 0.5);
+	color: var(--accent-warm);
 }
 
 .reviewsCarousel {
@@ -1193,48 +1201,108 @@
 }
 
 .footer {
-	padding: 40px 6vw 60px;
-	border-top: 0.5px solid var(--accent);
+	padding: 40px 6vw;
+	border-top: 0.5px solid rgba(255, 255, 255, 0.15);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	gap: 24px;
+	gap: 32px;
 	font-size: 14px;
 	color: var(--accent);
+	align-items: flex-start;
 }
 
-.partnerBar {
+.footerCol {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.footerColLabel {
+	font-size: var(--fs-small);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--accent-warm);
+	margin-bottom: 4px;
+}
+
+.accreditationBar {
 	background: #fff;
-	padding: 20px 6vw;
+	padding: 25px 6vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 40px;
+	gap: 56px;
 	flex-wrap: wrap;
+}
+
+.accreditationLogo {
+	display: flex;
+	align-items: center;
+	transition: opacity 180ms ease;
+}
+
+.accreditationLogo:hover {
+	opacity: 1;
+}
+
+.accreditationLogo img {
+	height: 70px;
+	width: auto;
+	object-fit: contain;
+}
+
+.footerPartners {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.partnersLabel {
+	font-size: var(--fs-small);
+	letter-spacing: 0.08em;
+	color: var(--accent-warm);
+	white-space: nowrap;
+	text-align: center;
+}
+
+.partnersLogos {
+	display: flex;
+	align-items: center;
+	gap: 28px;
 }
 
 .partnerLogo {
 	display: flex;
 	align-items: center;
-	opacity: 0.75;
-	transition: opacity 180ms ease;
-}
-
-.partnerLogo:hover {
-	opacity: 1;
 }
 
 .partnerLogo img {
-	height: 40px;
+	height: 70px;
 	width: auto;
 	object-fit: contain;
 }
 
+.partnerLogoOutlined {
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 50%;
+	overflow: hidden;
+	width: 70px;
+	height: 70px;
+	flex-shrink: 0;
+}
+
+.partnerLogoOutlined img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: scale(1.12);
+}
+
 .footerLinks {
 	display: flex;
-	gap: 18px;
-	flex-wrap: wrap;
-	background: none;
+	flex-direction: column;
+	gap: 8px;
 }
 
 .footerContact {
@@ -1290,6 +1358,16 @@
 		bottom: 64px;
 	}
 
+	.heroContent .heroTitle {
+		font-size: 49px;
+	}
+
+	.heroContent .primaryBtn,
+	.heroContent .secondaryBtn {
+		padding: 13px 26px;
+		font-size: 12px;
+	}
+
 	.section {
 		padding: 80px 5vw;
 	}
@@ -1303,7 +1381,7 @@
 	}
 
 	.teamGrid {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 
 	.coverage {
@@ -1433,13 +1511,19 @@
 	.heroContent {
 		left: 4vw;
 		right: 4vw;
-		bottom: 14px;
+		bottom: 24px;
 		max-width: 100%;
-		gap: 8px;
+		gap: 20px;
 	}
 
 	.heroContent .heroTitle {
-		font-size: clamp(22px, 4vw, 48px);
+		font-size: 43px;
+	}
+
+	.heroContent .primaryBtn,
+	.heroContent .secondaryBtn {
+		padding: 11px 22px;
+		font-size: 11px;
 	}
 
 	/* Font scaling between hamburger and mobile */
@@ -1477,33 +1561,51 @@
 		transform: none;
 	}
 
-	.heroContent {
+	.mobileHeroBlock {
 		display: none;
 	}
 
-	.mobileHeroBlock {
-		display: flex;
+	.heroContent {
+		left: 5vw;
+		right: 5vw;
+		bottom: 20px;
+		transform: none;
+		max-width: 100%;
+		align-items: flex-start;
+		text-align: left;
 		flex-direction: column;
-		gap: 20px;
-		background: var(--logo-bg);
-		color: var(--accent);
-		padding: 28px 5vw;
+		gap: 14px;
 	}
 
-	.mobileHeroBlock .heroTitle {
-		font-size: clamp(28px, 8vw, 42px);
-		color: var(--accent);
-		text-align: center;
+	.heroContent .heroTitle {
+		font-family: var(--font-display, "Bebas Neue", sans-serif);
+		font-size: 26px;
+		font-weight: 400;
+		letter-spacing: 0.03em;
+		line-height: 1.05;
+		max-width: 260px;
+	}
+
+	.heroContent .heroTitle br {
+		display: none;
 	}
 
 	.heroActions {
-		justify-content: center;
+		flex-wrap: nowrap;
 	}
 
-	.mobileHeroBlock .primaryBtn,
-	.mobileHeroBlock .secondaryBtn {
-		padding: 9px 18px;
-		font-size: 13px;
+	.heroContent .heroActions {
+		justify-content: flex-start;
+	}
+
+	.heroContent .heroActions {
+		flex-direction: row;
+	}
+
+	.heroContent .primaryBtn,
+	.heroContent .secondaryBtn {
+		padding: 7px 14px;
+		font-size: 10px;
 	}
 
 	.section {
@@ -1512,7 +1614,6 @@
 
 	.sectionTitle {
 		font-size: clamp(18px, 4.5vw, 22px);
-		padding: 20px 0;
 	}
 
 	.serviceColTitle {
@@ -1535,7 +1636,6 @@
 
 	.projectCard {
 		width: 100%;
-		overflow: hidden;
 	}
 
 	.projectMedia {
@@ -1543,12 +1643,12 @@
 	}
 
 	.projectBody {
-		padding: 8px 2px 0;
-		gap: 2px;
+		padding: 16px 16px 20px;
+		gap: 4px;
 	}
 
 	.projectTitle {
-		font-size: 14px;
+		font-size: 13px;
 	}
 
 	.projectMeta {
@@ -1592,10 +1692,6 @@
 
 	.teamRole {
 		font-size: 13px;
-	}
-
-	.teamBio {
-		font-size: 12px;
 	}
 
 	.placeholderReviewTxt {
@@ -1657,9 +1753,5 @@
 		flex-direction: column;
 		gap: 25px;
 		padding: 32px 5vw 40px;
-	}
-
-	.footerLinks {
-		gap: 14px;
 	}
 }

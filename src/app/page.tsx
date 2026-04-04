@@ -8,34 +8,51 @@ import {
 	INSTAGRAM_URL,
 	FACEBOOK_URL,
 } from "@/lib/constants";
-import { projects } from "@/lib/projects";
+import { projects, ongoingProjects } from "@/lib/projects";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import styles from "./page.module.css";
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const team = [
 	{
-		name: "Member Name",
-		role: "Member Role",
-		bio: "A small bio",
-		image: "/placeholders/person-placeholder.jpg",
+		name: "Rossi",
+		role: "Founder",
+		image: `${base}/media/team/rossi.png`,
 	},
 	{
-		name: "Member Name",
-		role: "Member Role",
-		bio: "A small bio",
-		image: "/placeholders/person-placeholder.jpg",
+		name: "Alfie",
+		role: "Carpenter",
+		image: `${base}/media/team/alfie.png`,
 	},
 	{
-		name: "Member Name",
-		role: "Member Role",
-		bio: "A small bio",
-		image: "/placeholders/person-placeholder.jpg",
+		name: "Charlie",
+		role: "Carpenter",
+		image: `${base}/media/team/charlie.png`,
 	},
 	{
-		name: "Member Name",
-		role: "Member Role",
-		bio: "A small bio",
-		image: "/placeholders/person-placeholder.jpg",
+		name: "John",
+		role: "Carpenter",
+		image: `${base}/media/team/john.png`,
+	},
+	{
+		name: "Luigi",
+		role: "Carpenter",
+		image: `${base}/media/team/luigi.png`,
+	},
+	{
+		name: "Tony",
+		role: "Carpenter",
+		image: `${base}/media/team/tony.png`,
+	},
+	{
+		name: "Fran",
+		role: "Technologist",
+		image: `${base}/media/team/fran.png`,
+	},
+	{
+		name: "Keith",
+		role: "Architectural Designer",
+		image: `${base}/media/team/keith.png`,
 	},
 ];
 
@@ -57,10 +74,8 @@ export default function Home() {
 					</div>
 					<div className={styles.heroContent}>
 						<h1 className={styles.heroTitle}>
-							Construction
-							<br />
-							services across
-							<br />
+							Construction <br />
+							services across <br />
 							the South West
 						</h1>
 						<div className={styles.heroActions}>
@@ -96,7 +111,9 @@ export default function Home() {
 							>
 								Recent Projects
 							</h2>
-							<p className={styles.sectionSubtitle}>A selection of our latest completed work</p>
+							<p className={styles.sectionSubtitle}>
+								A selection of our latest completed work
+							</p>
 						</div>
 					</div>
 					<div className={styles.projectsGrid}>
@@ -122,6 +139,52 @@ export default function Home() {
 							</Link>
 						))}
 					</div>
+				</section>
+				<section className={styles.section} id="ongoingProjects">
+					<div className={styles.sectionHeader}>
+						<div>
+							<h2
+								className={`${styles.sectionTitle} ${styles.sectionTitleProjects}`}
+							>
+								Ongoing Projects
+							</h2>
+							<p className={styles.sectionSubtitle}>
+								See what we're working on right now
+							</p>
+						</div>
+					</div>
+					<div className={styles.projectsGrid}>
+						{ongoingProjects.map((project) => (
+							<Link
+								key={project.slug}
+								href={`/projects/${project.slug}`}
+								className={styles.projectCard}
+							>
+								<div className={styles.projectMedia}>
+									<img
+										src={project.image}
+										alt={project.title}
+										width={1200}
+										height={800}
+										className={styles.projectImage}
+									/>
+								</div>
+								<div className={styles.projectBody}>
+									<span className={styles.projectMeta}>{project.meta}</span>
+									<h3 className={styles.projectTitle}>{project.title}</h3>
+								</div>
+							</Link>
+						))}
+					</div>
+				</section>
+
+				<section className={styles.section} id="reviews">
+					<div className={styles.sectionHeader}>
+						<div>
+							<h2 className={styles.sectionTitle}>What Our Clients Say</h2>
+						</div>
+					</div>
+					<ReviewsCarousel />
 				</section>
 
 				<section className={styles.section} id="team">
@@ -149,19 +212,9 @@ export default function Home() {
 									<h3 className={styles.teamName}>{member.name}</h3>
 									<p className={styles.teamRole}>{member.role}</p>
 								</div>
-								<p className={styles.teamBio}>{member.bio}</p>
 							</article>
 						))}
 					</div>
-				</section>
-
-				<section className={styles.section} id="reviews">
-					<div className={styles.sectionHeader}>
-						<div>
-							<h2 className={styles.sectionTitle}>What Our Clients Say</h2>
-						</div>
-					</div>
-					<ReviewsCarousel />
 				</section>
 
 				<section className={styles.section} id="contact">
@@ -329,17 +382,41 @@ export default function Home() {
 			</main>
 
 			<footer className={styles.footer}>
-				<div>
-					<strong>Green Carpentry</strong>
+				<div className={styles.footerCol}>
+					<span className={styles.footerColLabel}>Green Carpentry</span>
 					<p>Construction services across the South West.</p>
 				</div>
-				<div className={styles.footerLinks}>
-					<a href="#projects">Projects</a>
-					<a href="#about">About</a>
-					<a href="#contact">Contact</a>
-					<a href="#top">Back to top</a>
+				<div className={styles.footerCol}>
+					<span className={styles.footerColLabel}>Navigate</span>
+					<div className={styles.footerLinks}>
+						<a href="#projects">Projects</a>
+						<a href="#about">About</a>
+						<a href="#contact">Contact</a>
+						<a href="#top">Back to top</a>
+					</div>
+				</div>
+				<div className={styles.footerPartners}>
+					<span className={styles.footerColLabel}>Our Partners</span>
+					<div className={styles.partnersLogos}>
+						<a href="https://www.tekkwise.com/" className={styles.partnerLogo}>
+							<img
+								src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/tekkwise.png`}
+								alt="TeKKWise"
+							/>
+						</a>
+						<a
+							href="https://www.instagram.com/nethercottdrones/"
+							className={`${styles.partnerLogo} ${styles.partnerLogoOutlined}`}
+						>
+							<img
+								src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/nethercott-drones.png`}
+								alt="Nethercott Drones"
+							/>
+						</a>
+					</div>
 				</div>
 				<div className={styles.footerContact}>
+					<span className={styles.footerColLabel}>Get In Touch</span>
 					<a href={EMAIL_HREF} className={styles.footerContactLink}>
 						<svg
 							width="14"
@@ -388,32 +465,35 @@ export default function Home() {
 				</div>
 			</footer>
 
-			<div className={styles.partnerBar}>
-				<a href="https://www.citb.co.uk/" className={styles.partnerLogo}>
+			<div className={styles.accreditationBar}>
+				<a
+					href="https://www.cityandguilds.com/"
+					className={styles.accreditationLogo}
+				>
 					<img
-						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/citb.jpeg`}
-						alt="CITB"
-					/>
-				</a>
-				<a href="https://www.cityandguilds.com/" className={styles.partnerLogo}>
-					<img
-						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/cityguilds.jpeg`}
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/city-guilds.png`}
 						alt="City & Guilds"
 					/>
 				</a>
-				<a href="https://www.tekkwise.com/" className={styles.partnerLogo}>
+				<a href="https://www.citb.co.uk/" className={styles.accreditationLogo}>
 					<img
-						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/tekkwise.jpeg`}
-						alt="TeKKWise"
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/citb.png`}
+						alt="CITB"
+					/>
+				</a>
+				<a href="https://www.cscs.uk.com/" className={styles.accreditationLogo}>
+					<img
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/cscs.png`}
+						alt="CSCS"
 					/>
 				</a>
 				<a
-					href="https://www.instagram.com/nethercottdrones/"
-					className={styles.partnerLogo}
+					href="https://architecturaltechnology.com/"
+					className={styles.accreditationLogo}
 				>
 					<img
-						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/nethercottdrones.jpeg`}
-						alt="Nethercott Drones"
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/partnerlogos/ciat.png`}
+						alt="CIAT"
 					/>
 				</a>
 			</div>

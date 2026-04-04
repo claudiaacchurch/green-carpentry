@@ -32,7 +32,7 @@ export default function ReviewsCarousel() {
 
 	useEffect(() => {
 		function update() {
-			if (window.innerWidth < 720) setVisible(1);
+			if (window.innerWidth < 720) setVisible(2);
 			else if (window.innerWidth < 1100) setVisible(2);
 			else setVisible(3);
 		}
