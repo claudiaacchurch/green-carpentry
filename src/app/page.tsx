@@ -12,6 +12,7 @@ import {
 } from "@/lib/constants";
 import { projects, ongoingProjects } from "@/lib/projects";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
+import { getGoogleReviews } from "@/lib/getReviews";
 import ContactForm from "@/components/ContactForm";
 import styles from "./page.module.css";
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -59,7 +60,8 @@ const team = [
 	},
 ];
 
-export default function Home() {
+export default async function Home() {
+  const reviews = await getGoogleReviews();
 	return (
 		<div className={styles.page}>
 			<Header />
@@ -88,6 +90,25 @@ export default function Home() {
 								Contact Us
 							</a>
 						</div>
+					</div>
+				</section>
+
+				<section className={styles.introSection}>
+					<div className={styles.introCols}>
+						<p>
+							We provide reliable, high-quality workmanship across projects of
+							all sizes. With our own team of craftsmen covering every trade, we
+							take the hassle out of coordinating multiple contractors - and
+							we're always easy to get hold of at every stage of the project.
+						</p>
+						<p>
+							From initial design and detailed plans through to completion, we
+							handle planning permission and liaise with building control to
+							make the process straightforward. We work hard to find
+							cost-effective solutions without compromising on quality, and our
+							goal is simple: finish on time, within budget, and to a standard
+							we're proud of.
+						</p>
 					</div>
 				</section>
 
@@ -172,7 +193,7 @@ export default function Home() {
 							<h2 className={styles.sectionTitle}>What Our Clients Say</h2>
 						</div>
 					</div>
-					<ReviewsCarousel />
+					<ReviewsCarousel reviews={reviews} />
 				</section>
 
 				<section className={styles.section} id="team">
@@ -209,7 +230,7 @@ export default function Home() {
 							<a
 								href="https://www.tekkwise.com/"
 								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
-								style={{ padding: '2px 3px' }}
+								style={{ padding: "2px 3px" }}
 							>
 								<img
 									src={`${base}/media/partnerlogos/tekkwise.png`}
@@ -219,7 +240,7 @@ export default function Home() {
 							<a
 								href="https://www.instagram.com/nethercottdrones/"
 								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
-								style={{ padding: '2px 3px' }}
+								style={{ padding: "2px 3px" }}
 							>
 								<img
 									src={`${base}/media/partnerlogos/nethercott-drones.png`}
@@ -247,7 +268,7 @@ export default function Home() {
 							<a
 								href="https://www.facebook.com/p/THarris-plumbing-and-heating-100063621100983/"
 								className={`${styles.partnerLogo} ${styles.partnerLogoXl}`}
-								style={{ paddingBottom: '20px' }}
+								style={{ paddingBottom: "20px" }}
 							>
 								<img
 									src={`${base}/media/partnerlogos/t-harris-plumbing.png`}
@@ -266,7 +287,7 @@ export default function Home() {
 							<a
 								href="https://wmironwork.co.uk/"
 								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
-								style={{ padding: '2px 3px' }}
+								style={{ padding: "2px 3px" }}
 							>
 								<img
 									src={`${base}/media/partnerlogos/ironwork.png`}
@@ -276,7 +297,7 @@ export default function Home() {
 							<a
 								href="https://www.clearview-windows.uk/"
 								className={`${styles.partnerLogo} ${styles.partnerLogoXl}`}
-								style={{ padding: '18px 24px' }}
+								style={{ padding: "18px 24px" }}
 							>
 								<img
 									src={`${base}/media/partnerlogos/clear-view-windows.png`}

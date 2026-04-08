@@ -369,6 +369,27 @@
 	opacity: 0.8;
 }
 
+/* ── Intro ───────────────────────────────────── */
+
+.introSection {
+	padding: 72px 6vw;
+	border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.introCols {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 32px 48px;
+}
+
+.introCols p {
+	font-size: 15px;
+	line-height: 1.8;
+	color: var(--accent);
+	opacity: 0.8;
+	margin: 0;
+}
+
 /* ── Sections ────────────────────────────────── */
 
 .section {
@@ -1162,6 +1183,15 @@
 		padding: 7px 14px;
 		font-size: 10px;
 		box-shadow: none;
+	}
+
+	.introSection {
+		padding: 40px 5vw;
+	}
+
+	.introCols {
+		grid-template-columns: 1fr;
+		gap: 20px;
 	}
 
 	.section {

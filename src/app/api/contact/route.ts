@@ -2,7 +2,7 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
+	const resend = new Resend(process.env.RESEND_API_KEY);
 	const { name, phone, email, message } = await req.json();
 
 	if (!name || !phone || !email) {
@@ -14,7 +14,7 @@ export async function POST(req: Request) {
 
 	const { error } = await resend.emails.send({
 		from: "Green Carpentry <noreply@greencarpentry.co.uk>",
-		to: "claudiachurch00@gmail.com",
+		to: "green.carpentry@outlook.com",
 		replyTo: email,
 		subject: `New enquiry from ${name}`,
 		text: `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`,
