@@ -11,6 +11,7 @@ import {
 } from "@/lib/constants";
 import { projects, ongoingProjects } from "@/lib/projects";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
+import ContactForm from "@/components/ContactForm";
 import styles from "./page.module.css";
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -417,37 +418,7 @@ export default function Home() {
 							</div>
 						</div>
 
-						<div className={styles.contactFormBox}>
-							<h3 className={styles.contactFormTitle}>Send us a message</h3>
-							<form
-								className={styles.contactFormFields}
-								action={EMAIL_HREF}
-								method="POST"
-								encType="text/plain"
-							>
-								<div className={styles.formGrid}>
-									<div>
-										<label htmlFor="name">Name *</label>
-										<input id="name" name="name" type="text" required />
-									</div>
-									<div>
-										<label htmlFor="phone">Telephone *</label>
-										<input id="phone" name="phone" type="tel" required />
-									</div>
-								</div>
-								<div>
-									<label htmlFor="email">Email *</label>
-									<input id="email" name="email" type="email" required />
-								</div>
-								<div>
-									<label htmlFor="message">Message</label>
-									<textarea id="message" name="message" rows={4} />
-								</div>
-								<button type="submit" className={styles.primaryBtn}>
-									Send Enquiry
-								</button>
-							</form>
-						</div>
+						<ContactForm />
 					</div>
 				</section>
 			</main>
