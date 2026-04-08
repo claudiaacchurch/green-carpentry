@@ -1233,11 +1233,12 @@
 	}
 
 	.introSection {
-		padding: 40px 5vw;
+		padding: 40px 6vw;
 	}
 
-	.introCols {
+	.introCols p {
 		font-size: 14px;
+		line-height: 1.6;
 	}
 
 	.section {
