@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Review, reviews as fallbackReviews } from "@/lib/reviews";
+import { Review } from "@/lib/getReviews";
 import styles from "@/app/page.module.css";
 
 function Stars({ rating }: { rating: number }) {
@@ -26,7 +26,7 @@ function Stars({ rating }: { rating: number }) {
 }
 
 
-export default function ReviewsCarousel({ reviews = fallbackReviews }: { reviews?: Review[] }) {
+export default function ReviewsCarousel({ reviews = [] }: { reviews?: Review[] }) {
 	const [index, setIndex] = useState(0);
 	const [visible, setVisible] = useState(3);
 
