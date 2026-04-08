@@ -847,43 +847,57 @@
 	transition: opacity 180ms ease;
 }
 
-.footerPartners {
+
+.partnersSubSection {
+	margin-top: 48px;
+	padding-top: 32px;
+	border-top: 0.5px solid rgba(255, 255, 255, 0.15);
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 16px;
+}
+
+.partnersSubLabel {
+	font-size: var(--fs-small);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--accent-warm);
 }
 
 .partnersLogos {
-	display: flex;
-	align-items: center;
-	gap: 28px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+	gap: 12px;
 }
 
 .partnerLogo {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	background: #fff;
+	border-radius: 8px;
+	padding: 10px 14px;
+	width: 100%;
+	height: 70px;
+	transition: opacity 180ms ease;
+}
+
+.partnerLogo:hover {
+	opacity: 0.85;
+}
+
+.partnerLogoLg {
+	padding: 4px 6px;
+}
+
+.partnerLogoXl {
+	padding: 12px 18px;
 }
 
 .partnerLogo img {
-	height: 70px;
-	width: auto;
-	object-fit: contain;
-}
-
-.partnerLogoOutlined {
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	border-radius: 50%;
-	overflow: hidden;
-	width: 70px;
-	height: 70px;
-	flex-shrink: 0;
-}
-
-.partnerLogoOutlined img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
-	transform: scale(1.12);
+	object-fit: contain;
 }
 
 .accreditationBar {
@@ -1264,21 +1278,12 @@
 		gap: 8px;
 	}
 
-	.footerPartners {
-		gap: 6px;
-	}
 
-	.partnersLogos {
-		gap: 16px;
-	}
 
-	.partnerLogo img {
-		height: 52px;
-	}
-
-	.partnerLogoOutlined {
-		width: 52px;
-		height: 52px;
+	.partnerLogo {
+		width: 100px;
+		height: 54px;
+		padding: 8px 10px;
 	}
 
 	.footerColLabel {

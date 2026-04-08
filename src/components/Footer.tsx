@@ -21,26 +21,6 @@ export default function Footer() {
 						<Link href="/#top">Home</Link>
 					</div>
 				</div>
-				<div className={styles.footerPartners}>
-					<span className={styles.footerColLabel}>Our Partners</span>
-					<div className={styles.partnersLogos}>
-						<a href="https://www.tekkwise.com/" className={styles.partnerLogo}>
-							<img
-								src={`${base}/media/partnerlogos/tekkwise.png`}
-								alt="TeKKWise"
-							/>
-						</a>
-						<a
-							href="https://www.instagram.com/nethercottdrones/"
-							className={`${styles.partnerLogo} ${styles.partnerLogoOutlined}`}
-						>
-							<img
-								src={`${base}/media/partnerlogos/nethercott-drones.png`}
-								alt="Nethercott Drones"
-							/>
-						</a>
-					</div>
-				</div>
 				<div className={styles.footerContact}>
 					<span className={styles.footerColLabel}>Get In Touch</span>
 					<a href={EMAIL_HREF} className={styles.footerContactLink}>

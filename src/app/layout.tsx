@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Raleway } from "next/font/google";
+import { Bebas_Neue, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const bebas = Bebas_Neue({
@@ -8,10 +8,10 @@ const bebas = Bebas_Neue({
   subsets: ["latin"],
 });
 
-const raleway = Raleway({
+const montserrat = Montserrat({
   variable: "--font-nav",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://iframe.mediadelivery.net" />
       </head>
-      <body className={`${bebas.variable} ${raleway.variable}`}>
+      <body className={`${bebas.variable} ${montserrat.variable}`}>
         {children}
       </body>
     </html>

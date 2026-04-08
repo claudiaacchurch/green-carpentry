@@ -16,24 +16,9 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const team = [
 	{
-		name: "Rossi",
-		role: "Founder",
+		name: "Ross",
+		role: "Director",
 		image: `${base}/media/team/rossi.png`,
-	},
-	{
-		name: "Alfie",
-		role: "Carpenter",
-		image: `${base}/media/team/alfie.png`,
-	},
-	{
-		name: "Charlie",
-		role: "Carpenter",
-		image: `${base}/media/team/charlie.png`,
-	},
-	{
-		name: "John",
-		role: "Carpenter",
-		image: `${base}/media/team/john.png`,
 	},
 	{
 		name: "Luigi",
@@ -46,14 +31,29 @@ const team = [
 		image: `${base}/media/team/tony.png`,
 	},
 	{
-		name: "Fran",
-		role: "Technologist",
-		image: `${base}/media/team/fran.png`,
+		name: "John",
+		role: "Carpenter",
+		image: `${base}/media/team/john.png`,
+	},
+	{
+		name: "Alfie",
+		role: "Carpenter",
+		image: `${base}/media/team/alfie.png`,
+	},
+	{
+		name: "Charlie",
+		role: "Carpenter",
+		image: `${base}/media/team/charlie.png`,
 	},
 	{
 		name: "Keith",
 		role: "Architectural Designer",
 		image: `${base}/media/team/keith.png`,
+	},
+	{
+		name: "Fran",
+		role: "Technologist",
+		image: `${base}/media/team/fran.png`,
 	},
 ];
 
@@ -204,6 +204,88 @@ export default function Home() {
 							</article>
 						))}
 					</div>
+					<div className={styles.partnersSubSection}>
+						<span className={styles.partnersSubLabel}>Our Partners</span>
+						<div className={styles.partnersLogos}>
+							<a
+								href="https://www.tekkwise.com/"
+								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
+								style={{ padding: '2px 3px' }}
+							>
+								<img
+									src={`${base}/media/partnerlogos/tekkwise.png`}
+									alt="TeKKWise"
+								/>
+							</a>
+							<a
+								href="https://www.instagram.com/nethercottdrones/"
+								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
+								style={{ padding: '2px 3px' }}
+							>
+								<img
+									src={`${base}/media/partnerlogos/nethercott-drones.png`}
+									alt="Nethercott Drones"
+								/>
+							</a>
+							<a
+								href="https://www.jacklewiselectrics.co.uk/"
+								className={styles.partnerLogo}
+							>
+								<img
+									src={`${base}/media/partnerlogos/jack-lewis-electrics.png`}
+									alt="Jack Lewis Electrics"
+								/>
+							</a>
+							<a
+								href="/"
+								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
+							>
+								<img
+									src={`${base}/media/partnerlogos/placeholder-l.png`}
+									alt="L"
+								/>
+							</a>
+							<a
+								href="https://www.facebook.com/p/THarris-plumbing-and-heating-100063621100983/"
+								className={`${styles.partnerLogo} ${styles.partnerLogoXl}`}
+								style={{ paddingBottom: '20px' }}
+							>
+								<img
+									src={`${base}/media/partnerlogos/t-harris-plumbing.png`}
+									alt="T Harris Plumbing & Heating"
+								/>
+							</a>
+							<a
+								href="https://nigelsalterjoinery.com/"
+								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
+							>
+								<img
+									src={`${base}/media/partnerlogos/nigel-salter-joinery.png`}
+									alt="Nigel Salter Joinery"
+								/>
+							</a>
+							<a
+								href="https://wmironwork.co.uk/"
+								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
+								style={{ padding: '2px 3px' }}
+							>
+								<img
+									src={`${base}/media/partnerlogos/ironwork.png`}
+									alt="Ironwork Ltd"
+								/>
+							</a>
+							<a
+								href="https://www.clearview-windows.uk/"
+								className={`${styles.partnerLogo} ${styles.partnerLogoXl}`}
+								style={{ padding: '18px 24px' }}
+							>
+								<img
+									src={`${base}/media/partnerlogos/clear-view-windows.png`}
+									alt="Clear View Windows"
+								/>
+							</a>
+						</div>
+					</div>
 				</section>
 
 				<section className={styles.section} id="contact">
@@ -223,7 +305,7 @@ export default function Home() {
 
 							<div className={styles.contactInfoSection}>
 								<strong>Our Address:</strong>
-								<p>69 Rowlands Rise, Puriton, Somerset, TA7 8BU</p>
+								<p>Puriton, Somerset</p>
 							</div>
 
 							<div className={styles.contactInfoSection}>

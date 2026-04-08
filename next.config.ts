@@ -1,15 +1,9 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-const basePath = isProd ? "/green-carpentry" : "";
-
 const nextConfig: NextConfig = {
-  ...(isProd ? { output: "export", distDir: "docs" } : {}),
-  basePath,
   env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_BASE_PATH: "",
   },
-  images: { unoptimized: true },
   devIndicators: false,
 };
 

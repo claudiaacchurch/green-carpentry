@@ -45,7 +45,7 @@ body {
 body {
 	color: var(--ink);
 	background: var(--bg);
-	font-family: var(--font-nav, "Raleway", sans-serif);
+	font-family: var(--font-nav, "Montserrat", sans-serif);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

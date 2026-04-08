@@ -29,6 +29,23 @@ export const projects: Project[] = [
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/1da8b603-3901-42ef-91f2-779fa3c4cbe9?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
+		{
+		slug: "triple-flat-conversion-watchet",
+		title: "Triple Flat Conversion",
+		meta: "Watchet",
+		location: "Watchet, Somerset",
+		year: "2025",
+		description: [
+			"A triple flat conversion in the coastal town of Watchet for the Co-op, transforming old, unused dwellings above the shop into three modern, self-contained apartments.",
+
+			"The project included full structural alterations, chimney removal, complete re-roofing, a loft conversion, external staircases and landings for access, partition walls with soundproofing, individual kitchen and bathroom fit-outs, and new electrical and plumbing installations throughout each unit.",
+
+			"Each flat was finished to a high standard, combining practical layouts with quality materials - delivering a strong return on investment for the client.",
+		],
+		image: `${base}/media/projects/triple-flat-conversion-watchet.png`,
+		buildVideoEmbed:
+			"https://iframe.mediadelivery.net/embed/610237/e307f6cc-5507-49eb-83c5-db1e8de37a65?autoplay=true&loop=true&muted=true&preload=true&background=true",
+	},
 	{
 		slug: "full-house-renovation-glastonbury",
 		title: "Full House Renovation",
@@ -49,25 +66,8 @@ export const projects: Project[] = [
 			"https://iframe.mediadelivery.net/embed/610237/3c07db2d-bf52-479d-98e9-777d5615753d?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
 	{
-		slug: "triple-flat-conversion-watchet",
-		title: "Triple Flat Conversion",
-		meta: "Watchet",
-		location: "Watchet, Somerset",
-		year: "2025",
-		description: [
-			"A triple flat conversion in the coastal town of Watchet for the Co-op, transforming old, unused dwellings above the shop into three modern, self-contained apartments.",
-
-			"The project included full structural alterations, chimney removal, complete re-roofing, a loft conversion, external staircases and landings for access, partition walls with soundproofing, individual kitchen and bathroom fit-outs, and new electrical and plumbing installations throughout each unit.",
-
-			"Each flat was finished to a high standard, combining practical layouts with quality materials - delivering a strong return on investment for the client.",
-		],
-		image: `${base}/media/projects/triple-flat-conversion-watchet.png`,
-		buildVideoEmbed:
-			"https://iframe.mediadelivery.net/embed/610237/e307f6cc-5507-49eb-83c5-db1e8de37a65?autoplay=true&loop=true&muted=true&preload=true&background=true",
-	},
-	{
-		slug: "kitchen-renovation-taunton",
-		title: "Kitchen Renovation",
+		slug: "downstairs-renovation-taunton",
+		title: "Downstairs Renovation",
 		meta: "Taunton",
 		location: "Taunton, Somerset",
 		year: "2026",
@@ -78,7 +78,7 @@ export const projects: Project[] = [
 
 			"The result is a bright, functional kitchen that has become the heart of the home - exactly what the clients envisioned from the initial consultation.",
 		],
-		image: `${base}/media/projects/kitchen-renovation-taunton.png`,
+		image: `${base}/media/projects/downstairs-renovation-taunton.png`,
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/d9637ff2-bc69-4e01-beda-9004f48b5c8e?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -86,8 +86,8 @@ export const projects: Project[] = [
 
 export const ongoingProjects: Project[] = [
 	{
-		slug: "house-extension-bridgwater",
-		title: "House Extension",
+		slug: "double-house-extension-bridgwater",
+		title: "Double House Extension",
 		meta: "Bridgwater",
 		location: "Bridgwater, Somerset",
 		year: "2025-2026",
@@ -96,13 +96,13 @@ export const ongoingProjects: Project[] = [
 
 			"The build involves full groundworks and foundations, block and beam flooring, cavity wall construction and roofing - all of which are progressing well on site. Once complete, the interior fit-out will tie the new space seamlessly into the existing layout with new flooring and plastering throughout.",
 		],
-		image: `${base}/media/projects/house-extension-bridgwater.png`,
+		image: `${base}/media/projects/double-house-extension-bridgwater.png`,
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/0518b3de-beb4-4e77-a19b-b5ad3086281b?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
 	{
 		slug: "farmhouse-renovation-somerset",
-		title: "Farmhouse Renovation",
+		title: "Farmhouse and Triple Barn Renovation",
 		meta: "Somerset",
 		location: "Somerset",
 		year: "2025-2026",
@@ -118,8 +118,8 @@ export const ongoingProjects: Project[] = [
 			"https://iframe.mediadelivery.net/embed/610237/d366cfc2-cfe4-493b-a587-ea690bcb9efe?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
 	{
-		slug: "kitchen-renovation-taunton-ongoing",
-		title: "Kitchen Renovation",
+		slug: "house-renovation-taunton",
+		title: "House Renovation and Extension",
 		meta: "Taunton",
 		location: "Taunton, Somerset",
 		year: "2025-2026",
@@ -128,7 +128,7 @@ export const ongoingProjects: Project[] = [
 
 			"More details to follow as the project progresses.",
 		],
-		image: `${base}/media/projects/kitchen-renovation-taunton-ongoing.png`,
+		image: `${base}/media/projects/house-renovation-taunton.png`,
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/b849c472-9446-4903-9dcd-3523438324bb?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},

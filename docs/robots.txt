@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://greencarpentry.co.uk/sitemap.xml

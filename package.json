@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "npm run build && git add docs/ && git commit -m 'deploy' && git push"
+    "deploy": "git push"
   },
   "dependencies": {
     "next": "16.1.6",
