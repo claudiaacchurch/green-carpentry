@@ -12,7 +12,7 @@ import {
 } from "@/lib/constants";
 import { projects, ongoingProjects } from "@/lib/projects";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
-import { getGoogleReviews } from "@/lib/getReviews";
+import { getGoogleReviews, staticReviews } from "@/lib/getReviews";
 import ContactForm from "@/components/ContactForm";
 import styles from "./page.module.css";
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -61,7 +61,8 @@ const team = [
 ];
 
 export default async function Home() {
-  const reviews = await getGoogleReviews();
+  const googleReviews = await getGoogleReviews();
+  const reviews = googleReviews.length > 0 ? googleReviews : staticReviews;
 	return (
 		<div className={styles.page}>
 			<Header />

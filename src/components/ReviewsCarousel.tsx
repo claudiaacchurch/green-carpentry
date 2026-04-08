@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Review } from "@/lib/getReviews";
 import styles from "@/app/page.module.css";
 
@@ -25,10 +25,10 @@ function Stars({ rating }: { rating: number }) {
 	);
 }
 
-
 export default function ReviewsCarousel({ reviews = [] }: { reviews?: Review[] }) {
-	const [index, setIndex] = useState(0);
+	const [page, setPage] = useState(0);
 	const [visible, setVisible] = useState(3);
+	const [slideClass, setSlideClass] = useState("");
 
 	useEffect(() => {
 		function update() {
@@ -42,23 +42,40 @@ export default function ReviewsCarousel({ reviews = [] }: { reviews?: Review[] }
 	}, []);
 
 	const total = reviews.length;
-	const maxIndex = total - visible;
+	const pageCount = Math.ceil(total / visible);
+
+	const navigate = useCallback((nextPage: number, dir: "left" | "right") => {
+		const exitClass = dir === "left" ? styles.slideOutLeft : styles.slideOutRight;
+		const enterClass = dir === "left" ? styles.slideInRight : styles.slideInLeft;
+		setSlideClass(exitClass);
+		setTimeout(() => {
+			setPage(nextPage);
+			setSlideClass(enterClass);
+			setTimeout(() => setSlideClass(""), 220);
+		}, 220);
+	}, []);
 
 	function prev() {
-		setIndex((i) => Math.max(i - 1, 0));
+		navigate(Math.max(page - 1, 0), "right");
 	}
 
 	function next() {
-		setIndex((i) => Math.min(i + 1, maxIndex));
+		navigate(Math.min(page + 1, pageCount - 1), "left");
 	}
 
-	const visibleReviews = reviews.slice(index, index + visible);
+	const startIndex = page * visible;
+	const visibleReviews = reviews.slice(startIndex, startIndex + visible);
 
 	return (
 		<div className={styles.reviewsCarousel}>
-			<div className={styles.reviewsTrack}>
+			<div className={`${styles.reviewsTrack} ${slideClass}`}>
 				{visibleReviews.map((review, i) => (
-					<article key={index + i} className={styles.reviewCard}>
+					<article
+						key={startIndex + i}
+						className={styles.reviewCard}
+						style={review.url ? { cursor: "pointer" } : undefined}
+						onClick={() => review.url && window.open(review.url, "_blank", "noopener noreferrer")}
+					>
 						<Stars rating={review.rating} />
 						<p className={styles.reviewText}>{review.text}</p>
 						<div className={styles.reviewMeta}>
@@ -82,18 +99,27 @@ export default function ReviewsCarousel({ reviews = [] }: { reviews?: Review[] }
 				<button
 					className={styles.reviewsBtn}
 					onClick={prev}
-					disabled={index === 0}
+					disabled={page === 0}
 					aria-label="Previous reviews"
 				>
 					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
 						<path d="M15 18l-6-6 6-6" />
 					</svg>
 				</button>
-				<span className={styles.reviewsCount}>{index + 1}–{Math.min(index + visible, total)} of {total}</span>
+				<div className={styles.reviewsDots}>
+					{Array.from({ length: pageCount }).map((_, i) => (
+						<button
+							key={i}
+							className={`${styles.reviewsDot} ${i === page ? styles.reviewsDotActive : ""}`}
+							onClick={() => navigate(i, i > page ? "left" : "right")}
+							aria-label={`Page ${i + 1}`}
+						/>
+					))}
+				</div>
 				<button
 					className={styles.reviewsBtn}
 					onClick={next}
-					disabled={index >= maxIndex}
+					disabled={page >= pageCount - 1}
 					aria-label="Next reviews"
 				>
 					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
