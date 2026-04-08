@@ -100,8 +100,6 @@ export default async function Home() {
 							all sizes. With our own team of craftsmen covering every trade, we
 							take the hassle out of coordinating multiple contractors - and
 							we're always easy to get hold of at every stage of the project.
-						</p>
-						<p>
 							From initial design and detailed plans through to completion, we
 							handle planning permission and liaise with building control to
 							make the process straightforward. We work hard to find

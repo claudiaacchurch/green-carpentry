@@ -295,7 +295,12 @@
 	inset: 0;
 	z-index: 1;
 	pointer-events: none;
-	background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2) 55%, transparent 100%);
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.65) 0%,
+		rgba(0, 0, 0, 0.2) 55%,
+		transparent 100%
+	);
 }
 
 .heroContent {
@@ -372,18 +377,17 @@
 /* ── Intro ───────────────────────────────────── */
 
 .introSection {
-	padding: 72px 6vw;
+	padding: 72px 15vw;
 	border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .introCols {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
 	gap: 32px 48px;
 }
 
 .introCols p {
-	font-size: 15px;
+	font-size: var(--fs-body);
 	line-height: 1.8;
 	color: var(--accent);
 	opacity: 0.8;
@@ -868,7 +872,6 @@
 	transition: opacity 180ms ease;
 }
 
-
 .partnersSubSection {
 	margin-top: 48px;
 	padding-top: 32px;
@@ -1190,8 +1193,7 @@
 	}
 
 	.introCols {
-		grid-template-columns: 1fr;
-		gap: 20px;
+		font-size: 14px;
 	}
 
 	.section {
@@ -1307,8 +1309,6 @@
 	.footerCol {
 		gap: 8px;
 	}
-
-
 
 	.partnerLogo {
 		width: 100px;
