@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import {
 	PHONE_DISPLAY,
 	PHONE_HREF,
@@ -111,12 +112,11 @@ export default function Home() {
 								className={styles.projectCard}
 							>
 								<div className={styles.projectMedia}>
-									<img
+									<Image
 										src={project.image}
 										alt={project.title}
-										width={1200}
-										height={800}
-										loading="lazy"
+										fill
+										sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
 										className={styles.projectImage}
 									/>
 								</div>
@@ -149,12 +149,11 @@ export default function Home() {
 								className={styles.projectCard}
 							>
 								<div className={styles.projectMedia}>
-									<img
+									<Image
 										src={project.image}
 										alt={project.title}
-										width={1200}
-										height={800}
-										loading="lazy"
+										fill
+										sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
 										className={styles.projectImage}
 									/>
 								</div>
@@ -189,12 +188,11 @@ export default function Home() {
 								key={`${member.role}-${index}`}
 							>
 								<div className={styles.teamAvatar}>
-									<img
+									<Image
 										src={member.image}
 										alt={member.name}
-										width={120}
-										height={120}
-										loading="lazy"
+										width={140}
+										height={140}
 										className={styles.teamAvatarImage}
 									/>
 								</div>

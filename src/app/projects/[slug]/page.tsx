@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -33,10 +34,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 loading="lazy"
               />
             ) : (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
+                fill
+                priority
+                sizes="100vw"
                 className={styles.heroImage}
               />
             )}

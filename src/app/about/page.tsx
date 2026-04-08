@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Image from "next/image";
 import Footer from "@/components/Footer";
 import { EMAIL, EMAIL_HREF, PHONE_DISPLAY, PHONE_HREF } from "@/lib/constants";
 import styles from "./page.module.css";
@@ -10,9 +11,12 @@ export default function AboutPage() {
 
 			<main>
 				<section className={styles.hero}>
-					<img
-						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/about.png`}
+					<Image
+						src="/media/about.png"
 						alt="Green Carpentry team on site"
+						fill
+						priority
+						sizes="100vw"
 						className={styles.heroImage}
 					/>
 					<div className={styles.heroOverlay} />

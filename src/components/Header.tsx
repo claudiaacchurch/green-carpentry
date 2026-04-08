@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import SocialIcons from "./SocialIcons";
 import styles from "@/app/page.module.css";
 import { useRef, useState, useEffect } from "react";
@@ -64,11 +65,13 @@ export default function Header() {
 	return (
 		<header className={`${styles.header}${scrolled ? ` ${styles.headerScrolled}` : ""}`}>
 			<Link href="/#top" className={styles.logo}>
-				{/* eslint-disable-next-line @next/next/no-img-element */}
-				<img
-					src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/media/green-carpentry-logo.png`}
+				<Image
+					src="/media/green-carpentry-logo.png"
 					alt="Green Carpentry Logo"
+					width={160}
+					height={52}
 					className={styles.logoImage}
+					priority
 				/>
 			</Link>
 
