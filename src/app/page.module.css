@@ -383,7 +383,7 @@
 
 .introCols {
 	display: grid;
-	gap: 32px 48px;
+	gap: 20px 48px;
 }
 
 .introCols p {
