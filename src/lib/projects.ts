@@ -29,7 +29,7 @@ export const projects: Project[] = [
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/1da8b603-3901-42ef-91f2-779fa3c4cbe9?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
-		{
+	{
 		slug: "triple-flat-conversion-watchet",
 		title: "Triple Flat Conversion",
 		meta: "Watchet",
@@ -131,6 +131,21 @@ export const ongoingProjects: Project[] = [
 		image: `${base}/media/projects/house-renovation-taunton.png`,
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/b849c472-9446-4903-9dcd-3523438324bb?autoplay=true&loop=true&muted=true&preload=true&background=true",
+	},
+	{
+		slug: "house-extension-bridgwater",
+		title: "House Extension",
+		meta: "Bridgwater",
+		location: "Bridgwater, Somerset",
+		year: "2025-2026",
+		description: [
+			"Making the most of an outside town house plot with a new extension and roofing works.",
+
+			"More details to follow as the project progresses.",
+		],
+		image: `${base}/media/projects/house-extension-bridgwater.png`,
+		buildVideoEmbed:
+			"https://iframe.mediadelivery.net/embed/610237/1831cec4-c4d0-4452-b4d5-9b474ce179dc?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
 ];
 
