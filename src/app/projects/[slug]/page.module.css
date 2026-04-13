@@ -283,6 +283,15 @@
     padding: 40px 6vw;
   }
 
+  .description p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .instaCallout p {
+    font-size: 13px;
+  }
+
   .videoSection {
     padding: 0 6vw 48px;
   }
