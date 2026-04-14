@@ -21,7 +21,7 @@ const team = [
 	{
 		name: "Ross",
 		role: "Director",
-		image: `${base}/media/team/rossi.png`,
+		image: `${base}/media/team/ross.png`,
 	},
 	{
 		name: "Luigi",
@@ -40,12 +40,12 @@ const team = [
 	},
 	{
 		name: "Alfie",
-		role: "Carpenter",
+		role: "Apprentice",
 		image: `${base}/media/team/alfie.png`,
 	},
 	{
 		name: "Charlie",
-		role: "Carpenter",
+		role: "Apprentice",
 		image: `${base}/media/team/charlie.png`,
 	},
 	{
@@ -97,18 +97,31 @@ export default async function Home() {
 				<section className={styles.introSection}>
 					<div className={styles.introCols}>
 						<p>
-							We provide reliable, high-quality workmanship across projects of
-							all sizes. With our own team of craftsmen covering every trade, we
-							take the hassle out of coordinating multiple contractors - and
-							we're always easy to get hold of at every stage of the project.
+							Every project begins with a vision — bringing it to life takes
+							experience, precision, and the right team.
 						</p>
 						<p>
-							From initial design and detailed plans through to completion, we
-							handle planning permission and liaise with building control to
-							make the process straightforward. We work hard to find
-							cost-effective solutions without compromising on quality, and our
-							goal is simple: finish on time, within budget, and to a standard
-							we're proud of.
+							We provide reliable, high-quality workmanship across projects of
+							all sizes. With our own expert team of craftsmen covering every
+							trade, we take the hassle out of coordinating multiple
+							contractors. Friendly, approachable, and professional, we make it
+							easy to communicate with us every step of the way.
+						</p>
+						<p>
+							From initial design and detailed plans to flawless completion, we
+							guide your project every step of the way—securing planning
+							permission and liaising with building control—making the process
+							straightforward and stress-free. We also work hard to deliver
+							cost-effective solutions wherever possible, helping you save money
+							without compromising quality. Our goal is simple: complete on
+							time, within budget, and to a standard we are proud to stand
+							behind.
+						</p>
+						<p>
+							We take pride in our craftsmanship, attention to detail, and
+							providing a service our clients can trust. Explore our website to
+							see examples of our previous work and get in touch to discuss your
+							project.
 						</p>
 					</div>
 				</section>
@@ -225,89 +238,35 @@ export default async function Home() {
 							</article>
 						))}
 					</div>
-					<div className={styles.partnersSubSection}>
-						<span className={styles.partnersSubLabel}>Our Partners</span>
-						<div className={styles.partnersLogos}>
-							<a
-								href="https://www.tekkwise.com/"
-								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
-								style={{ padding: "2px 3px" }}
-							>
-								<img
-									src={`${base}/media/partnerlogos/tekkwise.png`}
-									alt="TeKKWise"
-								/>
-							</a>
-							<a
-								href="https://www.instagram.com/nethercottdrones/"
-								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
-								style={{ padding: "2px 3px" }}
-							>
-								<img
-									src={`${base}/media/partnerlogos/nethercott-drones.png`}
-									alt="Nethercott Drones"
-								/>
-							</a>
-							<a
-								href="https://www.jacklewiselectrics.co.uk/"
-								className={styles.partnerLogo}
-							>
-								<img
-									src={`${base}/media/partnerlogos/jack-lewis-electrics.png`}
-									alt="Jack Lewis Electrics"
-								/>
-							</a>
-							<a
-								href="/"
-								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
-							>
-								<img
-									src={`${base}/media/partnerlogos/placeholder-l.png`}
-									alt="L"
-								/>
-							</a>
-							<a
-								href="https://www.facebook.com/p/THarris-plumbing-and-heating-100063621100983/"
-								className={`${styles.partnerLogo} ${styles.partnerLogoXl}`}
-								style={{ paddingBottom: "20px" }}
-							>
-								<img
-									src={`${base}/media/partnerlogos/t-harris-plumbing.png`}
-									alt="T Harris Plumbing & Heating"
-								/>
-							</a>
-							<a
-								href="https://nigelsalterjoinery.com/"
-								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
-							>
-								<img
-									src={`${base}/media/partnerlogos/nigel-salter-joinery.png`}
-									alt="Nigel Salter Joinery"
-								/>
-							</a>
-							<a
-								href="https://wmironwork.co.uk/"
-								className={`${styles.partnerLogo} ${styles.partnerLogoLg}`}
-								style={{ padding: "2px 3px" }}
-							>
-								<img
-									src={`${base}/media/partnerlogos/ironwork.png`}
-									alt="Ironwork Ltd"
-								/>
-							</a>
-							<a
-								href="https://www.clearview-windows.uk/"
-								className={`${styles.partnerLogo} ${styles.partnerLogoXl}`}
-								style={{ padding: "18px 24px" }}
-							>
-								<img
-									src={`${base}/media/partnerlogos/clear-view-windows.png`}
-									alt="Clear View Windows"
-								/>
-							</a>
-						</div>
-					</div>
 				</section>
+
+				<p className={styles.partnersLabel}>Our Partners</p>
+				<div className={styles.partnersBar}>
+					<a href="https://www.tekkwise.com/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
+						<Image src="/media/partnerlogos/tekkwise.png" alt="TeKKWise" width={150} height={50} style={{ objectFit: "contain" }} />
+					</a>
+					<a href="https://www.instagram.com/nethercottdrones/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
+						<Image src="/media/partnerlogos/nethercott-drones.png" alt="Nethercott Drones" width={150} height={50} style={{ objectFit: "contain" }} />
+					</a>
+					<a href="https://www.jacklewiselectrics.co.uk/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
+						<Image src="/media/partnerlogos/jack-lewis-electrics.png" alt="Jack Lewis Electrics" width={150} height={50} style={{ objectFit: "contain" }} />
+					</a>
+					<a href="/" className={styles.partnerBarItem}>
+						<Image src="/media/partnerlogos/placeholder-l.png" alt="L" width={150} height={50} style={{ objectFit: "contain" }} />
+					</a>
+					<a href="https://www.facebook.com/p/THarris-plumbing-and-heating-100063621100983/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
+						<Image src="/media/partnerlogos/t-harris-plumbing.png" alt="T Harris Plumbing & Heating" width={150} height={50} style={{ objectFit: "contain" }} />
+					</a>
+					<a href="https://nigelsalterjoinery.com/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
+						<Image src="/media/partnerlogos/nigel-salter-joinery.png" alt="Nigel Salter Joinery" width={150} height={50} style={{ objectFit: "contain" }} />
+					</a>
+					<a href="https://wmironwork.co.uk/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
+						<Image src="/media/partnerlogos/ironwork.png" alt="Ironwork Ltd" width={150} height={50} style={{ objectFit: "contain" }} />
+					</a>
+					<a href="https://www.clearview-windows.uk/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
+						<Image src="/media/partnerlogos/clear-view-windows.png" alt="Clear View Windows" width={150} height={50} style={{ objectFit: "contain" }} />
+					</a>
+				</div>
 
 				<section className={styles.section} id="contact">
 					<div className={styles.contactWrapper}>

@@ -13,11 +13,11 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const projects: Project[] = [
 	{
-		slug: "loft-conversion-north-somerset",
+		slug: "loft-conversion-merridge",
 		title: "Loft Conversion",
-		meta: "North Somerset",
-		location: "North Somerset",
-		year: "2025",
+		meta: "Merridge",
+		location: "Merridge",
+		year: "2024",
 		description: [
 			"A full loft conversion in North Somerset, transforming an unused roof space into a bright, functional living area.",
 
@@ -33,8 +33,8 @@ export const projects: Project[] = [
 		slug: "triple-flat-conversion-watchet",
 		title: "Triple Flat Conversion",
 		meta: "Watchet",
-		location: "Watchet, Somerset",
-		year: "2025",
+		location: "Watchet",
+		year: "2024-2025",
 		description: [
 			"A triple flat conversion in the coastal town of Watchet for the Co-op, transforming old, unused dwellings above the shop into three modern, self-contained apartments.",
 
@@ -50,7 +50,7 @@ export const projects: Project[] = [
 		slug: "full-house-renovation-glastonbury",
 		title: "Full House Renovation",
 		meta: "Glastonbury",
-		location: "Glastonbury, Somerset",
+		location: "Glastonbury",
 		year: "2026",
 		description: [
 			"A complete top-to-bottom renovation of a four-bedroom house in Glastonbury, bringing every room up to a modern, high-quality finish while retaining the character of the original building.",
@@ -66,17 +66,16 @@ export const projects: Project[] = [
 			"https://iframe.mediadelivery.net/embed/610237/3c07db2d-bf52-479d-98e9-777d5615753d?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
 	{
-		slug: "downstairs-renovation-taunton",
+		slug: "downstairs-renovation-galmington",
 		title: "Downstairs Renovation",
-		meta: "Taunton",
-		location: "Taunton, Somerset",
+		meta: "Galmington",
+		location: "Galmington",
 		year: "2026",
 		description: [
 			"A full kitchen, utility, and hallway renovation for a family home in Taunton, transforming an outdated layout into a spacious, open-plan kitchen and dining area that maximises the available footprint.",
-
-			"The new kitchen and utility feature quartz worktops, integrated appliances, and under-cabinet lighting. Structural work included the removal of a load-bearing wall to open the space, as well as creating an opening for a new window. A new floor was laid throughout the kitchen, hallway, and downstairs toilet, and the previous leaking felt roof was replaced with a durable EPDM roof.",
-
-			"The result is a bright, functional kitchen that has become the heart of the home - exactly what the clients envisioned from the initial consultation.",
+			"The new kitchen and utility feature quartz worktops, integrated appliances, and under-cabinet lighting, complemented by newly installed ceiling spotlights that enhance both functionality and atmosphere. Structural work included the removal of a load-bearing wall to open up the space, along with the formation of a new window opening to increase natural light. A new floor was laid throughout the kitchen, hallway, and downstairs toilet, and the previous leaking felt roof was replaced with a durable EPDM system.",
+			"The heating system was also upgraded, with new radiators installed to the ground floor, alongside the addition of discreet plinth heaters—two within the kitchen and one in the utility—providing efficient, space-saving warmth.",
+			"The result is a bright, functional kitchen that has become the heart of the home—exactly what the clients envisioned from the initial consultation.",
 		],
 		image: `${base}/media/projects/downstairs-renovation-taunton.png`,
 		buildVideoEmbed:
@@ -86,10 +85,10 @@ export const projects: Project[] = [
 
 export const ongoingProjects: Project[] = [
 	{
-		slug: "double-house-extension-bridgwater",
+		slug: "double-house-extension-woolavington",
 		title: "Double House Extension",
-		meta: "Bridgwater",
-		location: "Bridgwater, Somerset",
+		meta: "Woolavington",
+		location: "Woolavington",
 		year: "2025-2026",
 		description: [
 			"A side house extension in Bridgwater, increasing the ground floor living space and creating a more open, connected layout within the home.",
@@ -101,47 +100,53 @@ export const ongoingProjects: Project[] = [
 			"https://iframe.mediadelivery.net/embed/610237/0518b3de-beb4-4e77-a19b-b5ad3086281b?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
 	{
-		slug: "farmhouse-renovation-somerset",
+		slug: "farmhouse-renovation-aisholt",
 		title: "Farmhouse and Triple Barn Renovation",
-		meta: "Somerset",
-		location: "Somerset",
-		year: "2025-2026",
+		meta: "Aisholt",
+		location: "Aisholt",
+		year: "2023-2026",
 		description: [
-			"A large-scale multi-building renovation of a Somerset farmhouse, transforming the entire property across several structures and outdoor features.",
-
-			"The scope covers a full whole-house renovation, the restoration and conversion of an outbuilding, and a new sauna. Landscaping works include the consturction of a pond.",
-
-			"An ambitious project requiring close coordination across trades and careful sequencing of works - currently ongoing and progressing well.",
+			"A comprehensive transformation of a Somerset farmhouse estate, this ambitious multi-building project brings together heritage restoration, contemporary design, and sustainable innovation.",
+			"The main house is undergoing a full renovation, alongside a substantial new extension featuring integrated solar roof tiles and a private balcony with elevated views across the surrounding landscape. A striking new orangery, constructed from the ground up, introduces a light-filled space that strengthens the connection between the house and its gardens.",
+			"Across the wider site, multiple outbuildings are being carefully restored and refurbished. A large barn has been reimagined as an impressive open-plan living space, incorporating a kitchen and a mezzanine level with a bedroom and en-suite. A second barn has been converted into a bespoke wellness retreat, complete with a sauna, changing room, and shower facilities. Stepping out from the sauna onto the timber decking, the space flows directly to the outdoor swimming pool.",
+			"Landscaping forms a key component of the project, including the excavation and transformation of a pond into this natural, self-cleaning swimming pool. The pool features 2 jettys for access and a pump system that circulates water through a separate filtration zone composed of aquatic plants and stone beds, providing a chemical-free and environmentally sustainable solution.",
+			"This is an ambitious and complex undertaking, requiring careful sequencing and close coordination across multiple trades. The project is currently ongoing and progressing well.",
 		],
 		image: `${base}/media/projects/farmhouse-renovation-somerset.png`,
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/d366cfc2-cfe4-493b-a587-ea690bcb9efe?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
 	{
-		slug: "house-renovation-taunton",
+		slug: "house-renovation-bower",
 		title: "House Renovation and Extension",
-		meta: "Taunton",
-		location: "Taunton, Somerset",
+		meta: "Bower",
+		location: "Bower",
 		year: "2025-2026",
 		description: [
-			"A full kitchen renovation currently underway in Taunton, giving a family home a complete transformation of its cooking and dining space.",
-
-			"More details to follow as the project progresses.",
+			"A full ground floor renovation has been completed in Taunton, transforming a family home through a complete reconfiguration of its internal layout and living spaces.",
+			"The project included a substantial rear extension and a garage conversion, significantly increasing the usable living area. Internally, major structural works were carried out, including the installation of large steel beams to open up the layout and create a modern open-plan environment. The kitchen was relocated into the new extension, forming the heart of the home, alongside the repositioning of the downstairs WC.",
+			"Further enhancements included the installation of new windows to the rear of the existing property, a roof lantern within the extension to maximise natural light, and large bifold doors that open the space out onto the garden.",
+			"To the front of the property, a new porch was constructed, improving both the entrance and the overall sense of arrival while opening up the hallway internally.",
+			"Externally, the garden is currently being fully cleared and landscaped, creating a cohesive outdoor space that will complement the newly transformed interior.",
+			"Once complete, the landscaping will provide a seamless extension of the living space, bringing together the interior and exterior to create a fully unified and considered family home.",
 		],
 		image: `${base}/media/projects/house-renovation-taunton.png`,
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/b849c472-9446-4903-9dcd-3523438324bb?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
 	{
-		slug: "house-extension-bridgwater",
+		slug: "house-extension-puriton",
 		title: "House Extension",
-		meta: "Bridgwater",
-		location: "Bridgwater, Somerset",
+		meta: "Puriton",
+		location: "Puriton",
 		year: "2025-2026",
 		description: [
-			"Making the most of an outside town house plot with a new extension and roofing works.",
-
-			"More details to follow as the project progresses.",
+			"A comprehensive, top-to-bottom renovation of a detached property, this project has transformed the home both internally and externally, centred around a substantial three-sided wraparound extension and a complete open-plan reconfiguration of the ground floor.",
+			"Externally, the driveway was fully excavated and cleared, including the removal of existing trees, to create a generous four-car parking area. The rear garden has also been extensively landscaped to a high standard, featuring porcelain tiling, tiered terraces leading down to a lawned area, and a further level that connects to a newly constructed outbuilding.",
+			"Internally, the property has been fully renovated, with a reconfigured stud wall layout to enhance both space and flow. This includes the creation of a larger main bathroom, now finished as a full wet room with intricate tile work. One of the bedrooms has been converted into a spacious his-and-hers walk-in wardrobe, adding a bespoke, high-end element to the home.",
+			"The new extension has significantly increased the footprint of the property, allowing for a dedicated front office, a large additional living space to the side with secondary access to the driveway, and a generous utility room. To the rear, a substantial kitchen and dining area sits beneath a large roof lantern, creating a bright and open focal point for the home.",
+			"At the lower level of the garden, a further extension houses a state-of-the-art gym, complete with integrated speakers, mirrored walls, and acoustic panelling. Opposite, a pergola area provides a sheltered outdoor space, with the garden nearing completion and prepared for the installation of a hot tub.",
+			"This project delivers a complete transformation, combining high-end finishes with practical design to create a modern, spacious, and highly functional family home.",
 		],
 		image: `${base}/media/projects/house-extension-bridgwater.png`,
 		buildVideoEmbed:
