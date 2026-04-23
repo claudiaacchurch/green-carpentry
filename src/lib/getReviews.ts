@@ -51,25 +51,39 @@ export async function getGoogleReviews(): Promise<Review[]> {
 
   if (!apiKey || !placeId) return [];
 
-  const res = await fetch(
-    `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}&reviews_sort=newest`,
-    { next: { revalidate: 86400 } }
-  );
+  try {
+    const res = await fetch(
+      `https://places.googleapis.com/v1/places/${placeId}?fields=reviews&languageCode=en`,
+      {
+        headers: {
+          "X-Goog-Api-Key": apiKey,
+        },
+        next: { revalidate: 86400 },
+      }
+    );
 
-  if (!res.ok) {
-    console.error("Places API HTTP error:", res.status);
+    if (!res.ok) {
+      console.error("Places API (New) HTTP error:", res.status);
+      return [];
+    }
+
+    const data = await res.json();
+    const raw = data.reviews ?? [];
+    console.log("Places API (New) reviews returned:", raw.length);
+
+    return raw.map((r: {
+      authorAttribution: { displayName: string };
+      rating: number;
+      text: { text: string };
+      relativePublishTimeDescription: string;
+    }) => ({
+      name: r.authorAttribution.displayName,
+      rating: r.rating,
+      text: r.text.text,
+      date: r.relativePublishTimeDescription,
+    }));
+  } catch (err) {
+    console.error("Places API (New) error:", err);
     return [];
   }
-
-  const data = await res.json();
-  console.log("Places API status:", data.status, "| error:", data.error_message ?? "none");
-  const raw = data.result?.reviews ?? [];
-  console.log("Reviews returned:", raw.length);
-
-  return raw.map((r: { author_name: string; rating: number; text: string; relative_time_description: string }) => ({
-    name: r.author_name,
-    rating: r.rating,
-    text: r.text,
-    date: r.relative_time_description,
-  }));
 }

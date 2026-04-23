@@ -97,31 +97,23 @@ export default async function Home() {
 				<section className={styles.introSection}>
 					<div className={styles.introCols}>
 						<p>
-							Every project begins with a vision — bringing it to life takes
+							Every project begins with a vision - bringing it to life takes
 							experience, precision, and the right team.
 						</p>
 						<p>
-							We provide reliable, high-quality workmanship across projects of
-							all sizes. With our own expert team of craftsmen covering every
-							trade, we take the hassle out of coordinating multiple
-							contractors. Friendly, approachable, and professional, we make it
-							easy to communicate with us every step of the way.
+							Our team of skilled craftsmen covers every trade, so you won’t
+							need to deal with multiple contractors. From initial design and
+							planning permission through to flawless completion, we manage the
+							entire process, delivering cost-effective solutions throughout
+							without compromising on quality.
 						</p>
 						<p>
-							From initial design and detailed plans to flawless completion, we
-							guide your project every step of the way—securing planning
-							permission and liaising with building control—making the process
-							straightforward and stress-free. We also work hard to deliver
-							cost-effective solutions wherever possible, helping you save money
-							without compromising quality. Our goal is simple: complete on
-							time, within budget, and to a standard we are proud to stand
-							behind.
+							Our focus is simple: completing your project on time, within
+							budget, and to a standard we’re proud to stand behind.
 						</p>
 						<p>
-							We take pride in our craftsmanship, attention to detail, and
-							providing a service our clients can trust. Explore our website to
-							see examples of our previous work and get in touch to discuss your
-							project.
+							Explore our website to see examples of our previous work and get
+							in touch to discuss your project.
 						</p>
 					</div>
 				</section>
@@ -242,29 +234,112 @@ export default async function Home() {
 
 				<p className={styles.partnersLabel}>Our Partners</p>
 				<div className={styles.partnersBar}>
-					<a href="https://www.tekkwise.com/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
-						<Image src="/media/partnerlogos/tekkwise.png" alt="TeKKWise" width={150} height={50} style={{ objectFit: "contain" }} />
+					<a
+						href="https://www.tekkwise.com/"
+						className={styles.partnerBarItem}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Image
+							src="/media/partnerlogos/tekkwise.png"
+							alt="TeKKWise"
+							width={150}
+							height={50}
+							style={{ objectFit: "contain" }}
+						/>
 					</a>
-					<a href="https://www.instagram.com/nethercottdrones/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
-						<Image src="/media/partnerlogos/nethercott-drones.png" alt="Nethercott Drones" width={150} height={50} style={{ objectFit: "contain" }} />
+					<a
+						href="https://www.instagram.com/nethercottdrones/"
+						className={styles.partnerBarItem}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Image
+							src="/media/partnerlogos/nethercott-drones.png"
+							alt="Nethercott Drones"
+							width={150}
+							height={50}
+							style={{ objectFit: "contain" }}
+						/>
 					</a>
-					<a href="https://www.jacklewiselectrics.co.uk/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
-						<Image src="/media/partnerlogos/jack-lewis-electrics.png" alt="Jack Lewis Electrics" width={150} height={50} style={{ objectFit: "contain" }} />
+					<a
+						href="https://www.jacklewiselectrics.co.uk/"
+						className={styles.partnerBarItem}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Image
+							src="/media/partnerlogos/jack-lewis-electrics.png"
+							alt="Jack Lewis Electrics"
+							width={150}
+							height={50}
+							style={{ objectFit: "contain" }}
+						/>
 					</a>
 					<a href="/" className={styles.partnerBarItem}>
-						<Image src="/media/partnerlogos/placeholder-l.png" alt="L" width={150} height={50} style={{ objectFit: "contain" }} />
+						<Image
+							src="/media/partnerlogos/placeholder-l.png"
+							alt="L"
+							width={150}
+							height={50}
+							style={{ objectFit: "contain" }}
+						/>
 					</a>
-					<a href="https://www.facebook.com/p/THarris-plumbing-and-heating-100063621100983/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
-						<Image src="/media/partnerlogos/t-harris-plumbing.png" alt="T Harris Plumbing & Heating" width={150} height={50} style={{ objectFit: "contain" }} />
+					<a
+						href="https://www.facebook.com/p/THarris-plumbing-and-heating-100063621100983/"
+						className={styles.partnerBarItem}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Image
+							src="/media/partnerlogos/t-harris-plumbing.png"
+							alt="T Harris Plumbing & Heating"
+							width={150}
+							height={50}
+							style={{ objectFit: "contain" }}
+						/>
 					</a>
-					<a href="https://nigelsalterjoinery.com/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
-						<Image src="/media/partnerlogos/nigel-salter-joinery.png" alt="Nigel Salter Joinery" width={150} height={50} style={{ objectFit: "contain" }} />
+					<a
+						href="https://nigelsalterjoinery.com/"
+						className={styles.partnerBarItem}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Image
+							src="/media/partnerlogos/nigel-salter-joinery.png"
+							alt="Nigel Salter Joinery"
+							width={150}
+							height={50}
+							style={{ objectFit: "contain" }}
+						/>
 					</a>
-					<a href="https://wmironwork.co.uk/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
-						<Image src="/media/partnerlogos/ironwork.png" alt="Ironwork Ltd" width={150} height={50} style={{ objectFit: "contain" }} />
+					<a
+						href="https://wmironwork.co.uk/"
+						className={styles.partnerBarItem}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Image
+							src="/media/partnerlogos/ironwork.png"
+							alt="Ironwork Ltd"
+							width={150}
+							height={50}
+							style={{ objectFit: "contain" }}
+						/>
 					</a>
-					<a href="https://www.clearview-windows.uk/" className={styles.partnerBarItem} target="_blank" rel="noopener noreferrer">
-						<Image src="/media/partnerlogos/clear-view-windows.png" alt="Clear View Windows" width={150} height={50} style={{ objectFit: "contain" }} />
+					<a
+						href="https://www.clearview-windows.uk/"
+						className={styles.partnerBarItem}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Image
+							src="/media/partnerlogos/clear-view-windows.png"
+							alt="Clear View Windows"
+							width={150}
+							height={50}
+							style={{ objectFit: "contain" }}
+						/>
 					</a>
 				</div>
 

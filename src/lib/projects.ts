@@ -19,11 +19,10 @@ export const projects: Project[] = [
 		location: "Merridge",
 		year: "2024",
 		description: [
-			"A full loft conversion in North Somerset, transforming an unused roof space into a bright, functional living area.",
-
-			"The project involved structural alterations to the existing roof, installation of steels, and the creation of a light-filled room complete with insulation, boarding and plastering. A set of French doors open onto a newly built balcony, bringing in natural light and a sense of space. Electrics and lighting were run throughout, with a finish that ties seamlessly into the rest of the property.",
-
-			"A clean, efficient conversion giving the clients the extra space they needed and adding significant value to their home.",
+			"A full loft conversion on this lovely property in the Quantock Hills, transforming an unused roof space into a bright and functional living area.",
+			"The project involved structural alterations to the existing walls and roof. New floor joists and timber frame walls were installed for the build, along with a full rewire and plumbing installation to upgrade the heating system for the new space. A new en-suite was also added. A new staircase was installed to provide access, with triangular windows fitted to bring natural light into the stairwell. The space was designed for comfort and practicality.",
+			"A set of bifold doors opens onto a newly built balcony, enhancing the sense of space, with an external staircase installed to provide additional access. Externally, the conversion was finished with Cedral cladding.",
+			"A clean and efficient conversion, providing the clients with the additional room they needed while adding significant value to their home.",
 		],
 		image: `${base}/media/projects/loft-conversion-north-somerset.png`,
 		buildVideoEmbed:
@@ -91,9 +90,10 @@ export const ongoingProjects: Project[] = [
 		location: "Woolavington",
 		year: "2025-2026",
 		description: [
-			"A side house extension in Bridgwater, increasing the ground floor living space and creating a more open, connected layout within the home.",
-
-			"The build involves full groundworks and foundations, block and beam flooring, cavity wall construction and roofing - all of which are progressing well on site. Once complete, the interior fit-out will tie the new space seamlessly into the existing layout with new flooring and plastering throughout.",
+			"This project involved two extensions to the same property — a large side extension and a smaller rear extension — significantly increasing the ground floor living space and creating a more open, connected layout throughout the home.",
+			"The build included full groundworks and foundations, with cavity wall construction for the side extension and a timber frame structure for the rear. The project also involved complete electrical works, along with additional plumbing for new radiators.",
+			"Internally, new laminate flooring was installed throughout the extensions, as well as the existing hallway and downstairs toilet. The main living area features a bespoke media wall beneath a striking vaulted ceiling, complete with Velux windows to maximise natural light. A dedicated utility room was also incorporated into the design.",
+			"Externally, the driveway was fully excavated, concreted, and finished with a high-quality resin surface, completing the project to a clean and modern standard.",
 		],
 		image: `${base}/media/projects/double-house-extension-bridgwater.png`,
 		buildVideoEmbed:
