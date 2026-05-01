@@ -221,7 +221,7 @@ export default async function Home() {
 										width={140}
 										height={140}
 										className={styles.teamAvatarImage}
-										style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
+										style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
 									/>
 								</div>
 								<div>
