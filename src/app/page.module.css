@@ -678,8 +678,8 @@
 }
 
 .teamAvatar {
-	width: 140px;
-	height: 140px;
+	width: 100px;
+	height: 100px;
 	border-radius: 50%;
 	background: rgba(255, 255, 255, 0.12);
 	display: grid;
@@ -928,11 +928,12 @@
 .partnersBar {
 	background: #fff;
 	margin: 0 6vw 80px;
-	padding: 20px 24px;
+	padding: 16px 24px;
 	border-radius: 8px;
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
 	gap: 8px;
+	align-items: center;
 }
 
 .partnerBarItem {
@@ -1322,7 +1323,7 @@
 	}
 
 	.contactInfoTitle {
-		font-size: 22px;
+		font-size: clamp(18px, 4.5vw, 22px);
 	}
 
 	.contactInfoText {

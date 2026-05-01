@@ -14,6 +14,7 @@ import { projects, ongoingProjects } from "@/lib/projects";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import { getGoogleReviews, staticReviews } from "@/lib/getReviews";
 import ContactForm from "@/components/ContactForm";
+import ScrollReveal from "@/components/ScrollReveal";
 import styles from "./page.module.css";
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -94,6 +95,7 @@ export default async function Home() {
 					</div>
 				</section>
 
+				<ScrollReveal>
 				<section className={styles.introSection}>
 					<div className={styles.introCols}>
 						<p>
@@ -117,7 +119,9 @@ export default async function Home() {
 						</p>
 					</div>
 				</section>
+				</ScrollReveal>
 
+				<ScrollReveal>
 				<section className={styles.section} id="projects">
 					<div className={styles.sectionHeader}>
 						<div>
@@ -155,6 +159,9 @@ export default async function Home() {
 						))}
 					</div>
 				</section>
+				</ScrollReveal>
+
+				<ScrollReveal>
 				<section className={styles.section} id="ongoingProjects">
 					<div className={styles.sectionHeader}>
 						<div>
@@ -192,7 +199,9 @@ export default async function Home() {
 						))}
 					</div>
 				</section>
+				</ScrollReveal>
 
+				<ScrollReveal>
 				<section className={styles.section} id="reviews">
 					<div className={styles.sectionHeader}>
 						<div>
@@ -201,7 +210,9 @@ export default async function Home() {
 					</div>
 					<ReviewsCarousel reviews={reviews} />
 				</section>
+				</ScrollReveal>
 
+				<ScrollReveal>
 				<section className={styles.section} id="team">
 					<div className={styles.sectionHeader}>
 						<div>
@@ -218,8 +229,8 @@ export default async function Home() {
 									<Image
 										src={member.image}
 										alt={member.name}
-										width={140}
-										height={140}
+										width={100}
+										height={100}
 										className={styles.teamAvatarImage}
 										style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
 									/>
@@ -232,7 +243,9 @@ export default async function Home() {
 						))}
 					</div>
 				</section>
+				</ScrollReveal>
 
+				<ScrollReveal>
 				<p className={styles.partnersLabel}>Our Partners</p>
 				<div className={styles.partnersBar}>
 					<a
@@ -244,8 +257,8 @@ export default async function Home() {
 						<Image
 							src="/media/partnerlogos/tekkwise.png"
 							alt="TeKKWise"
-							width={150}
-							height={50}
+							width={70}
+							height={70}
 							style={{ objectFit: "contain" }}
 						/>
 					</a>
@@ -258,8 +271,8 @@ export default async function Home() {
 						<Image
 							src="/media/partnerlogos/nethercott-drones.png"
 							alt="Nethercott Drones"
-							width={150}
-							height={50}
+							width={70}
+							height={70}
 							style={{ objectFit: "contain" }}
 						/>
 					</a>
@@ -272,8 +285,8 @@ export default async function Home() {
 						<Image
 							src="/media/partnerlogos/jack-lewis-electrics.png"
 							alt="Jack Lewis Electrics"
-							width={150}
-							height={50}
+							width={70}
+							height={70}
 							style={{ objectFit: "contain" }}
 						/>
 					</a>
@@ -281,8 +294,8 @@ export default async function Home() {
 						<Image
 							src="/media/partnerlogos/placeholder-l.png"
 							alt="L"
-							width={150}
-							height={50}
+							width={70}
+							height={70}
 							style={{ objectFit: "contain" }}
 						/>
 					</a>
@@ -343,7 +356,9 @@ export default async function Home() {
 						/>
 					</a>
 				</div>
+				</ScrollReveal>
 
+				<ScrollReveal>
 				<section className={styles.section} id="contact">
 					<div className={styles.contactWrapper}>
 						<div className={styles.contactInfoBox}>
@@ -476,6 +491,7 @@ export default async function Home() {
 						<ContactForm />
 					</div>
 				</section>
+				</ScrollReveal>
 			</main>
 
 			<Footer />
