@@ -54,12 +54,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <span className={styles.infoLabel}>Year</span>
               <span className={styles.infoValue}>{project.year}</span>
             </div>
-            <div className={styles.metaItem}>
-              <span className={styles.infoLabel}>Status</span>
-              <span className={styles.infoValue}>
-                {isOngoing ? "In progress" : "Complete"}
-              </span>
-            </div>
           </aside>
 
           <div className={styles.projectStory}>
