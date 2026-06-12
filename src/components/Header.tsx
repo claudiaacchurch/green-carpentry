@@ -11,6 +11,7 @@ import { EMAIL_HREF, PHONE_HREF } from "@/lib/constants";
 
 export default function Header() {
 	const detailsRef = useRef<HTMLDetailsElement>(null);
+	const pendingScrollRef = useRef<string | null>(null);
 	const [closing, setClosing] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
 	const pathname = usePathname();
@@ -46,13 +47,14 @@ export default function Header() {
 		}
 		e.preventDefault();
 		const menuIsOpen = detailsRef.current?.open ?? false;
-		if (menuIsOpen) startClose();
-		setTimeout(() => {
-			const el = document.getElementById(hash);
-			if (el) {
-				smoothScrollToElement(el);
-			}
-		}, menuIsOpen ? 560 : 0);
+		if (menuIsOpen) {
+			pendingScrollRef.current = hash;
+			startClose();
+			return;
+		}
+
+		const el = document.getElementById(hash);
+		if (el) smoothScrollToElement(el);
 	}
 
 	function handleTransitionEnd(e: React.TransitionEvent<HTMLDivElement>) {
@@ -63,6 +65,17 @@ export default function Header() {
 		) {
 			setClosing(false);
 			if (detailsRef.current) detailsRef.current.open = false;
+
+			const hash = pendingScrollRef.current;
+			pendingScrollRef.current = null;
+			if (hash) {
+				window.requestAnimationFrame(() => {
+					window.requestAnimationFrame(() => {
+						const el = document.getElementById(hash);
+						if (el) smoothScrollToElement(el);
+					});
+				});
+			}
 		}
 	}
 

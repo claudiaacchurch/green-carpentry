@@ -1,5 +1,17 @@
 let activeAnimation: number | null = null;
 
+function getDocumentTop(element: HTMLElement) {
+	let top = 0;
+	let current: HTMLElement | null = element;
+
+	while (current) {
+		top += current.offsetTop;
+		current = current.offsetParent as HTMLElement | null;
+	}
+
+	return top;
+}
+
 export function smoothScrollToElement(element: HTMLElement) {
 	if (activeAnimation !== null) {
 		window.cancelAnimationFrame(activeAnimation);
@@ -9,7 +21,7 @@ export function smoothScrollToElement(element: HTMLElement) {
 	const start = window.scrollY;
 	const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 	const target = Math.min(
-		Math.max(element.getBoundingClientRect().top + start - headerHeight, 0),
+		Math.max(getDocumentTop(element) - headerHeight, 0),
 		maxScroll,
 	);
 	const distance = target - start;
