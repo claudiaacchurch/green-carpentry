@@ -15,6 +15,9 @@ import ReviewsCarousel from "@/components/ReviewsCarousel";
 import { getGoogleReviews, staticReviews } from "@/lib/getReviews";
 import ContactForm from "@/components/ContactForm";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroMedia from "@/components/HeroMedia";
+import FadeImage from "@/components/FadeImage";
+import SmoothAnchor from "@/components/SmoothAnchor";
 import styles from "./page.module.css";
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -71,10 +74,12 @@ export default async function Home() {
 			<main>
 				<section className={styles.hero} id="top">
 					<div className={styles.heroMedia}>
-						<iframe
-							src="https://iframe.mediadelivery.net/embed/610237/71858d3d-4c6f-4a88-bae3-5de046b33908?autoplay=true&loop=true&muted=true&preload=true&background=true"
-							className={styles.heroVideo}
-							allow="autoplay"
+						<HeroMedia
+							poster={`${base}/media/projects/loft-conversion-north-somerset.png`}
+							alt="Green Carpentry construction project"
+							videoUrl="https://iframe.mediadelivery.net/embed/610237/71858d3d-4c6f-4a88-bae3-5de046b33908?autoplay=true&loop=true&muted=true&preload=true&background=true"
+							imageClassName={styles.heroPoster}
+							videoClassName={styles.heroVideo}
 						/>
 						<div className={styles.heroOverlay} />
 					</div>
@@ -85,12 +90,12 @@ export default async function Home() {
 							the South West
 						</h1>
 						<div className={styles.heroActions}>
-							<a href="#projects" className={styles.primaryBtn}>
+							<SmoothAnchor href="#projects" className={styles.primaryBtn}>
 								View Projects
-							</a>
-							<a href="#contact" className={styles.secondaryBtn}>
+							</SmoothAnchor>
+							<SmoothAnchor href="#contact" className={styles.secondaryBtn}>
 								Contact Us
-							</a>
+							</SmoothAnchor>
 						</div>
 					</div>
 				</section>
@@ -136,7 +141,7 @@ export default async function Home() {
 						</div>
 					</div>
 					<div className={styles.projectsGrid}>
-						{projects.map((project) => (
+						{projects.map((project, index) => (
 							<Link
 								key={project.slug}
 								href={`/projects/${project.slug}`}
@@ -149,6 +154,7 @@ export default async function Home() {
 										fill
 										sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
 										className={styles.projectImage}
+										priority={index < 2}
 									/>
 								</div>
 								<div className={styles.projectBody}>
@@ -169,14 +175,14 @@ export default async function Home() {
 								className={`${styles.sectionTitle} ${styles.sectionTitleProjects}`}
 							>
 								Ongoing Projects
-							</h2>
-							<p className={styles.sectionSubtitle}>
-								See what we're working on right now
-							</p>
+								</h2>
+								<p className={styles.sectionSubtitle}>
+									See what we&apos;re working on right now
+								</p>
 						</div>
 					</div>
 					<div className={styles.projectsGrid}>
-						{ongoingProjects.map((project) => (
+						{ongoingProjects.map((project, index) => (
 							<Link
 								key={project.slug}
 								href={`/projects/${project.slug}`}
@@ -189,6 +195,7 @@ export default async function Home() {
 										fill
 										sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
 										className={styles.projectImage}
+										priority={index < 2}
 									/>
 								</div>
 								<div className={styles.projectBody}>
@@ -226,7 +233,7 @@ export default async function Home() {
 								key={`${member.role}-${index}`}
 							>
 								<div className={styles.teamAvatar}>
-									<Image
+									<FadeImage
 										src={member.image}
 										alt={member.name}
 										width={100}
@@ -250,11 +257,11 @@ export default async function Home() {
 				<div className={styles.partnersBar}>
 					<a
 						href="https://www.tekkwise.com/"
-						className={styles.partnerBarItem}
+						className={`${styles.partnerBarItem} ${styles.partnerBarItemSquare}`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<Image
+						<FadeImage
 							src="/media/partnerlogos/tekkwise.png"
 							alt="TeKKWise"
 							width={70}
@@ -264,11 +271,11 @@ export default async function Home() {
 					</a>
 					<a
 						href="https://www.instagram.com/nethercottdrones/"
-						className={styles.partnerBarItem}
+						className={`${styles.partnerBarItem} ${styles.partnerBarItemSquare}`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<Image
+						<FadeImage
 							src="/media/partnerlogos/nethercott-drones.png"
 							alt="Nethercott Drones"
 							width={70}
@@ -278,11 +285,11 @@ export default async function Home() {
 					</a>
 					<a
 						href="https://www.jacklewiselectrics.co.uk/"
-						className={styles.partnerBarItem}
+						className={`${styles.partnerBarItem} ${styles.partnerBarItemSquare}`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<Image
+						<FadeImage
 							src="/media/partnerlogos/jack-lewis-electrics.png"
 							alt="Jack Lewis Electrics"
 							width={70}
@@ -290,22 +297,22 @@ export default async function Home() {
 							style={{ objectFit: "contain" }}
 						/>
 					</a>
-					<a href="/" className={styles.partnerBarItem}>
-						<Image
-							src="/media/partnerlogos/placeholder-l.png"
+						<Link href="/" className={`${styles.partnerBarItem} ${styles.partnerBarItemSquare}`}>
+							<FadeImage
+								src="/media/partnerlogos/placeholder-l.png"
 							alt="L"
 							width={70}
 							height={70}
-							style={{ objectFit: "contain" }}
-						/>
-					</a>
+								style={{ objectFit: "contain" }}
+							/>
+						</Link>
 					<a
 						href="https://www.facebook.com/p/THarris-plumbing-and-heating-100063621100983/"
 						className={styles.partnerBarItem}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<Image
+						<FadeImage
 							src="/media/partnerlogos/t-harris-plumbing.png"
 							alt="T Harris Plumbing & Heating"
 							width={150}
@@ -319,7 +326,7 @@ export default async function Home() {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<Image
+						<FadeImage
 							src="/media/partnerlogos/nigel-salter-joinery.png"
 							alt="Nigel Salter Joinery"
 							width={150}
@@ -333,7 +340,7 @@ export default async function Home() {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<Image
+						<FadeImage
 							src="/media/partnerlogos/ironwork.png"
 							alt="Ironwork Ltd"
 							width={150}
@@ -347,7 +354,7 @@ export default async function Home() {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<Image
+						<FadeImage
 							src="/media/partnerlogos/clear-view-windows.png"
 							alt="Clear View Windows"
 							width={150}

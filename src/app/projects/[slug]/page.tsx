@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeroMedia from "@/components/HeroMedia";
 import { projects, ongoingProjects, getProject } from "@/lib/projects";
 import { INSTAGRAM_URL } from "@/lib/constants";
 import styles from "./page.module.css";
@@ -26,23 +26,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         {/* Hero */}
         <section className={styles.hero}>
           <div className={styles.heroMedia}>
-            {project.buildVideoEmbed ? (
-              <iframe
-                src={project.buildVideoEmbed}
-                className={styles.heroVideo}
-                allow="autoplay"
-                loading="lazy"
-              />
-            ) : (
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                priority
-                sizes="100vw"
-                className={styles.heroImage}
-              />
-            )}
+            <HeroMedia
+              poster={project.image}
+              alt={project.title}
+              videoUrl={project.buildVideoEmbed}
+              imageClassName={styles.heroImage}
+              videoClassName={styles.heroVideo}
+            />
           </div>
           <div className={styles.heroOverlay} />
           <div className={styles.heroContent}>

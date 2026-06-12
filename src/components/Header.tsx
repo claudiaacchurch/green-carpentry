@@ -5,6 +5,7 @@ import Image from "next/image";
 import SocialIcons from "./SocialIcons";
 import styles from "@/app/page.module.css";
 import { useRef, useState, useEffect } from "react";
+import { smoothScrollToElement } from "@/lib/smoothScroll";
 
 export default function Header() {
 	const detailsRef = useRef<HTMLDetailsElement>(null);
@@ -25,7 +26,6 @@ export default function Header() {
 	function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>) {
 		const href = e.currentTarget.getAttribute("href");
 		if (!href?.includes("#")) return;
-		if (!detailsRef.current?.open) return;
 		const [pathPart, hash] = href.split("#");
 		const onTargetPage = !pathPart || window.location.pathname === pathPart || window.location.pathname === pathPart.replace(/\/$/, "");
 		if (!onTargetPage) {
@@ -33,15 +33,14 @@ export default function Header() {
 			return;
 		}
 		e.preventDefault();
-		startClose();
+		const menuIsOpen = detailsRef.current?.open ?? false;
+		if (menuIsOpen) startClose();
 		setTimeout(() => {
 			const el = document.getElementById(hash);
 			if (el) {
-				const headerHeight = document.querySelector("header")?.offsetHeight ?? 0;
-				const top = el.getBoundingClientRect().top + window.scrollY - headerHeight;
-				window.scrollTo({ top, behavior: "smooth" });
+				smoothScrollToElement(el);
 			}
-		}, 380);
+		}, menuIsOpen ? 380 : 0);
 	}
 
 	function handleTransitionEnd(e: React.TransitionEvent<HTMLDivElement>) {
@@ -64,7 +63,7 @@ export default function Header() {
 
 	return (
 		<header className={`${styles.header}${scrolled ? ` ${styles.headerScrolled}` : ""}`}>
-			<Link href="/#top" className={styles.logo}>
+			<Link href="/#top" className={styles.logo} onClick={handleNavClick}>
 				<Image
 					src="/media/green-carpentry-logo.png"
 					alt="Green Carpentry Logo"
@@ -77,12 +76,12 @@ export default function Header() {
 
 			<div className={styles.headerRight}>
 				<nav className={styles.nav}>
-					<Link href="/#top">Home</Link>
-					<Link href="/#projects">Projects</Link>
+					<Link href="/#top" onClick={handleNavClick}>Home</Link>
+					<Link href="/#projects" onClick={handleNavClick}>Projects</Link>
 					<Link href="/about">About</Link>
-					<Link href="/#team">Meet the Team</Link>
-					<Link href="/#reviews">Reviews</Link>
-					<Link href="/#contact">Get in Touch</Link>
+					<Link href="/#team" onClick={handleNavClick}>Meet the Team</Link>
+					<Link href="/#reviews" onClick={handleNavClick}>Reviews</Link>
+					<Link href="/#contact" onClick={handleNavClick}>Get in Touch</Link>
 					<div className={styles.navSocials}>
 						<SocialIcons />
 					</div>

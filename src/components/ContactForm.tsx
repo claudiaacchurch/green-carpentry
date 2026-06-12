@@ -59,7 +59,7 @@ export default function ContactForm() {
         </button>
         {status === "success" && (
           <p style={{ color: "var(--accent-warm)", marginTop: "8px" }}>
-            Message sent! We'll be in touch soon.
+	            Message sent! We&apos;ll be in touch soon.
           </p>
         )}
         {status === "error" && (
