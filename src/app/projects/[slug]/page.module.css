@@ -217,16 +217,14 @@
   align-items: center;
   gap: 10px;
   color: var(--accent);
-  background: var(--bg);
-  border: 1px solid var(--bg);
+  background: var(--ink);
+  border: 1px solid var(--ink);
   border-radius: 999px;
   padding: 13px 20px;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  transition:
-    border-color 220ms ease,
-    background-color 220ms ease;
+  transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .instaCallout > a svg {
@@ -240,8 +238,8 @@
 }
 
 .instaCallout > a:hover {
-  background: #202020;
-  border-color: #202020;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 /* ── Back bar ──────────────────────────────── */
