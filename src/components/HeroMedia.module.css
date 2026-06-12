@@ -1,16 +1,24 @@
 .poster {
 	z-index: 0;
+	opacity: 1;
 }
 
 .video {
 	z-index: 1;
 	opacity: 0;
 	pointer-events: none;
-	transition: opacity 180ms ease;
+	visibility: hidden;
+	transition:
+		opacity 360ms ease,
+		visibility 0s linear 360ms;
 }
 
 .videoReady {
 	opacity: 1;
+	visibility: visible;
+	transition:
+		opacity 360ms ease,
+		visibility 0s linear 0s;
 }
 
 .loader {
@@ -23,7 +31,7 @@
 	overflow: hidden;
 	background: rgba(255, 255, 255, 0.22);
 	transform: translateX(-50%);
-	transition: opacity 150ms ease;
+	transition: opacity 240ms ease;
 	pointer-events: none;
 }
 

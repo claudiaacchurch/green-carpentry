@@ -15,7 +15,7 @@
 	--line: rgba(27, 27, 27, 0.12);
 	--shadow: 0 18px 60px rgba(27, 27, 27, 0.18);
 	--radius-lg: 32px;
-	--radius-md: 20px;
+	--radius-md: 12px;
 	--radius-sm: 12px;
 }
 
@@ -63,6 +63,11 @@ video {
 
 button {
 	font: inherit;
+}
+
+:where(a, button, input, textarea):focus-visible {
+	outline: 2px solid rgba(255, 255, 255, 0.9);
+	outline-offset: 3px;
 }
 
 ::selection {

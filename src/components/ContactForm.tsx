@@ -39,16 +39,16 @@ export default function ContactForm() {
         <div className={styles.formGrid}>
           <div>
             <label htmlFor="name">Name *</label>
-            <input id="name" name="name" type="text" required />
+            <input id="name" name="name" type="text" autoComplete="name" required />
           </div>
           <div>
             <label htmlFor="phone">Telephone *</label>
-            <input id="phone" name="phone" type="tel" required />
+            <input id="phone" name="phone" type="tel" autoComplete="tel" required />
           </div>
         </div>
         <div>
           <label htmlFor="email">Email *</label>
-          <input id="email" name="email" type="email" required />
+          <input id="email" name="email" type="email" autoComplete="email" required />
         </div>
         <div>
           <label htmlFor="message">Message</label>
@@ -58,12 +58,12 @@ export default function ContactForm() {
           {status === "sending" ? "Sending…" : "Send Enquiry"}
         </button>
         {status === "success" && (
-          <p style={{ color: "var(--accent-warm)", marginTop: "8px" }}>
-	            Message sent! We&apos;ll be in touch soon.
+          <p className={`${styles.formStatus} ${styles.formStatusSuccess}`} role="status">
+            Message sent. We&apos;ll be in touch soon.
           </p>
         )}
         {status === "error" && (
-          <p style={{ color: "#e55", marginTop: "8px" }}>
+          <p className={`${styles.formStatus} ${styles.formStatusError}`} role="alert">
             Something went wrong. Please try calling us instead.
           </p>
         )}

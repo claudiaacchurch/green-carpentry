@@ -85,8 +85,9 @@ export default async function Home() {
 					</div>
 					<div className={styles.heroContent}>
 						<h1 className={styles.heroTitle}>
-							Construction <br />
-							services across <br />
+							Construction <br className={styles.desktopTitleBreak} />
+							services <br className={styles.mobileTitleBreak} />
+							across <br className={styles.desktopTitleBreak} />
 							the South West
 						</h1>
 						<div className={styles.heroActions}>
@@ -369,25 +370,30 @@ export default async function Home() {
 				<section className={styles.section} id="contact">
 					<div className={styles.contactWrapper}>
 						<div className={styles.contactInfoBox}>
-							<h2 className={styles.contactInfoTitle}>Contact us</h2>
-							<p className={styles.contactInfoText}>
-								We want to hear about your project. Call us today for a
-								consultation and a free quote on our services.
-							</p>
-
-							<div className={styles.contactInfoSection}>
-								<strong>Business Hours:</strong>
-								<p>Monday-Friday: 8am-4pm</p>
-								<p>Saturday-Sunday: Closed</p>
+							<div className={styles.contactInfoHeader}>
+								<h2 className={styles.contactInfoTitle}>Contact us</h2>
+								<p className={styles.contactInfoText}>
+									We want to hear about your project. Call us today for a
+									consultation and a free quote on our services.
+								</p>
 							</div>
 
-							<div className={styles.contactInfoSection}>
-								<strong>Our Address:</strong>
-								<p>Puriton, Somerset</p>
+							<div className={styles.contactDetailsGrid}>
+								<div className={styles.contactInfoSection}>
+									<strong>Business hours</strong>
+									<p>Mon-Fri, 8am-4pm</p>
+									<p>Weekends closed</p>
+								</div>
+
+								<div className={styles.contactInfoSection}>
+									<strong>Our address</strong>
+									<p>Puriton, Somerset</p>
+									<p>Serving the South West</p>
+								</div>
 							</div>
 
-							<div className={styles.contactInfoSection}>
-								<strong>Get In Touch:</strong>
+							<div className={`${styles.contactInfoSection} ${styles.contactMethods}`}>
+								<strong>Get in touch</strong>
 								<p className={styles.contactInfoItem}>
 									<svg
 										width="16"
@@ -435,8 +441,8 @@ export default async function Home() {
 								</p>
 							</div>
 
-							<div className={styles.contactInfoSection}>
-								<strong>Follow Us:</strong>
+							<div className={`${styles.contactInfoSection} ${styles.contactSocialSection}`}>
+								<strong>Follow us</strong>
 								<div className={styles.contactSocialRow}>
 									<a
 										href={INSTAGRAM_URL}

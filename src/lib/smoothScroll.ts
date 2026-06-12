@@ -22,7 +22,7 @@ export function smoothScrollToElement(element: HTMLElement) {
 		return;
 	}
 
-	const duration = Math.min(1100, Math.max(650, Math.abs(distance) * 0.45));
+	const duration = Math.min(850, Math.max(460, Math.abs(distance) * 0.28));
 	const startedAt = performance.now();
 
 	const cancel = () => {

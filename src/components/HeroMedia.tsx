@@ -25,16 +25,20 @@ export default function HeroMedia({
 	useEffect(() => {
 		if (!videoUrl) return;
 
+		const playerOrigin = new URL(videoUrl).origin;
+
 		function send(command: "activate" | "play") {
-			iframeRef.current?.contentWindow?.postMessage({ command }, "*");
+			iframeRef.current?.contentWindow?.postMessage({ command }, playerOrigin);
 		}
 
 		function handlePlayerEvent(event: MessageEvent) {
 			if (event.source !== iframeRef.current?.contentWindow) return;
+			if (event.origin !== playerOrigin) return;
 			if (event.data?.channel !== "bunnystream") return;
 
 			if (
 				event.data.event === "play" ||
+				event.data.event === "playing" ||
 				(event.data.event === "timeupdate" && event.data.status?.playing)
 			) {
 				setVideoReady(true);
@@ -43,13 +47,15 @@ export default function HeroMedia({
 
 		window.addEventListener("message", handlePlayerEvent);
 
+		// Autoplay is requested in the embed URL; these retries only help browsers
+		// that initialise the muted background player after the iframe loads.
 		const startup = window.setInterval(() => {
 			send("activate");
 			send("play");
-		}, 500);
+		}, 800);
 		const stopStartup = window.setTimeout(
 			() => window.clearInterval(startup),
-			10000,
+			6400,
 		);
 
 		return () => {
@@ -81,7 +87,6 @@ export default function HeroMedia({
 						className={`${styles.video} ${videoReady ? styles.videoReady : ""} ${videoClassName}`}
 						allow="autoplay; fullscreen; picture-in-picture"
 						loading="eager"
-						onLoad={() => setVideoReady(true)}
 					/>
 					<div
 						className={`${styles.loader} ${videoReady ? styles.loaderHidden : ""}`}

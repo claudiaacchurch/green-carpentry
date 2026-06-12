@@ -10,9 +10,14 @@ export default function SmoothAnchor({
 }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
 	function handleClick(event: MouseEvent<HTMLAnchorElement>) {
 		onClick?.(event);
-		if (event.defaultPrevented || !href.startsWith("#")) return;
+		if (event.defaultPrevented || !href.includes("#")) return;
 
-		const target = document.getElementById(href.slice(1));
+		const [pathPart, hash] = href.split("#");
+		const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+		const targetPath = pathPart.replace(/\/$/, "") || currentPath;
+		if (targetPath !== currentPath) return;
+
+		const target = document.getElementById(hash);
 		if (!target) return;
 
 		event.preventDefault();

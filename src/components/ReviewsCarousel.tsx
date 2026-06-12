@@ -72,9 +72,17 @@ export default function ReviewsCarousel({ reviews = [] }: { reviews?: Review[] }
 				{visibleReviews.map((review, i) => (
 					<article
 						key={startIndex + i}
-						className={styles.reviewCard}
-						style={review.url ? { cursor: "pointer" } : undefined}
+						className={`${styles.reviewCard}${review.url ? ` ${styles.reviewCardInteractive}` : ""}`}
+						role={review.url ? "link" : undefined}
+						tabIndex={review.url ? 0 : undefined}
+						aria-label={review.url ? `Read ${review.name}'s review on Google` : undefined}
 						onClick={() => review.url && window.open(review.url, "_blank", "noopener noreferrer")}
+						onKeyDown={(event) => {
+							if (review.url && (event.key === "Enter" || event.key === " ")) {
+								event.preventDefault();
+								window.open(review.url, "_blank", "noopener,noreferrer");
+							}
+						}}
 					>
 						<Stars rating={review.rating} />
 						<p className={styles.reviewText}>{review.text}</p>

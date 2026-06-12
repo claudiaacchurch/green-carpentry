@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FadeImage from "./FadeImage";
+import SmoothAnchor from "./SmoothAnchor";
 import { EMAIL, EMAIL_HREF, PHONE_DISPLAY, PHONE_HREF } from "@/lib/constants";
 import styles from "@/app/page.module.css";
 
@@ -15,10 +16,10 @@ export default function Footer() {
 				<div className={styles.footerCol}>
 					<span className={styles.footerColLabel}>Navigate</span>
 					<div className={styles.footerLinks}>
-						<Link href="/#projects">Projects</Link>
+						<SmoothAnchor href="/#projects">Projects</SmoothAnchor>
 						<Link href="/about">About</Link>
-						<Link href="/#contact">Contact</Link>
-						<Link href="/#top">Home</Link>
+						<SmoothAnchor href="/#contact">Contact</SmoothAnchor>
+						<SmoothAnchor href="/#top">Home</SmoothAnchor>
 					</div>
 				</div>
 				<div className={styles.footerContact}>
