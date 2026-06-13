@@ -1537,7 +1537,7 @@
 	.heroActions {
 		flex-wrap: nowrap;
 		width: 100%;
-		max-width: 290px;
+		max-width: 250px;
 	}
 
 	.heroContent .heroActions {
@@ -1552,7 +1552,7 @@
 		align-items: center;
 		justify-content: center;
 		min-width: 0;
-		padding: 7px 16px;
+		padding: 7px 12px;
 		font-size: clamp(10px, 1.4vw, 10.5px);
 		letter-spacing: 0.055em;
 		box-shadow: none;
