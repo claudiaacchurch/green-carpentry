@@ -130,7 +130,7 @@
 	align-items: center;
 	padding-left: 18px;
 	margin-left: 2px;
-	border-left: 1px solid rgba(255, 255, 255, 0.12);
+	border-left: 1px solid #ffffff45;
 }
 
 .navSocials a {
@@ -185,16 +185,24 @@
 		transform 180ms ease;
 }
 
+.mobileHeaderIcon:first-child svg {
+	transform: translateX(3px);
+}
+
 .mobileHeaderIcon:hover {
 	opacity: 0.72;
 	transform: translateY(-1px);
 }
 
-.mobileHeaderIcon + .mobileHeaderIcon,
+.mobileHeaderIcon + .mobileHeaderIcon {
+	border-left: 1px solid #ffffff45;
+	margin-left: 8px;
+}
+
 .mobileMenu {
-	border-left: 1px solid rgba(255, 255, 255, 0.12);
-	margin-left: 10px;
-	padding-left: 10px;
+	margin-left: 8px;
+	padding-left: 0;
+	border: 0;
 }
 
 .hamburger {
@@ -1391,12 +1399,12 @@
 	}
 
 	.heroVideo {
-		width: 100%;
-		height: 100%;
+		width: calc(100% + 2px);
+		height: calc(100% + 2px);
 		min-height: unset;
 		min-width: unset;
-		top: 0;
-		left: 0;
+		top: -1px;
+		left: -1px;
 		transform: none;
 	}
 
@@ -1472,10 +1480,10 @@
 
 	.heroVideo {
 		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		top: -1px;
+		left: -1px;
+		width: calc(100% + 2px);
+		height: calc(100% + 2px);
 		min-height: unset;
 		min-width: unset;
 		transform: none;
@@ -1493,8 +1501,8 @@
 		transform: none;
 		max-width: 100%;
 		width: 100%;
-		background: var(--bg);
-		padding: 24px 5vw 28px;
+		background: linear-gradient(180deg, #0d0d0d 0%, var(--bg) 100%);
+		padding: 28px 6vw 34px;
 		align-items: center;
 		text-align: center;
 		flex-direction: column;
@@ -1503,11 +1511,11 @@
 
 	.heroContent .heroTitle {
 		font-family: var(--font-display, "Bebas Neue", sans-serif);
-		font-size: clamp(34px, 9.5vw, 43px);
+		font-size: clamp(32px, 8.2vw, 41px);
 		font-weight: 400;
-		letter-spacing: 0.03em;
-		line-height: 0.98;
-		max-width: 360px;
+		letter-spacing: 0.025em;
+		line-height: 1.02;
+		max-width: 340px;
 		width: 100%;
 		text-shadow: none;
 		text-align: center;
@@ -1523,13 +1531,12 @@
 
 	.heroActions {
 		flex-wrap: nowrap;
-		width: 100%;
-		max-width: 290px;
+		width: auto;
+		max-width: none;
 	}
 
 	.heroContent .heroActions {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		display: flex;
 		justify-content: center;
 		gap: 10px;
 	}
@@ -1539,19 +1546,46 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 11px 22px;
+		min-width: 132px;
+		min-height: 44px;
+		padding: 10px 18px;
 		font-size: 11px;
+		letter-spacing: 0.055em;
 		box-shadow: none;
 		text-align: center;
 	}
 
+	.heroContent .primaryBtn {
+		color: var(--bg);
+		background: var(--accent);
+	}
+
+	.heroContent .secondaryBtn {
+		border-color: rgba(255, 255, 255, 0.65);
+		background: rgba(255, 255, 255, 0.025);
+	}
+
 	.introSection {
-		padding: 40px 5vw;
+		padding: 44px 7vw 50px;
+	}
+
+	.introCols {
+		gap: 22px;
+		max-width: 620px;
+		margin: 0 auto;
 	}
 
 	.introCols p {
 		font-size: 14px;
-		line-height: 1.6;
+		line-height: 1.7;
+		opacity: 0.72;
+	}
+
+	.introCols p:first-child {
+		font-size: 15px;
+		line-height: 1.65;
+		color: #fff;
+		opacity: 1;
 	}
 
 	.reviewText {
@@ -1747,9 +1781,17 @@
 		gap: 0;
 	}
 
-	.mobileHeaderIcon + .mobileHeaderIcon,
+	.mobileHeaderIcon:first-child svg {
+		transform: translateX(2px);
+	}
+
+	.mobileHeaderIcon + .mobileHeaderIcon {
+		margin-left: 6px;
+	}
+
 	.mobileMenu {
-		margin-left: 7px;
-		padding-left: 7px;
+		margin-left: 8px;
+		padding-left: 0;
+		border: 0;
 	}
 }
