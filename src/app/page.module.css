@@ -377,12 +377,19 @@
 	inset: 0;
 	z-index: 1;
 	pointer-events: none;
-	background: linear-gradient(
-		to top,
-		rgba(0, 0, 0, 0.65) 0%,
-		rgba(0, 0, 0, 0.2) 55%,
-		transparent 100%
-	);
+	background:
+		linear-gradient(
+			90deg,
+			rgba(0, 0, 0, 0.48) 0%,
+			rgba(0, 0, 0, 0.16) 48%,
+			transparent 72%
+		),
+		linear-gradient(
+			to top,
+			rgba(0, 0, 0, 0.68) 0%,
+			rgba(0, 0, 0, 0.16) 58%,
+			transparent 100%
+		);
 }
 
 .heroContent {
@@ -395,16 +402,16 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 32px;
+	gap: 24px;
 	color: var(--bg);
 	animation: heroRiseIn 800ms 180ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
 .heroTitle {
 	font-family: var(--font-display, "Bebas Neue", sans-serif);
-	font-size: 59px;
-	letter-spacing: 0.03em;
-	line-height: 1.05;
+	font-size: clamp(50px, 4.4vw, 68px);
+	letter-spacing: 0.025em;
+	line-height: 1;
 	font-weight: 400;
 	color: var(--accent);
 	text-shadow:
