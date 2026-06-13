@@ -20,9 +20,9 @@ export default function Header() {
 		{ href: "/#top", label: "Home" },
 		{ href: "/#projects", label: "Projects" },
 		{ href: "/about", label: "About" },
-		{ href: "/#team", label: "Meet the Team" },
+		{ href: "/#team", label: "Team" },
 		{ href: "/#reviews", label: "Reviews" },
-		{ href: "/#contact", label: "Get in Touch" },
+		{ href: "/#contact", label: "Contact" },
 	];
 
 	useEffect(() => {
