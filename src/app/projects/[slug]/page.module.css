@@ -61,19 +61,14 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  background:
-    radial-gradient(
-      ellipse 78% 72% at 0% 100%,
-      rgba(0, 0, 0, 0.74) 0%,
-      rgba(0, 0, 0, 0.4) 44%,
-      rgba(0, 0, 0, 0.08) 74%,
-      transparent 100%
-    ),
-    linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.16) 0%,
-      transparent 40%
-    );
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.55) 38%,
+    rgba(0, 0, 0, 0.22) 68%,
+    rgba(0, 0, 0, 0.06) 86%,
+    transparent 100%
+  );
 }
 
 .heroContent {

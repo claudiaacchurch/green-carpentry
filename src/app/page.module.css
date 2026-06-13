@@ -377,19 +377,14 @@
 	inset: 0;
 	z-index: 1;
 	pointer-events: none;
-	background:
-		radial-gradient(
-			ellipse 82% 112% at 0% 72%,
-			rgba(0, 0, 0, 0.72) 0%,
-			rgba(0, 0, 0, 0.42) 46%,
-			rgba(0, 0, 0, 0.1) 76%,
-			transparent 100%
-		),
-		linear-gradient(
-			to top,
-			rgba(0, 0, 0, 0.18) 0%,
-			transparent 42%
-		);
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.82) 0%,
+		rgba(0, 0, 0, 0.58) 24%,
+		rgba(0, 0, 0, 0.24) 48%,
+		rgba(0, 0, 0, 0.06) 68%,
+		transparent 84%
+	);
 }
 
 .heroContent {
