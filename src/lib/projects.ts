@@ -123,12 +123,11 @@ export const ongoingProjects: Project[] = [
 		location: "Bower",
 		year: "2025-2026",
 		description: [
-			"A full ground floor renovation has been completed in Taunton, transforming a family home through a complete reconfiguration of its internal layout and living spaces.",
-			"The project included a substantial rear extension and a garage conversion, significantly increasing the usable living area. Internally, major structural works were carried out, including the installation of large steel beams to open up the layout and create a modern open-plan environment. The kitchen was relocated into the new extension, forming the heart of the home, alongside the repositioning of the downstairs WC.",
-			"Further enhancements included the installation of new windows to the rear of the existing property, a roof lantern within the extension to maximise natural light, and large bifold doors that open the space out onto the garden.",
-			"To the front of the property, a new porch was constructed, improving both the entrance and the overall sense of arrival while opening up the hallway internally.",
-			"Externally, the garden is currently being fully cleared and landscaped, creating a cohesive outdoor space that will complement the newly transformed interior.",
-			"Once complete, the landscaping will provide a seamless extension of the living space, bringing together the interior and exterior to create a fully unified and considered family home.",
+			"This project included a substantial rear extension, garage conversion, and full ground-floor refurbishment, significantly increasing the property’s usable living space.",
+			"Major structural works were undertaken, including the installation of large steel beams to create a modern open-plan layout. The kitchen was relocated into the new extension, while the downstairs WC was repositioned to improve the flow of the ground floor.",
+			"New rear windows, a roof lantern, and large bifold doors were installed to maximise natural light and create a strong connection to the garden.",
+			"To the front of the property, a new porch enhanced both the entrance and hallway, while externally, the garden was fully cleared and landscaped to complement the newly transformed home.",
+			"The result is a bright, contemporary living space that offers improved functionality and a more open feel throughout.",
 		],
 		image: `${base}/media/projects/house-renovation-taunton.png`,
 		buildVideoEmbed:
