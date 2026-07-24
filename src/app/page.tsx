@@ -22,7 +22,7 @@ const team = [
 	{
 		name: "Ross",
 		role: "Director",
-		image: `${base}/media/team/ross.png`,
+		image: `${base}/media/team/ross-new.png`,
 	},
 	{
 		name: "Luigi",
@@ -268,23 +268,9 @@ export default async function Home() {
 									style={{ objectFit: "contain" }}
 								/>
 							</a>
-								<a
-								href="https://www.clearview-windows.uk/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemWideSoft}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<Image
-									src="/media/partnerlogos/clear-view-windows.png"
-									alt="Clear View Windows"
-									width={150}
-									height={50}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
 							<a
 								href="/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemLarge}`}
+								className={`${styles.partnerBarItem} ${styles.partnerBarItemL}`}
 							>
 								<Image
 									src="/media/partnerlogos/placeholder-l.png"
@@ -296,7 +282,7 @@ export default async function Home() {
 							</a>
 							<a
 								href="https://nigelsalterjoinery.com/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemWide}`}
+								className={`${styles.partnerBarItem} ${styles.partnerBarItemWide} ${styles.partnerBarItemNudgeUp3}`}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -309,8 +295,22 @@ export default async function Home() {
 								/>
 							</a>
 							<a
+								href="https://www.clearview-windows.uk/"
+								className={`${styles.partnerBarItem} ${styles.partnerBarItemWideSoft} ${styles.partnerBarItemNudgeUp4}`}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<Image
+									src="/media/partnerlogos/clear-view-windows.png"
+									alt="Clear View Windows"
+									width={150}
+									height={50}
+									style={{ objectFit: "contain" }}
+								/>
+							</a>
+							<a
 								href="https://www.instagram.com/nethercottdrones/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemLarge}`}
+								className={`${styles.partnerBarItem} ${styles.partnerBarItemNethercott}`}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -324,7 +324,7 @@ export default async function Home() {
 							</a>
 							<a
 								href="https://www.facebook.com/p/THarris-plumbing-and-heating-100063621100983/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemWideSoft}`}
+								className={`${styles.partnerBarItem} ${styles.partnerBarItemWideTight} ${styles.partnerBarItemNudgeUp7}`}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -336,9 +336,9 @@ export default async function Home() {
 									style={{ objectFit: "contain" }}
 								/>
 							</a>
-								<a
+							<a
 								href="https://wmironwork.co.uk/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemWide}`}
+								className={`${styles.partnerBarItem} ${styles.partnerBarItemWide} ${styles.partnerBarItemNudgeDown3}`}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -364,8 +364,6 @@ export default async function Home() {
 									style={{ objectFit: "contain" }}
 								/>
 							</a>
-		
-						
 						</div>
 					</div>
 				</ScrollReveal>

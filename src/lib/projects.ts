@@ -151,6 +151,23 @@ export const ongoingProjects: Project[] = [
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/1831cec4-c4d0-4452-b4d5-9b474ce179dc?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
+	{
+		slug: "seafront-extension-burnham",
+		title: "Seafront Extension & Ground Floor Renovation",
+		meta: "Burnham-on-Sea",
+		location: "Burnham-on-Sea",
+		year: "2026",
+		description: [
+			"Located on the seafront in Burnham-on-Sea, this project involves the construction of a contemporary single-storey extension alongside a complete ground floor renovation designed to maximise space, natural light, and modern family living.",
+			"The new extension will house a relocated kitchen and open-plan living area, creating a spacious and functional heart of the home. A large roof lantern has been incorporated into the design, allowing natural light to flood the space while taking full advantage of the property’s coastal setting.",
+			"As part of the internal reconfiguration, the existing kitchen will be transformed into a dedicated home office, providing a practical and flexible workspace. New bifold doors will also be installed to the side elevation, creating a seamless connection between the interior and exterior while enhancing light and accessibility.",
+			"The project includes a full electrical upgrade to support the new layout, along with the installation of additional radiators to ensure the extended living space remains comfortable throughout the year.",
+			"This extensive renovation and extension will significantly enhance both the functionality and value of the property, delivering a bright, modern living environment that complements its prime seafront location in Burnham-on-Sea.",
+		],
+		image: `${base}/media/projects/burnham-on-sea.png`,
+		buildVideoEmbed:
+			"https://iframe.mediadelivery.net/embed/610237/7f0d95c9-fcd2-4433-851b-d44e846ee1c1?autoplay=true&loop=true&muted=true&preload=true&background=true",
+	},
 ];
 
 export function getProject(slug: string): Project | undefined {

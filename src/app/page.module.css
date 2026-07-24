@@ -678,8 +678,8 @@
 }
 
 .teamAvatar {
-	width: 100px;
-	height: 100px;
+	width: 120px;
+	height: 120px;
 	border-radius: 50%;
 	background: rgba(255, 255, 255, 0.12);
 	display: grid;
@@ -964,16 +964,29 @@
 }
 
 .partnerBarItem.partnerBarItemLarge {
-	padding: 12px;
+	padding: 15px;
+}
+
+.partnerBarItem.partnerBarItemL {
+	padding: 19px;
+}
+
+.partnerBarItem.partnerBarItemNethercott {
+	padding: 18px;
 }
 
 .partnerBarItem.partnerBarItemSmall {
-	padding: 26px;
+	padding: 31px;
 }
 
 .partnerBarItem.partnerBarItemWide {
-	padding-left: 2px;
-	padding-right: 2px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.partnerBarItem.partnerBarItemWideTight {
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 .partnerBarItem.partnerBarItemWideSoft {
@@ -981,6 +994,21 @@
 	padding-right: 10px;
 }
 
+.partnerBarItemNudgeUp3 img {
+	transform: translateY(-3px);
+}
+
+.partnerBarItemNudgeUp4 img {
+	transform: translateY(-4px);
+}
+
+.partnerBarItemNudgeUp7 img {
+	transform: translateY(-7px);
+}
+
+.partnerBarItemNudgeDown3 img {
+	transform: translateY(1px);
+}
 
 .accreditationBar {
 	background: #fff;
@@ -1412,11 +1440,19 @@
 	}
 
 	.partnerBarItem.partnerBarItemLarge {
-		padding: 6px;
+		padding: 7px;
+	}
+
+	.partnerBarItem.partnerBarItemL {
+		padding: 9px;
+	}
+
+	.partnerBarItem.partnerBarItemNethercott {
+		padding: 9px;
 	}
 
 	.partnerBarItem.partnerBarItemSmall {
-		padding: 14px;
+		padding: 16px;
 	}
 
 	.partnerBarItem.partnerBarItemWide {
@@ -1424,9 +1460,30 @@
 		padding-right: 0;
 	}
 
+	.partnerBarItem.partnerBarItemWideTight {
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+
 	.partnerBarItem.partnerBarItemWideSoft {
 		padding-left: 5px;
 		padding-right: 5px;
+	}
+
+	.partnerBarItemNudgeUp3 img {
+		transform: translateY(-1px);
+	}
+
+	.partnerBarItemNudgeUp4 img {
+		transform: translateY(-2px);
+	}
+
+	.partnerBarItemNudgeUp7 img {
+		transform: translateY(-3px);
+	}
+
+	.partnerBarItemNudgeDown3 img {
+		transform: none;
 	}
 
 	.accreditationBar {
