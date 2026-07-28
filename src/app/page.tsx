@@ -57,7 +57,7 @@ const team = [
 	{
 		name: "Fran",
 		role: "Technologist",
-		image: `${base}/media/team/fran.png`,
+		image: `${base}/media/team/fran-new.png`,
 	},
 ];
 
