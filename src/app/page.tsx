@@ -25,7 +25,7 @@ const team = [
 	{
 		name: "Ross",
 		role: "Director",
-		image: `${base}/media/team/ross.png`,
+		image: `${base}/media/team/ross-new.png`,
 	},
 	{
 		name: "Luigi",
@@ -44,7 +44,7 @@ const team = [
 	},
 	{
 		name: "Alfie",
-		role: "Apprentice",
+		role: "Carpenter",
 		image: `${base}/media/team/alfie.png`,
 	},
 	{
@@ -60,7 +60,7 @@ const team = [
 	{
 		name: "Fran",
 		role: "Technologist",
-		image: `${base}/media/team/fran.png`,
+		image: `${base}/media/team/fran-new.png`,
 	},
 ];
 
