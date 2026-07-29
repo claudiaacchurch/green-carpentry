@@ -1840,12 +1840,13 @@
 	}
 
 	.accreditationBar {
-		gap: 3vw;
+		gap: 2vw;
 		padding: 14px 4vw;
+		justify-content: space-between;
 	}
 
 	.accreditationLogo img {
-		height: 34px;
+		height: 42px;
 	}
 }
 
