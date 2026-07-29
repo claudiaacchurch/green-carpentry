@@ -1328,6 +1328,16 @@
 	object-fit: contain;
 }
 
+/* Square logos read larger at the same height; wide logos carry built-in
+   whitespace and read smaller. Nudge both toward the same optical size. */
+.accreditationLogoSquare img {
+	height: 56px;
+}
+
+.accreditationLogoWide img {
+	height: 78px;
+}
+
 /* ── Responsive ──────────────────────────────── */
 
 @media (max-width: 1180px) {
@@ -1847,6 +1857,14 @@
 
 	.accreditationLogo img {
 		height: 48px;
+	}
+
+	.accreditationLogoSquare img {
+		height: 38px;
+	}
+
+	.accreditationLogoWide img {
+		height: 54px;
 	}
 }
 

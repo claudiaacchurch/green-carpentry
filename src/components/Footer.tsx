@@ -79,15 +79,21 @@ export default function Footer() {
 				>
 					<FadeImage src="/media/partnerlogos/city-guilds.png" alt="City & Guilds" width={120} height={70} />
 				</a>
-				<a href="https://www.citb.co.uk/" className={styles.accreditationLogo}>
+				<a
+					href="https://www.citb.co.uk/"
+					className={`${styles.accreditationLogo} ${styles.accreditationLogoWide}`}
+				>
 					<FadeImage src="/media/partnerlogos/citb.png" alt="CITB" width={120} height={70} />
 				</a>
-				<a href="https://www.cscs.uk.com/" className={styles.accreditationLogo}>
+				<a
+					href="https://www.cscs.uk.com/"
+					className={`${styles.accreditationLogo} ${styles.accreditationLogoSquare}`}
+				>
 					<FadeImage src="/media/partnerlogos/cscs.png" alt="CSCS" width={120} height={70} />
 				</a>
 				<a
 					href="https://architecturaltechnology.com/"
-					className={styles.accreditationLogo}
+					className={`${styles.accreditationLogo} ${styles.accreditationLogoWide}`}
 				>
 					<FadeImage src="/media/partnerlogos/ciat.png" alt="CIAT" width={120} height={70} />
 				</a>
