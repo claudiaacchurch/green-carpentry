@@ -1243,7 +1243,7 @@
 		max-width: 100%;
 		width: 100%;
 		background: var(--bg);
-		padding: 20px 5vw;
+		padding: 24px 5vw 16px;
 		align-items: center;
 		text-align: left;
 		flex-direction: column;
@@ -1282,7 +1282,7 @@
 	}
 
 	.introSection {
-		padding: 40px 6vw;
+		padding: 28px 6vw;
 	}
 
 	.introCols p {
@@ -1429,10 +1429,12 @@
 
 	.partnersBar {
 		margin: 0 5vw 56px;
+		padding: 16px 14px 18px;
 	}
 
 	.partnersGrid {
 		grid-template-columns: repeat(4, 1fr);
+		gap: 10px;
 	}
 
 	.partnerBarItem {
