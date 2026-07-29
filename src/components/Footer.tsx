@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
+import FadeImage from "./FadeImage";
+import SmoothAnchor from "./SmoothAnchor";
 import { EMAIL, EMAIL_HREF, PHONE_DISPLAY, PHONE_HREF } from "@/lib/constants";
 import styles from "@/app/page.module.css";
 
@@ -15,10 +16,10 @@ export default function Footer() {
 				<div className={styles.footerCol}>
 					<span className={styles.footerColLabel}>Navigate</span>
 					<div className={styles.footerLinks}>
-						<Link href="/#projects">Projects</Link>
+						<SmoothAnchor href="/#projects">Projects</SmoothAnchor>
 						<Link href="/about">About</Link>
-						<Link href="/#contact">Contact</Link>
-						<Link href="/#top">Home</Link>
+						<SmoothAnchor href="/#contact">Contact</SmoothAnchor>
+						<SmoothAnchor href="/#top">Home</SmoothAnchor>
 					</div>
 				</div>
 				<div className={styles.footerContact}>
@@ -76,19 +77,19 @@ export default function Footer() {
 					href="https://www.cityandguilds.com/"
 					className={styles.accreditationLogo}
 				>
-					<Image src="/media/partnerlogos/city-guilds.png" alt="City & Guilds" width={120} height={70} />
+					<FadeImage src="/media/partnerlogos/city-guilds.png" alt="City & Guilds" width={120} height={70} />
 				</a>
 				<a href="https://www.citb.co.uk/" className={styles.accreditationLogo}>
-					<Image src="/media/partnerlogos/citb.png" alt="CITB" width={120} height={70} />
+					<FadeImage src="/media/partnerlogos/citb.png" alt="CITB" width={120} height={70} />
 				</a>
 				<a href="https://www.cscs.uk.com/" className={styles.accreditationLogo}>
-					<Image src="/media/partnerlogos/cscs.png" alt="CSCS" width={120} height={70} />
+					<FadeImage src="/media/partnerlogos/cscs.png" alt="CSCS" width={120} height={70} />
 				</a>
 				<a
 					href="https://architecturaltechnology.com/"
 					className={styles.accreditationLogo}
 				>
-					<Image src="/media/partnerlogos/ciat.png" alt="CIAT" width={120} height={70} />
+					<FadeImage src="/media/partnerlogos/ciat.png" alt="CIAT" width={120} height={70} />
 				</a>
 			</div>
 		</>

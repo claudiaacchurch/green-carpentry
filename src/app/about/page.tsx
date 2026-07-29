@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
-import Image from "next/image";
 import Footer from "@/components/Footer";
+import FadeImage from "@/components/FadeImage";
 import { EMAIL, EMAIL_HREF, PHONE_DISPLAY, PHONE_HREF } from "@/lib/constants";
 import styles from "./page.module.css";
 
@@ -11,11 +11,13 @@ export default function AboutPage() {
 
 			<main>
 				<section className={styles.hero}>
-					<Image
+					<FadeImage
 						src="/media/about.png"
 						alt="Green Carpentry team on site"
 						fill
 						priority
+						fetchPriority="high"
+						quality={88}
 						sizes="100vw"
 						className={styles.heroImage}
 					/>

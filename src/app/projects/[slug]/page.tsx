@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeroMedia from "@/components/HeroMedia";
 import { projects, ongoingProjects, getProject } from "@/lib/projects";
 import { INSTAGRAM_URL } from "@/lib/constants";
 import styles from "./page.module.css";
@@ -17,6 +17,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
+  const isOngoing = ongoingProjects.some((item) => item.slug === project.slug);
 
   return (
     <div className={styles.page}>
@@ -26,60 +27,59 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         {/* Hero */}
         <section className={styles.hero}>
           <div className={styles.heroMedia}>
-            {project.buildVideoEmbed ? (
-              <iframe
-                src={project.buildVideoEmbed}
-                className={styles.heroVideo}
-                allow="autoplay"
-                loading="lazy"
-              />
-            ) : (
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                priority
-                sizes="100vw"
-                className={styles.heroImage}
-              />
-            )}
+            <HeroMedia
+              poster={project.image}
+              alt={project.title}
+              videoUrl={project.buildVideoEmbed}
+              imageClassName={styles.heroImage}
+              videoClassName={styles.heroVideo}
+            />
           </div>
           <div className={styles.heroOverlay} />
           <div className={styles.heroContent}>
+            <span className={styles.heroEyebrow}>
+              {isOngoing ? "Ongoing project" : "Completed project"}
+            </span>
             <h1 className={styles.heroTitle}>{project.title}</h1>
           </div>
         </section>
 
-        {/* Info strip */}
-        <div className={styles.infoStrip}>
-          <div className={styles.infoItem}>
-            <span className={styles.infoLabel}>Year</span>
-            <span className={styles.infoValue}>{project.year}</span>
-          </div>
-          <div className={styles.infoItem}>
-            <span className={styles.infoLabel}>Location</span>
-            <span className={styles.infoValue}>{project.location}</span>
-          </div>
-        </div>
+        <section className={styles.projectOverview}>
+          <aside className={styles.projectMeta}>
+            <div className={styles.metaItem}>
+              <span className={styles.infoLabel}>Location</span>
+              <span className={styles.infoValue}>{project.location}</span>
+            </div>
+            <div className={styles.metaItem}>
+              <span className={styles.infoLabel}>Year</span>
+              <span className={styles.infoValue}>{project.year}</span>
+            </div>
+          </aside>
 
-        {/* Description */}
-        <div className={styles.body}>
-          <div className={styles.description}>
-            {project.description.map((para, i) => (
-              <p key={i}>{para}</p>
-            ))}
+          <div className={styles.projectStory}>
+            <div className={styles.description}>
+              {project.description.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
 
-        {/* Instagram callout */}
-        <div className={styles.instaCallout}>
-          <p>
-            For full start-to-finish pictures of this project, head over to our{" "}
-            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
-              Instagram highlights.
-            </a>
-          </p>
-        </div>
+        <aside className={styles.instaCallout}>
+          <div>
+            <span className={styles.calloutLabel}>See the full build</span>
+            <p>
+              Follow the project from start to finish through our Instagram
+              highlights.
+            </p>
+          </div>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+            View on Instagram
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M4 10h11M11 6l4 4-4 4" />
+            </svg>
+          </a>
+        </aside>
 
         {/* Back to projects */}
         <div className={styles.backBar}>

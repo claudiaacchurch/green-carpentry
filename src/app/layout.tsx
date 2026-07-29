@@ -29,6 +29,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://iframe.mediadelivery.net" />
+        <link rel="dns-prefetch" href="https://iframe.mediadelivery.net" />
+        <link rel="preconnect" href="https://assets.mediadelivery.net" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://video-1365.mediadelivery.net" />
       </head>
       <body className={`${bebas.variable} ${montserrat.variable}`}>
         {children}
