@@ -7,3 +7,6 @@ export const EMAIL_HREF = `mailto:${EMAIL}`;
 export const INSTAGRAM_URL = "https://instagram.com/_greencarpentry";
 export const FACEBOOK_URL =
 	"https://www.facebook.com/Green-Carpentry-100049023407614/";
+
+export const SITE_URL =
+	process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.green-carpentry.co.uk";
