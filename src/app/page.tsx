@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -19,80 +20,83 @@ import HeroMedia from "@/components/HeroMedia";
 import FadeImage from "@/components/FadeImage";
 import SmoothAnchor from "@/components/SmoothAnchor";
 import styles from "./page.module.css";
-const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const team = [
 	{
 		name: "Ross",
 		role: "Managing Director & Contracts Manager",
-		image: `${base}/media/team/ross-new.png`,
+		image: "/media/team/ross-new.jpg",
 	},
 	{
 		name: "Liam",
 		role: "Site manager",
-		image: `${base}/media/team/liam.png`,
+		image: "/media/team/liam.jpg",
 	},
 	{
 		name: "Luigi",
 		role: "Carpenter",
-		image: `${base}/media/team/luigi.png`,
+		image: "/media/team/luigi.jpg",
 	},
 	{
 		name: "Tony",
 		role: "Carpenter",
-		image: `${base}/media/team/tony.png`,
+		image: "/media/team/tony.jpg",
 	},
 	{
 		name: "John",
 		role: "Carpenter",
-		image: `${base}/media/team/john.png`,
+		image: "/media/team/john.jpg",
 	},
 	{
 		name: "Alfie",
 		role: "Carpenter",
-		image: `${base}/media/team/alfie.png`,
+		image: "/media/team/alfie.jpg",
 	},
 	{
 		name: "Charlie",
 		role: "Apprentice",
-		image: `${base}/media/team/charlie.png`,
+		image: "/media/team/charlie.jpg",
 	},
 	{
 		name: "Tyler",
 		role: "Plasterer",
-		image: `${base}/media/team/tyler.png`,
+		image: "/media/team/tyler.jpg",
 	},
 	{
 		name: "Joe",
 		role: "Bricklayer",
-		image: `${base}/media/team/joey.png`,
+		image: "/media/team/joey.jpg",
 	},
 	{
 		name: "Dan",
 		role: "Stonemason",
-		image: `${base}/media/team/dan.png`,
+		image: "/media/team/dan.jpg",
 	},
 	{
 		name: "Burt",
 		role: "Groundworker",
-		image: `${base}/media/team/bert.png`,
+		image: "/media/team/bert.jpg",
 	},
 	{
 		name: "Scott",
 		role: "Skilled Labourer",
-		image: `${base}/media/team/scott.png`,
+		image: "/media/team/scott.jpg",
 	},
 	{
 		name: "Keith",
 		role: "Architectural Designer",
-		image: `${base}/media/team/keith.png`,
+		image: "/media/team/keith.jpg",
 	},
 	{
 		name: "Fran",
 		role: "Technologist",
-		image: `${base}/media/team/fran-new.png`,
+		image: "/media/team/fran-new.jpg",
 	},
 ];
+
+export const metadata: Metadata = {
+	alternates: { canonical: "/" },
+};
 
 export default async function Home() {
 	const googleReviews = await getGoogleReviews();
@@ -105,7 +109,7 @@ export default async function Home() {
 				<section className={styles.hero} id="top">
 					<div className={styles.heroMedia}>
 						<HeroMedia
-							poster={`${base}/media/projects/loft-conversion-north-somerset.png`}
+							poster={"/media/projects/loft-conversion-north-somerset.jpg"}
 							alt="Green Carpentry construction project"
 							videoUrl="https://iframe.mediadelivery.net/embed/610237/71858d3d-4c6f-4a88-bae3-5de046b33908?autoplay=true&loop=true&muted=true&preload=true&background=true"
 							imageClassName={styles.heroPoster}
@@ -172,7 +176,7 @@ export default async function Home() {
 							</div>
 						</div>
 						<div className={styles.projectsGrid}>
-							{projects.map((project, index) => (
+							{projects.map((project) => (
 								<Link
 									key={project.slug}
 									href={`/projects/${project.slug}`}
@@ -185,7 +189,6 @@ export default async function Home() {
 											fill
 											sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
 											className={styles.projectImage}
-											priority={index < 2}
 										/>
 									</div>
 									<div className={styles.projectBody}>
@@ -213,7 +216,7 @@ export default async function Home() {
 							</div>
 						</div>
 						<div className={styles.projectsGrid}>
-							{ongoingProjects.map((project, index) => (
+							{ongoingProjects.map((project) => (
 								<Link
 									key={project.slug}
 									href={`/projects/${project.slug}`}
@@ -226,7 +229,6 @@ export default async function Home() {
 											fill
 											sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
 											className={styles.projectImage}
-											priority={index < 2}
 										/>
 									</div>
 									<div className={styles.projectBody}>

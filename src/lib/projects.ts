@@ -9,8 +9,6 @@ export interface Project {
 	buildVideoEmbed?: string;
 }
 
-const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
 export const projects: Project[] = [
 	{
 		slug: "double-house-extension-woolavington",
@@ -24,7 +22,7 @@ export const projects: Project[] = [
 			"Internally, new laminate flooring was installed throughout the extensions, as well as the existing hallway and downstairs toilet. The main living area features a bespoke media wall beneath a striking vaulted ceiling, complete with Velux windows to maximise natural light. A dedicated utility room was also incorporated into the design.",
 			"Externally, the driveway was fully excavated, concreted, and finished with a high-quality resin surface, completing the project to a clean and modern standard.",
 		],
-		image: `${base}/media/projects/double-house-extension-bridgwater.png`,
+		image: "/media/projects/double-house-extension-bridgwater.jpg",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/ac0e7771-aeb2-476c-9021-a317fe81bced?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -40,7 +38,7 @@ export const projects: Project[] = [
 			"A set of bifold doors opens onto a newly built balcony, enhancing the sense of space, with an external staircase installed to provide additional access. Externally, the conversion was finished with Cedral cladding.",
 			"A clean and efficient conversion, providing the clients with the additional room they needed while adding significant value to their home.",
 		],
-		image: `${base}/media/projects/loft-conversion-north-somerset.png`,
+		image: "/media/projects/loft-conversion-north-somerset.jpg",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/1da8b603-3901-42ef-91f2-779fa3c4cbe9?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -57,7 +55,7 @@ export const projects: Project[] = [
 
 			"Each flat was finished to a high standard, combining practical layouts with quality materials - delivering a strong return on investment for the client.",
 		],
-		image: `${base}/media/projects/triple-flat-conversion-watchet.png`,
+		image: "/media/projects/triple-flat-conversion-watchet.jpg",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/e307f6cc-5507-49eb-83c5-db1e8de37a65?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -76,7 +74,7 @@ export const projects: Project[] = [
 
 			"Working to a tight schedule to allow the owners to move in, our team coordinated all trades on site and delivered the project on time and within budget - a result the clients were delighted with.",
 		],
-		image: `${base}/media/projects/house-renovation-glastonbury.png`,
+		image: "/media/projects/house-renovation-glastonbury.jpg",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/3c07db2d-bf52-479d-98e9-777d5615753d?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -92,7 +90,7 @@ export const projects: Project[] = [
 			"The heating system was also upgraded, with new radiators installed to the ground floor, alongside the addition of discreet plinth heaters—two within the kitchen and one in the utility—providing efficient, space-saving warmth.",
 			"The result is a bright, functional kitchen that has become the heart of the home—exactly what the clients envisioned from the initial consultation.",
 		],
-		image: `${base}/media/projects/downstairs-renovation-taunton.png`,
+		image: "/media/projects/downstairs-renovation-taunton.jpg",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/d9637ff2-bc69-4e01-beda-9004f48b5c8e?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -106,7 +104,7 @@ export const ongoingProjects: Project[] = [
 		location: "Calcott",
 		year: "2026",
 		description: [""],
-		image: `${base}/media/projects/house-extension-calcott.png`,
+		image: "/media/projects/house-extension-calcott.jpg",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/ac462cf7-0d8a-4ce7-b7b9-bfdfb65c029e?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -123,7 +121,7 @@ export const ongoingProjects: Project[] = [
 			"Landscaping forms a key component of the project, including the excavation and transformation of a pond into this natural, self-cleaning swimming pool. The pool features 2 jettys for access and a pump system that circulates water through a separate filtration zone composed of aquatic plants and stone beds, providing a chemical-free and environmentally sustainable solution.",
 			"This is an ambitious and complex undertaking, requiring careful sequencing and close coordination across multiple trades. The project is currently ongoing and progressing well.",
 		],
-		image: `${base}/media/projects/farmhouse-renovation-somerset.png`,
+		image: "/media/projects/farmhouse-renovation-somerset.jpg",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/d366cfc2-cfe4-493b-a587-ea690bcb9efe?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -140,7 +138,7 @@ export const ongoingProjects: Project[] = [
 			"To the front of the property, a new porch enhanced both the entrance and hallway, while externally, the garden was fully cleared and landscaped to complement the newly transformed home.",
 			"The result is a bright, contemporary living space that offers improved functionality and a more open feel throughout.",
 		],
-		image: `${base}/media/projects/house-renovation-taunton.png`,
+		image: "/media/projects/house-renovation-taunton.jpg",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/b849c472-9446-4903-9dcd-3523438324bb?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -158,7 +156,7 @@ export const ongoingProjects: Project[] = [
 			"At the lower level of the garden, a further extension houses a state-of-the-art gym, complete with integrated speakers, mirrored walls, and acoustic panelling. Opposite, a pergola area provides a sheltered outdoor space, with the garden nearing completion and prepared for the installation of a hot tub.",
 			"This project delivers a complete transformation, combining high-end finishes with practical design to create a modern, spacious, and highly functional family home.",
 		],
-		image: `${base}/media/projects/house-extension-bridgwater.png`,
+		image: "/media/projects/house-extension-bridgwater.jpg",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/1831cec4-c4d0-4452-b4d5-9b474ce179dc?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -175,7 +173,7 @@ export const ongoingProjects: Project[] = [
 			"The project includes a full electrical upgrade to support the new layout, along with the installation of additional radiators to ensure the extended living space remains comfortable throughout the year.",
 			"This extensive renovation and extension will significantly enhance both the functionality and value of the property, delivering a bright, modern living environment that complements its prime seafront location in Burnham-on-Sea.",
 		],
-		image: `${base}/media/projects/burnham-on-sea.png`,
+		image: "/media/projects/burnham-on-sea.jpg",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/7f0d95c9-fcd2-4433-851b-d44e846ee1c1?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},

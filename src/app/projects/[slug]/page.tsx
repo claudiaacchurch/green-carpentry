@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -11,6 +12,34 @@ export function generateStaticParams() {
   const allSlugs = [...projects, ...ongoingProjects].map((p) => p.slug);
   const unique = [...new Set(allSlugs)];
   return unique.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProject(slug);
+  if (!project) return {};
+
+  const title = `${project.title}, ${project.location}`;
+  const intro = project.description[0] ?? "";
+  const description =
+    intro.length > 155 ? `${intro.slice(0, 152).trimEnd()}…` : intro;
+  const ogImage = project.image.replace("/media/projects/", "/media/og/");
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      title: `${title} | Green Carpentry`,
+      description,
+      url: `/projects/${project.slug}`,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: project.title }],
+    },
+  };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

@@ -1,8 +1,22 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FadeImage from "@/components/FadeImage";
 import { EMAIL, EMAIL_HREF, PHONE_DISPLAY, PHONE_HREF } from "@/lib/constants";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+	title: "About Us",
+	description:
+		"Meet Green Carpentry — a Somerset construction and renovation team covering every trade, from loft conversions and extensions to full house renovations.",
+	alternates: { canonical: "/about" },
+	openGraph: {
+		title: "About Us | Green Carpentry",
+		description:
+			"Meet Green Carpentry — a Somerset construction and renovation team covering every trade, from loft conversions and extensions to full house renovations.",
+		url: "/about",
+	},
+};
 
 export default function AboutPage() {
 	return (
@@ -12,7 +26,7 @@ export default function AboutPage() {
 			<main>
 				<section className={styles.hero}>
 					<FadeImage
-						src="/media/about.png"
+						src="/media/about.jpg"
 						alt="Green Carpentry team on site"
 						fill
 						priority
