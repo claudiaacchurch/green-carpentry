@@ -13,6 +13,22 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const projects: Project[] = [
 	{
+		slug: "double-house-extension-woolavington",
+		title: "Double House Extension",
+		meta: "Woolavington",
+		location: "Woolavington",
+		year: "2025-2026",
+		description: [
+			"This project involved two extensions to the same property - a large side extension and a smaller rear extension — significantly increasing the ground floor living space and creating a more open, connected layout throughout the home.",
+			"The build included full groundworks and foundations, with cavity wall construction for the side extension and a timber frame structure for the rear. The project also involved complete electrical works, along with additional plumbing for new radiators.",
+			"Internally, new laminate flooring was installed throughout the extensions, as well as the existing hallway and downstairs toilet. The main living area features a bespoke media wall beneath a striking vaulted ceiling, complete with Velux windows to maximise natural light. A dedicated utility room was also incorporated into the design.",
+			"Externally, the driveway was fully excavated, concreted, and finished with a high-quality resin surface, completing the project to a clean and modern standard.",
+		],
+		image: `${base}/media/projects/double-house-extension-bridgwater.png`,
+		buildVideoEmbed:
+			"https://iframe.mediadelivery.net/embed/610237/ac0e7771-aeb2-476c-9021-a317fe81bced?autoplay=true&loop=true&muted=true&preload=true&background=true",
+	},
+	{
 		slug: "loft-conversion-merridge",
 		title: "Loft Conversion",
 		meta: "Merridge",
@@ -84,20 +100,15 @@ export const projects: Project[] = [
 
 export const ongoingProjects: Project[] = [
 	{
-		slug: "double-house-extension-woolavington",
-		title: "Double House Extension",
-		meta: "Woolavington",
-		location: "Woolavington",
-		year: "2025-2026",
-		description: [
-			"This project involved two extensions to the same property — a large side extension and a smaller rear extension — significantly increasing the ground floor living space and creating a more open, connected layout throughout the home.",
-			"The build included full groundworks and foundations, with cavity wall construction for the side extension and a timber frame structure for the rear. The project also involved complete electrical works, along with additional plumbing for new radiators.",
-			"Internally, new laminate flooring was installed throughout the extensions, as well as the existing hallway and downstairs toilet. The main living area features a bespoke media wall beneath a striking vaulted ceiling, complete with Velux windows to maximise natural light. A dedicated utility room was also incorporated into the design.",
-			"Externally, the driveway was fully excavated, concreted, and finished with a high-quality resin surface, completing the project to a clean and modern standard.",
-		],
-		image: `${base}/media/projects/double-house-extension-bridgwater.png`,
+		slug: "house-extension-catcott",
+		title: "House Extension / Garage Conversion",
+		meta: "Calcott",
+		location: "Calcott",
+		year: "2026",
+		description: [""],
+		image: `${base}/media/projects/house-extension-calcott.png`,
 		buildVideoEmbed:
-			"https://iframe.mediadelivery.net/embed/610237/0518b3de-beb4-4e77-a19b-b5ad3086281b?autoplay=true&loop=true&muted=true&preload=true&background=true",
+			"https://iframe.mediadelivery.net/embed/610237/ac462cf7-0d8a-4ce7-b7b9-bfdfb65c029e?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
 	{
 		slug: "farmhouse-renovation-aisholt",

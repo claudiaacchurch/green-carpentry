@@ -849,10 +849,22 @@
 
 /* ── Team ────────────────────────────────────── */
 
+/* Flex rather than grid so a partial last row is centred, whatever the team size */
 .teamGrid {
-	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 24px;
+	--team-cols: 4;
+	--team-gap: 24px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--team-gap);
+}
+
+.teamGrid > .teamCard {
+	flex: 0 0
+		calc(
+			(100% - (var(--team-cols) - 1) * var(--team-gap)) / var(--team-cols)
+		);
+	min-width: 0;
 }
 
 .teamCard {
@@ -1227,7 +1239,7 @@
 
 .partnersGrid {
 	display: grid;
-	grid-template-columns: repeat(8, 1fr);
+	grid-template-columns: repeat(12, 1fr);
 	gap: 16px;
 	align-items: center;
 }
@@ -1246,6 +1258,12 @@
 	max-width: 130px;
 	justify-self: center;
 	overflow: hidden;
+	grid-column: span 2;
+}
+
+/* 11 logos: 6 on row one, 5 centred on row two */
+.partnersGrid > .partnerBarItem:nth-child(7) {
+	grid-column: 2 / span 2;
 }
 
 .partnerBarItem img {
@@ -1358,7 +1376,16 @@
 
 @media (max-width: 1100px) {
 	.partnersGrid {
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(8, 1fr);
+	}
+
+	.partnersGrid > .partnerBarItem:nth-child(7) {
+		grid-column: span 2;
+	}
+
+	/* 11 logos at 4 per row: centre the 3 on the last row */
+	.partnersGrid > .partnerBarItem:nth-child(9) {
+		grid-column: 2 / span 2;
 	}
 
 	.section {
@@ -1374,7 +1401,7 @@
 	}
 
 	.teamGrid {
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		--team-cols: 4;
 	}
 
 	.formGrid {
@@ -1694,8 +1721,8 @@
 	}
 
 	.teamGrid {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 16px;
+		--team-cols: 2;
+		--team-gap: 16px;
 	}
 
 	.teamCard {
@@ -1794,7 +1821,7 @@
 	}
 
 	.partnersGrid {
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(8, 1fr);
 		gap: 10px;
 	}
 
