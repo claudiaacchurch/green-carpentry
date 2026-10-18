@@ -418,12 +418,12 @@ export default async function Home() {
 							</a>
 							<a
 								href="https://www.facebook.com/p/Alfa-Resins-LTD-61558736039917/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemL}`}
+								className={`${styles.partnerBarItem} ${styles.partnerBarItemWideSoft}`}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
 								<FadeImage
-									src="/media/partnerlogos/alfa-resin.png"
+									src="/media/partnerlogos/alfa-resin-wide.png"
 									alt="Alfa Resin"
 									width={60}
 									height={60}

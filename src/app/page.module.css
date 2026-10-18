@@ -1728,7 +1728,7 @@
 	.teamCard {
 		text-align: center;
 		gap: 16px;
-		padding: 20px;
+		padding: 20px 10px;
 		align-items: center;
 	}
 
@@ -1744,6 +1744,7 @@
 
 	.teamRole {
 		font-size: 13px;
+		letter-spacing: 0.02em;
 	}
 
 	.contactInfoBox,
@@ -1825,39 +1826,41 @@
 		gap: 10px;
 	}
 
+	/* Mobile tiles are ~80px: keep wide logos off the edges and pull
+	   round/square marks in so everything reads at a similar size */
 	.partnerBarItem {
-		padding: 10px;
+		padding: 15px;
 	}
 
 	.partnerBarItem.partnerBarItemLarge {
-		padding: 7px;
+		padding: 12px;
 	}
 
 	.partnerBarItem.partnerBarItemL {
-		padding: 9px;
+		padding: 14px;
 	}
 
 	.partnerBarItem.partnerBarItemNethercott {
-		padding: 9px;
+		padding: 13px;
 	}
 
 	.partnerBarItem.partnerBarItemSmall {
-		padding: 16px;
+		padding: 18px;
 	}
 
 	.partnerBarItem.partnerBarItemWide {
-		padding-left: 0;
-		padding-right: 0;
+		padding-left: 7px;
+		padding-right: 7px;
 	}
 
 	.partnerBarItem.partnerBarItemWideTight {
-		padding-left: 4px;
-		padding-right: 4px;
+		padding-left: 8px;
+		padding-right: 8px;
 	}
 
 	.partnerBarItem.partnerBarItemWideSoft {
-		padding-left: 5px;
-		padding-right: 5px;
+		padding-left: 8px;
+		padding-right: 8px;
 	}
 
 	.partnerBarItemNudgeUp3 img {
