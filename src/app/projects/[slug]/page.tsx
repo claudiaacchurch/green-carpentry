@@ -48,6 +48,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   if (!project) notFound();
   const isOngoing = ongoingProjects.some((item) => item.slug === project.slug);
 
+  // Previous/next within the same list (completed or ongoing), wrapping round
+  const siblings = isOngoing ? ongoingProjects : projects;
+  const index = siblings.findIndex((item) => item.slug === project.slug);
+  const prevProject = siblings[(index - 1 + siblings.length) % siblings.length];
+  const nextProject = siblings[(index + 1) % siblings.length];
+
   return (
     <div className={styles.page}>
       <Header />
@@ -110,15 +116,51 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </a>
         </aside>
 
-        {/* Back to projects */}
-        <div className={styles.backBar}>
-          <Link href="/#projects" className={styles.backLink}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M19 12H5M5 12l7-7M5 12l7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            Back to Projects
+        <section className={styles.quoteBanner}>
+          <div>
+            <h2>Planning something similar?</h2>
+            <p>
+              Tell us about your project and we&apos;ll get back to you with a
+              free, no-obligation quote.
+            </p>
+          </div>
+          <Link href="/#contact" className={styles.quoteBtn}>
+            Get a free quote
           </Link>
-        </div>
+        </section>
+
+        <nav className={styles.projectNav} aria-label="More projects">
+          <Link
+            href={`/projects/${prevProject.slug}`}
+            className={styles.projectNavLink}
+            aria-label={`Previous project: ${prevProject.title}`}
+          >
+            <span className={styles.projectNavLabel}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M19 12H5M5 12l7-7M5 12l7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              Previous
+            </span>
+          </Link>
+          <Link
+            href={isOngoing ? "/#ongoingProjects" : "/#projects"}
+            className={styles.projectNavAll}
+          >
+            All projects
+          </Link>
+          <Link
+            href={`/projects/${nextProject.slug}`}
+            className={`${styles.projectNavLink} ${styles.projectNavNext}`}
+            aria-label={`Next project: ${nextProject.title}`}
+          >
+            <span className={styles.projectNavLabel}>
+              Next
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M19 12l-7-7M19 12l-7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+          </Link>
+        </nav>
       </main>
 
       <Footer />

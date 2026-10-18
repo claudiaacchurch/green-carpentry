@@ -67,9 +67,11 @@
 	padding: 8px 0;
 }
 
+/* Scales smoothly with the window (86px at 1000px wide up to 104px at
+   1400px) rather than stepping, so it never grows while cards shrink */
 .logoImage {
-	height: 104px;
-	max-height: 104px;
+	height: clamp(86px, 4.5vw + 41px, 104px);
+	max-height: none;
 	width: auto;
 	object-fit: contain;
 	display: block;
@@ -577,10 +579,23 @@
 
 /* ── Projects ────────────────────────────────── */
 
+/* Flex rather than grid so a partial last row is centred */
 .projectsGrid {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 30px;
+	--project-cols: 3;
+	--project-gap: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--project-gap);
+}
+
+.projectsGrid > .projectCard {
+	flex: 0 0
+		calc(
+			(100% - (var(--project-cols) - 1) * var(--project-gap)) /
+				var(--project-cols)
+		);
+	min-width: 0;
 }
 
 .projectCard {
@@ -820,6 +835,15 @@
 	cursor: default;
 }
 
+.reviewsCounter {
+	min-width: 56px;
+	text-align: center;
+	font-size: var(--fs-sub);
+	letter-spacing: 0.06em;
+	color: rgba(255, 255, 255, 0.7);
+	font-variant-numeric: tabular-nums;
+}
+
 .reviewsDots {
 	display: flex;
 	align-items: center;
@@ -857,6 +881,11 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: var(--team-gap);
+}
+
+/* Arrow under the swipeable team row on mobile, hinting it scrolls */
+.teamSwipeHint {
+	display: none;
 }
 
 .teamGrid > .teamCard {
@@ -934,6 +963,14 @@
 	color: var(--accent-warm);
 	font-weight: 500;
 	margin-top: 4px;
+}
+
+/* Wide desktops: 5 per row (5, 5, 4) instead of 4 rows at 4 per row.
+   Cards stay wide enough for full-size photos and two-line roles. */
+@media (min-width: 1360px) {
+	.teamGrid {
+		--team-cols: 5;
+	}
 }
 
 /* ── Contact ─────────────────────────────────── */
@@ -1220,18 +1257,10 @@
 	transition: opacity 180ms ease;
 }
 
-.partnersLabel {
-	padding: 32px 6vw 10px;
-	font-size: 11px;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
-	color: #fff;
-}
-
+/* One white logo wall: the panel is the only surface, logos have no boxes */
 .partnersBar {
 	background: #fff;
-	margin: 0 6vw 80px;
-	padding: 20px 24px 28px;
+	padding: 24px 32px;
 	border-radius: 16px;
 	display: flex;
 	flex-direction: column;
@@ -1248,9 +1277,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #fff;
-	border: 1px solid var(--line);
-	border-radius: 14px;
 	padding: 18px;
 	aspect-ratio: 1 / 1;
 	opacity: 1;
@@ -1261,9 +1287,27 @@
 	grid-column: span 2;
 }
 
-/* 11 logos: 6 on row one, 5 centred on row two */
-.partnersGrid > .partnerBarItem:nth-child(7) {
+/* Centre a partial last row for any number of logos. Each logo spans 2 of
+   12 columns (6 per row); the first logo of a short last row (row start that
+   is also k-th from the end) is pushed in by one column per missing logo. */
+.partnersGrid > .partnerBarItem:nth-child(6n + 1):nth-last-child(5) {
 	grid-column: 2 / span 2;
+}
+
+.partnersGrid > .partnerBarItem:nth-child(6n + 1):nth-last-child(4) {
+	grid-column: 3 / span 2;
+}
+
+.partnersGrid > .partnerBarItem:nth-child(6n + 1):nth-last-child(3) {
+	grid-column: 4 / span 2;
+}
+
+.partnersGrid > .partnerBarItem:nth-child(6n + 1):nth-last-child(2) {
+	grid-column: 5 / span 2;
+}
+
+.partnersGrid > .partnerBarItem:nth-child(6n + 1):nth-last-child(1) {
+	grid-column: 6 / span 2;
 }
 
 .partnerBarItem img {
@@ -1379,13 +1423,22 @@
 		grid-template-columns: repeat(8, 1fr);
 	}
 
-	.partnersGrid > .partnerBarItem:nth-child(7) {
+	/* Undo the 6-per-row offsets, then centre a short last row at 4 per row
+	   (2 of 8 columns each) */
+	.partnersGrid > .partnerBarItem:nth-child(n):nth-last-child(n) {
 		grid-column: span 2;
 	}
 
-	/* 11 logos at 4 per row: centre the 3 on the last row */
-	.partnersGrid > .partnerBarItem:nth-child(9) {
+	.partnersGrid > .partnerBarItem:nth-child(4n + 1):nth-last-child(3) {
 		grid-column: 2 / span 2;
+	}
+
+	.partnersGrid > .partnerBarItem:nth-child(4n + 1):nth-last-child(2) {
+		grid-column: 3 / span 2;
+	}
+
+	.partnersGrid > .partnerBarItem:nth-child(4n + 1):nth-last-child(1) {
+		grid-column: 4 / span 2;
 	}
 
 	.section {
@@ -1393,7 +1446,7 @@
 	}
 
 	.projectsGrid {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		--project-cols: 2;
 	}
 
 	.reviewsTrack {
@@ -1430,13 +1483,24 @@
 		height: 36px;
 	}
 
-	.logoImage {
-		height: 86px;
-		max-height: 86px;
-	}
 }
 
 @media (max-width: 954px) {
+	/* Tablet: 4 narrower team cards, so tighten them enough that the longest
+	   role ("Managing Director & Contracts Manager") stays on two lines */
+	.teamGrid {
+		--team-gap: 12px;
+	}
+
+	.teamCard {
+		padding: 20px 8px;
+	}
+
+	.teamRole {
+		font-size: 13px;
+		letter-spacing: 0.01em;
+	}
+
 	.page {
 		--header-h: 100px;
 	}
@@ -1577,44 +1641,71 @@
 		font-size: 18px;
 	}
 
+	/* One tall hero with the title over the video (like desktop) instead of a
+	   short video strip with a separate centred text block underneath */
 	.hero {
-		padding-bottom: 4px;
+		--hero-h: min(68svh, 560px);
+		position: relative;
+		display: block;
+		height: var(--hero-h);
+		padding: 0;
 	}
 
 	.heroMedia {
+		position: absolute;
+		inset: 0;
+		aspect-ratio: auto;
 		border-radius: 0;
 	}
 
+	/* Size the 16:9 player to the hero's height so it covers, not letterboxes */
 	.heroVideo {
 		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: calc(var(--hero-h) * 16 / 9);
+		height: 100%;
+		min-width: 100%;
+		transform: translate(-50%, -50%);
+	}
+
+	.heroOverlay {
+		display: block;
 	}
 
 	.heroContent {
-		padding: 28px 7vw 34px;
-		gap: clamp(16px, 2.5vw, 18px);
+		position: absolute;
+		left: 5vw;
+		right: 5vw;
+		bottom: 28px;
+		width: auto;
+		padding: 0;
+		background: none;
+		gap: 16px;
+		align-items: flex-start;
+		text-align: left;
 	}
 
 	.heroContent .heroTitle {
 		font-family: var(--font-display, "Bebas Neue", sans-serif);
-		font-size: clamp(30px, 7vw, 36px);
+		font-size: clamp(36px, 10vw, 44px);
 		font-weight: 400;
 		letter-spacing: 0.025em;
-		line-height: 1.06;
-		max-width: 340px;
+		line-height: 1.04;
+		max-width: none;
 		width: 100%;
-		text-shadow: none;
-		text-align: center;
+		text-align: left;
 	}
 
 	.heroActions {
 		flex-wrap: nowrap;
 		width: 100%;
-		max-width: 250px;
+		max-width: 280px;
 	}
 
 	.heroContent .heroActions {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		gap: 10px;
 	}
 
@@ -1641,31 +1732,38 @@
 		background: rgba(255, 255, 255, 0.025);
 	}
 
+	/* Same 5vw gutter as the section headings below */
 	.introSection {
-		padding: 44px 7vw 50px;
+		padding: 40px 5vw;
+		border-top: none;
 	}
 
 	.introCols {
-		gap: 22px;
-		max-width: 620px;
-		margin: 0 auto;
+		gap: 18px;
+		max-width: none;
+		margin: 0;
+	}
+
+	/* "Explore our website…" is filler on a phone: the hero buttons do that job */
+	.introCols p:last-child {
+		display: none;
 	}
 
 	.introCols p {
-		font-size: 14px;
+		font-size: 15px;
 		line-height: 1.7;
 		opacity: 0.72;
 	}
 
 	.introCols p:first-child {
-		font-size: 15px;
+		font-size: 17px;
 		line-height: 1.65;
 		color: #fff;
 		opacity: 1;
 	}
 
 	.reviewText {
-		font-size: 14px;
+		font-size: 15px;
 		line-height: 1.6;
 	}
 
@@ -1678,7 +1776,7 @@
 	}
 
 	.section {
-		padding: 32px 5vw;
+		padding: 40px 5vw;
 	}
 
 	.sectionTitle {
@@ -1691,44 +1789,116 @@
 	}
 
 	.projectsGrid {
-		grid-template-columns: 1fr;
-		gap: 16px;
+		/* Two compact cards per row keeps the project lists from becoming a
+		   very long single-column scroll on phones */
+		--project-cols: 2;
+		--project-gap: 12px;
 	}
 
-	.projectCard {
-		width: 100%;
+	/* Mobile is left-aligned throughout, so no centred orphans: with an odd
+	   number of projects the first (most recent) becomes a full-width feature
+	   card and the rest pair up evenly below */
+	.projectsGrid {
+		justify-content: flex-start;
 	}
 
-	.projectMedia {
+	.projectsGrid > .projectCard:first-child:nth-last-child(odd) {
+		flex-basis: 100%;
+	}
+
+	.projectsGrid > .projectCard:first-child:nth-last-child(odd) .projectMedia {
 		aspect-ratio: 16 / 9;
 	}
 
+	/* Compact card: full-bleed photo, left-aligned text, location as a small
+	   label and the title in normal case so it doesn't feel cramped */
+	.projectMedia {
+		aspect-ratio: 4 / 3;
+		margin: 0;
+		border-radius: 0;
+	}
+
 	.projectBody {
-		padding: 16px 16px 20px;
+		padding: 10px 12px 14px;
 		gap: 4px;
+		align-items: flex-start;
+		text-align: left;
 	}
 
 	.projectTitle {
-		font-size: 12px;
+		font-size: 13px;
+		font-weight: 600;
+		text-transform: none;
+		letter-spacing: 0;
+		line-height: 1.3;
 	}
 
 	.projectMeta {
-		font-size: 12px;
+		font-size: 10px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
 	}
 
 	.reviewsTrack {
 		grid-template-columns: 1fr;
 	}
 
+	/* Mobile: one swipeable row instead of a 7-row grid. Cards snap into
+	   place and the next one peeks in so it's clear there's more. The row runs
+	   edge to edge, with padding keeping the first card on the 5vw gutter. */
 	.teamGrid {
-		--team-cols: 2;
-		--team-gap: 16px;
+		--team-gap: 12px;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-padding-inline: 5vw;
+		margin-inline: -5vw;
+		padding: 2px 5vw 6px;
+		scrollbar-width: none;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.teamGrid::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Wide enough that the longest role ("Managing Director & Contracts
+	   Manager") fits on two lines, while the next card still peeks in */
+	.teamGrid > .teamCard {
+		flex: 0 0 162px;
+		scroll-snap-align: start;
+	}
+
+	/* Right-aligned, next to the peeking card it points towards. A tappable
+	   button: 40px hit area, pulled in so the arrow itself stays on the edge */
+	.teamSwipeHint {
+		display: grid;
+		place-items: center;
+		width: 40px;
+		height: 40px;
+		margin: 2px -11px -11px auto;
+		padding: 0;
+		border: 0;
+		background: none;
+		color: rgba(255, 255, 255, 0.55);
+		cursor: pointer;
+		transition: color 180ms ease;
+	}
+
+	.teamSwipeHint:active {
+		color: #fff;
+	}
+
+	.teamSwipeHint:focus-visible {
+		outline: 2px solid var(--green-toned);
+		border-radius: 999px;
 	}
 
 	.teamCard {
 		text-align: center;
 		gap: 16px;
-		padding: 20px 10px;
+		padding: 20px 8px;
 		align-items: center;
 	}
 
@@ -1744,12 +1914,18 @@
 
 	.teamRole {
 		font-size: 13px;
-		letter-spacing: 0.02em;
+		letter-spacing: 0.01em;
 	}
 
 	.contactInfoBox,
 	.contactFormBox {
 		padding: 24px;
+	}
+
+	/* Full-width like the buttons in the green banners */
+	.contactFormBox button[type="submit"] {
+		width: 100%;
+		justify-content: center;
 	}
 
 	.contactInfoBox {
@@ -1761,7 +1937,7 @@
 	}
 
 	.contactInfoText {
-		font-size: 14px;
+		font-size: 15px;
 	}
 
 	.contactDetailsGrid {
@@ -1816,14 +1992,19 @@
 		margin-bottom: 0;
 	}
 
+
 	.partnersBar {
-		margin: 0 5vw 56px;
-		padding: 16px 14px 18px;
+		padding: 12px 10px;
 	}
 
 	.partnersGrid {
 		grid-template-columns: repeat(8, 1fr);
-		gap: 10px;
+		gap: 6px 10px;
+	}
+
+	/* Left-aligned like the rest of mobile: drop the last-row centring offsets */
+	.partnersGrid > .partnerBarItem:nth-child(n):nth-last-child(n) {
+		grid-column: span 2;
 	}
 
 	/* Mobile tiles are ~80px: keep wide logos off the edges and pull
@@ -1881,7 +2062,7 @@
 
 	.accreditationBar {
 		gap: 2vw;
-		padding: 14px 4vw;
+		padding: 14px 8vw;
 		justify-content: space-between;
 	}
 
@@ -1899,6 +2080,16 @@
 }
 
 @media (max-width: 380px) {
+	/* Narrow phones: a touch smaller role text so cards can shrink and the
+	   next card still peeks in, keeping the longest role on two lines */
+	.teamGrid > .teamCard {
+		flex-basis: 150px;
+	}
+
+	.teamRole {
+		font-size: 12px;
+	}
+
 	.headerInner {
 		gap: 12px;
 	}

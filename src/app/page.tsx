@@ -16,6 +16,7 @@ import ReviewsCarousel from "@/components/ReviewsCarousel";
 import { getGoogleReviews, staticReviews } from "@/lib/getReviews";
 import ContactForm from "@/components/ContactForm";
 import ScrollReveal from "@/components/ScrollReveal";
+import ScrollRowButton from "@/components/ScrollRowButton";
 import HeroMedia from "@/components/HeroMedia";
 import FadeImage from "@/components/FadeImage";
 import SmoothAnchor from "@/components/SmoothAnchor";
@@ -29,7 +30,7 @@ const team = [
 	},
 	{
 		name: "Liam",
-		role: "Site manager",
+		role: "Site Manager",
 		image: "/media/team/liam.jpg",
 	},
 	{
@@ -60,7 +61,7 @@ const team = [
 	{
 		name: "Tyler",
 		role: "Plasterer",
-		image: "/media/team/tyler.jpg",
+		image: "/media/team/tyler-avatar.jpg",
 	},
 	{
 		name: "Joe",
@@ -187,7 +188,7 @@ export default async function Home() {
 											src={project.image}
 											alt={project.title}
 											fill
-											sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
+											sizes="(max-width: 1100px) 50vw, 33vw"
 											className={styles.projectImage}
 										/>
 									</div>
@@ -227,7 +228,7 @@ export default async function Home() {
 											src={project.image}
 											alt={project.title}
 											fill
-											sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
+											sizes="(max-width: 1100px) 50vw, 33vw"
 											className={styles.projectImage}
 										/>
 									</div>
@@ -242,24 +243,13 @@ export default async function Home() {
 				</ScrollReveal>
 
 				<ScrollReveal>
-					<section className={styles.section} id="reviews">
-						<div className={styles.sectionHeader}>
-							<div>
-								<h2 className={styles.sectionTitle}>What Our Clients Say</h2>
-							</div>
-						</div>
-						<ReviewsCarousel reviews={reviews} />
-					</section>
-				</ScrollReveal>
-
-				<ScrollReveal>
 					<section className={styles.section} id="team">
 						<div className={styles.sectionHeader}>
 							<div>
 								<h2 className={styles.sectionTitle}>Meet the Team</h2>
 							</div>
 						</div>
-						<div className={styles.teamGrid}>
+						<div className={styles.teamGrid} id="team-row">
 							{team.map((member, index) => (
 								<article
 									className={styles.teamCard}
@@ -287,167 +277,187 @@ export default async function Home() {
 								</article>
 							))}
 						</div>
+						<ScrollRowButton
+							targetId="team-row"
+							className={styles.teamSwipeHint}
+							label="Show more of the team"
+						/>
 					</section>
 				</ScrollReveal>
 
 				<ScrollReveal>
-					<p className={styles.partnersLabel}>Our Partners</p>
-					<div className={styles.partnersBar}>
-						<div className={styles.partnersGrid}>
-							<a
-								href="https://www.tekkwise.com/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemLarge}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FadeImage
-									src="/media/partnerlogos/tekkwise.png"
-									alt="TeKKWise"
-									width={70}
-									height={70}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
-							<a
-								href="/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemL}`}
-							>
-								<FadeImage
-									src="/media/partnerlogos/placeholder-l.png"
-									alt="L"
-									width={70}
-									height={70}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
-							<a
-								href="https://nigelsalterjoinery.com/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemWide} ${styles.partnerBarItemNudgeUp3}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FadeImage
-									src="/media/partnerlogos/nigel-salter-joinery.png"
-									alt="Nigel Salter Joinery"
-									width={150}
-									height={50}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
-							<a
-								href="https://www.clearview-windows.uk/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemWideSoft} ${styles.partnerBarItemNudgeUp4}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FadeImage
-									src="/media/partnerlogos/clear-view-windows.png"
-									alt="Clear View Windows"
-									width={150}
-									height={50}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
-							<a
-								href="https://www.instagram.com/nethercottdrones/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemNethercott}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FadeImage
-									src="/media/partnerlogos/nethercott-drones.png"
-									alt="Nethercott Drones"
-									width={70}
-									height={70}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
-							<a
-								href="https://www.thomasfacades.co.uk/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemWide} ${styles.partnerBarItemNudgeDown3}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FadeImage
-									src="/media/partnerlogos/thomas-fascades.png"
-									alt="Thomas Fascades"
-									width={60}
-									height={60}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
-							<a
-								href="https://wmironwork.co.uk/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemWide}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FadeImage
-									src="/media/partnerlogos/ironwork.png"
-									alt="Ironwork Ltd"
-									width={150}
-									height={50}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
-							<a
-								href="https://www.jacklewiselectrics.co.uk/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemSmall}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FadeImage
-									src="/media/partnerlogos/jack-lewis-electrics.png"
-									alt="Jack Lewis Electrics"
-									width={60}
-									height={60}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
-							<a
-								href="https://lightworksolar.co.uk/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemWideSoft}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FadeImage
-									src="/media/partnerlogos/lightwork-solar.png"
-									alt="Lightwork Solar Solutions"
-									width={60}
-									height={60}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
-							<a
-								href="https://www.facebook.com/p/Alfa-Resins-LTD-61558736039917/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemWideSoft}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FadeImage
-									src="/media/partnerlogos/alfa-resin-wide.png"
-									alt="Alfa Resin"
-									width={60}
-									height={60}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
-							<a
-								href="https://www.facebook.com/p/THarris-plumbing-and-heating-100063621100983/"
-								className={`${styles.partnerBarItem} ${styles.partnerBarItemWideTight} ${styles.partnerBarItemNudgeUp7}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FadeImage
-									src="/media/partnerlogos/t-harris-plumbing.png"
-									alt="T Harris Plumbing & Heating"
-									width={150}
-									height={50}
-									style={{ objectFit: "contain" }}
-								/>
-							</a>
+					<section className={styles.section} id="partners">
+						<div className={styles.sectionHeader}>
+							<h2 className={styles.sectionTitle}>Our Partners</h2>
 						</div>
-					</div>
+						<div className={styles.partnersBar}>
+							<div className={styles.partnersGrid}>
+								<a
+									href="https://www.tekkwise.com/"
+									className={`${styles.partnerBarItem} ${styles.partnerBarItemLarge}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FadeImage
+										src="/media/partnerlogos/tekkwise.png"
+										alt="TeKKWise"
+										width={70}
+										height={70}
+										style={{ objectFit: "contain" }}
+									/>
+								</a>
+								<a
+									href="/"
+									className={`${styles.partnerBarItem} ${styles.partnerBarItemL}`}
+								>
+									<FadeImage
+										src="/media/partnerlogos/placeholder-l.png"
+										alt="L"
+										width={70}
+										height={70}
+										style={{ objectFit: "contain" }}
+									/>
+								</a>
+								<a
+									href="https://nigelsalterjoinery.com/"
+									className={`${styles.partnerBarItem} ${styles.partnerBarItemWide} ${styles.partnerBarItemNudgeUp3}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FadeImage
+										src="/media/partnerlogos/nigel-salter-joinery.png"
+										alt="Nigel Salter Joinery"
+										width={150}
+										height={50}
+										style={{ objectFit: "contain" }}
+									/>
+								</a>
+								<a
+									href="https://www.clearview-windows.uk/"
+									className={`${styles.partnerBarItem} ${styles.partnerBarItemWideSoft} ${styles.partnerBarItemNudgeUp4}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FadeImage
+										src="/media/partnerlogos/clear-view-windows.png"
+										alt="Clear View Windows"
+										width={150}
+										height={50}
+										style={{ objectFit: "contain" }}
+									/>
+								</a>
+								<a
+									href="https://www.instagram.com/nethercottdrones/"
+									className={`${styles.partnerBarItem} ${styles.partnerBarItemNethercott}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FadeImage
+										src="/media/partnerlogos/nethercott-drones.png"
+										alt="Nethercott Drones"
+										width={70}
+										height={70}
+										style={{ objectFit: "contain" }}
+									/>
+								</a>
+								<a
+									href="https://www.thomasfacades.co.uk/"
+									className={`${styles.partnerBarItem} ${styles.partnerBarItemWide} ${styles.partnerBarItemNudgeDown3}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FadeImage
+										src="/media/partnerlogos/thomas-fascades.png"
+										alt="Thomas Fascades"
+										width={60}
+										height={60}
+										style={{ objectFit: "contain" }}
+									/>
+								</a>
+								<a
+									href="https://wmironwork.co.uk/"
+									className={`${styles.partnerBarItem} ${styles.partnerBarItemWide}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FadeImage
+										src="/media/partnerlogos/ironwork.png"
+										alt="Ironwork Ltd"
+										width={150}
+										height={50}
+										style={{ objectFit: "contain" }}
+									/>
+								</a>
+								<a
+									href="https://www.jacklewiselectrics.co.uk/"
+									className={`${styles.partnerBarItem} ${styles.partnerBarItemSmall}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FadeImage
+										src="/media/partnerlogos/jack-lewis-electrics.png"
+										alt="Jack Lewis Electrics"
+										width={60}
+										height={60}
+										style={{ objectFit: "contain" }}
+									/>
+								</a>
+								<a
+									href="https://lightworksolar.co.uk/"
+									className={`${styles.partnerBarItem} ${styles.partnerBarItemWideSoft}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FadeImage
+										src="/media/partnerlogos/lightwork-solar.png"
+										alt="Lightwork Solar Solutions"
+										width={60}
+										height={60}
+										style={{ objectFit: "contain" }}
+									/>
+								</a>
+								<a
+									href="https://www.facebook.com/p/Alfa-Resins-LTD-61558736039917/"
+									className={`${styles.partnerBarItem} ${styles.partnerBarItemWideSoft}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FadeImage
+										src="/media/partnerlogos/alfa-resin-wide.png"
+										alt="Alfa Resin"
+										width={60}
+										height={60}
+										style={{ objectFit: "contain" }}
+									/>
+								</a>
+								<a
+									href="https://www.facebook.com/p/THarris-plumbing-and-heating-100063621100983/"
+									className={`${styles.partnerBarItem} ${styles.partnerBarItemWideTight} ${styles.partnerBarItemNudgeUp7}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FadeImage
+										src="/media/partnerlogos/t-harris-plumbing.png"
+										alt="T Harris Plumbing & Heating"
+										width={150}
+										height={50}
+										style={{ objectFit: "contain" }}
+									/>
+								</a>
+							</div>
+						</div>
+					</section>
+				</ScrollReveal>
+
+				<ScrollReveal>
+					<section className={styles.section} id="reviews">
+						<div className={styles.sectionHeader}>
+							<div>
+								<h2 className={styles.sectionTitle}>What Our Clients Say</h2>
+							</div>
+						</div>
+						<ReviewsCarousel reviews={reviews} />
+					</section>
 				</ScrollReveal>
 
 				<ScrollReveal>

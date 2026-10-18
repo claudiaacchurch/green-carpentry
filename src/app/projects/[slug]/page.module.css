@@ -200,14 +200,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  background: var(--green-toned);
-  color: var(--bg);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  background: #1b1b1b;
+  color: var(--accent);
 }
 
 .instaCallout p {
   font-size: 15px;
-  color: rgba(17, 17, 17, 0.78);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   margin-top: 7px;
 }
@@ -217,7 +216,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--bg);
+  color: var(--accent);
 }
 
 .instaCallout > a {
@@ -226,8 +225,8 @@
   align-items: center;
   gap: 10px;
   color: var(--accent);
-  background: var(--ink);
-  border: 1px solid var(--ink);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 999px;
   padding: 13px 20px;
   font-size: 12px;
@@ -251,26 +250,94 @@
   transform: translateY(-1px);
 }
 
-/* ── Back bar ──────────────────────────────── */
-.backBar {
+/* ── Quote banner ──────────────────────────── */
+.quoteBanner {
+  margin: 0 6vw 72px;
+  padding: 36px 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: var(--green-toned);
+  color: var(--ink);
+}
+
+.quoteBanner h2 {
+  font-size: clamp(20px, 2vw, 30px);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.quoteBanner p {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.78);
+}
+
+.quoteBtn {
+  flex-shrink: 0;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.quoteBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ── Previous / next project ───────────────── */
+.projectNav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
   padding: 32px 6vw 48px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.backLink {
+.projectNavLink {
+  display: flex;
+  min-width: 0;
+  color: var(--accent);
+}
+
+.projectNavNext {
+  justify-content: flex-end;
+}
+
+.projectNavLabel {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--accent);
-  opacity: 0.7;
-  font-size: 13px;
-  letter-spacing: 0.06em;
+  font-size: 12px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  opacity: 0.75;
   transition: opacity 180ms ease;
 }
 
-.backLink:hover {
+.projectNavLink:hover .projectNavLabel,
+.projectNavAll:hover {
   opacity: 1;
+}
+
+.projectNavAll {
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  opacity: 0.8;
+  transition: opacity 180ms ease;
 }
 
 /* ── Footer ────────────────────────────────── */
@@ -340,39 +407,44 @@
     --header-h: 90px;
   }
 
+  /* Taller hero so the build video is the showcase, matching the homepage
+     hero: title over the bottom on the same 5vw gutter as the content */
   .hero {
-    height: auto;
-    aspect-ratio: 16 / 9;
+    --hero-h: min(56svh, 460px);
+    height: var(--hero-h);
   }
 
+  /* Size the 16:9 player to the hero's height so it covers, not letterboxes */
   .heroVideo {
-    width: calc(100% + 2px);
-    height: calc(100% + 2px);
+    top: 50%;
+    left: 50%;
+    width: calc(var(--hero-h) * 16 / 9);
+    height: 100%;
+    min-width: 100%;
     min-height: unset;
-    min-width: unset;
-    top: -1px;
-    left: -1px;
-    transform: none;
+    transform: translate(-50%, -50%);
   }
 
   .heroContent {
-    left: 6vw;
-    bottom: 14px;
-    gap: 5px;
+    left: 5vw;
+    right: 5vw;
+    bottom: 24px;
+    gap: 8px;
   }
 
   .heroEyebrow {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .heroTitle {
-    font-size: 7vw;
+    font-size: clamp(32px, 9vw, 40px);
+    line-height: 1;
   }
 
   .projectOverview {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 48px 5vw;
+    gap: 32px;
+    padding: 40px 5vw;
   }
 
   .projectMeta {
@@ -395,12 +467,12 @@
   }
 
   .description p {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.72;
   }
 
   .instaCallout {
-    margin: 48px 5vw;
+    margin: 40px 5vw;
     padding: 24px;
     flex-direction: column;
     align-items: flex-start;
@@ -416,7 +488,26 @@
     justify-content: center;
   }
 
-  .backBar {
+  .quoteBanner {
+    margin: 0 5vw 40px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .quoteBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .projectNav {
+    gap: 12px;
     padding: 28px 5vw 40px;
+  }
+
+  .projectNavAll {
+    padding: 9px 16px;
+    font-size: 12px;
   }
 }

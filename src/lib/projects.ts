@@ -98,7 +98,7 @@ export const projects: Project[] = [
 
 export const ongoingProjects: Project[] = [
 	{
-		slug: "house-extension-catcott",
+		slug: "house-extension-calcott",
 		title: "House Extension / Garage Conversion",
 		meta: "Calcott",
 		location: "Calcott",
