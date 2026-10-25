@@ -7,6 +7,9 @@ export interface Project {
 	description: string[];
 	image: string;
 	buildVideoEmbed?: string;
+	/** Bunny HLS playlist (or a direct MP4). When set, the hero plays it in a
+	 *  plain <video> tag instead of the Bunny player iframe. */
+	heroVideo?: string;
 }
 
 export const projects: Project[] = [
@@ -56,6 +59,8 @@ export const projects: Project[] = [
 			"Each flat was finished to a high standard, combining practical layouts with quality materials - delivering a strong return on investment for the client.",
 		],
 		image: "/media/projects/triple-flat-conversion-watchet.jpg",
+		heroVideo:
+			"https://vz-1b37b700-661.b-cdn.net/e307f6cc-5507-49eb-83c5-db1e8de37a65/playlist.m3u8",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/e307f6cc-5507-49eb-83c5-db1e8de37a65?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},

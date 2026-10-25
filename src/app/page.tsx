@@ -112,7 +112,7 @@ export default async function Home() {
 						<HeroMedia
 							poster={"/media/projects/loft-conversion-north-somerset.jpg"}
 							alt="Green Carpentry construction project"
-							videoUrl="https://iframe.mediadelivery.net/embed/610237/71858d3d-4c6f-4a88-bae3-5de046b33908?autoplay=true&loop=true&muted=true&preload=true&background=true"
+							videoSrc="https://vz-1b37b700-661.b-cdn.net/71858d3d-4c6f-4a88-bae3-5de046b33908/playlist.m3u8"
 							imageClassName={styles.heroPoster}
 							videoClassName={styles.heroVideo}
 						/>

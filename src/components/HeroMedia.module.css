@@ -12,6 +12,11 @@
 
 .video {
 	z-index: 1;
+	object-fit: cover;
+	/* Hero videos are deliberately wider than the screen (cropped to cover);
+	   the global video max-width would squash them and make the player pick
+	   a lower quality */
+	max-width: none;
 	opacity: 0;
 	pointer-events: none;
 	visibility: hidden;
