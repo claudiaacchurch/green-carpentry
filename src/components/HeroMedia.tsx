@@ -12,9 +12,6 @@ interface HeroMediaProps {
 	videoClassName?: string;
 }
 
-// Seconds of real playback before the video replaces the still photo
-const REVEAL_AFTER_SECONDS = 0.5;
-
 export default function HeroMedia({
 	alt,
 	poster,
@@ -39,13 +36,10 @@ export default function HeroMedia({
 			if (event.origin !== playerOrigin) return;
 			if (event.data?.channel !== "bunnystream") return;
 
-			// Only reveal once the video has genuinely played a little: "play"
-			// and the first timeupdate can arrive while Bunny's own loading
-			// spinner/bar is still on screen, so wait for real playback.
-			const currentTime = Number(event.data.status?.currentTime ?? 0);
 			if (
-				event.data.event === "timeupdate" &&
-				currentTime >= REVEAL_AFTER_SECONDS
+				event.data.event === "play" ||
+				event.data.event === "playing" ||
+				(event.data.event === "timeupdate" && event.data.status?.playing)
 			) {
 				setVideoReady(true);
 			}
