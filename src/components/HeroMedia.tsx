@@ -75,7 +75,7 @@ export default function HeroMedia({
 				fetchPriority="high"
 				quality={88}
 				sizes="100vw"
-				className={`${styles.poster} ${imageClassName}`}
+				className={`${styles.poster}${videoReady ? ` ${styles.posterHidden}` : ""} ${imageClassName}`}
 			/>
 
 			{videoUrl && (

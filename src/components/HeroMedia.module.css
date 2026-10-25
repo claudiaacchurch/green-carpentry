@@ -1,6 +1,13 @@
 .poster {
 	z-index: 0;
 	opacity: 1;
+	transition: opacity 360ms ease 360ms;
+}
+
+/* Once the video is showing, hide the still behind it so no sliver of it can
+   peek out at the edges (it showed as a green line on mobile) */
+.posterHidden {
+	opacity: 0;
 }
 
 .video {
