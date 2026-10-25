@@ -65,8 +65,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <HeroMedia
               poster={project.image}
               alt={project.title}
-              videoSrc={project.heroVideo}
-              videoUrl={project.heroVideo ? undefined : project.buildVideoEmbed}
+              videoUrl={project.buildVideoEmbed}
               imageClassName={styles.heroImage}
               videoClassName={styles.heroVideo}
             />
