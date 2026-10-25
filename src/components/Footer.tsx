@@ -16,10 +16,12 @@ export default function Footer() {
 				<div className={styles.footerCol}>
 					<span className={styles.footerColLabel}>Navigate</span>
 					<div className={styles.footerLinks}>
+						<SmoothAnchor href="/#top">Home</SmoothAnchor>
 						<SmoothAnchor href="/#projects">Projects</SmoothAnchor>
 						<Link href="/about">About</Link>
+						<SmoothAnchor href="/#team">Team</SmoothAnchor>
+						<SmoothAnchor href="/#reviews">Reviews</SmoothAnchor>
 						<SmoothAnchor href="/#contact">Contact</SmoothAnchor>
-						<SmoothAnchor href="/#top">Home</SmoothAnchor>
 					</div>
 				</div>
 				<div className={styles.footerContact}>

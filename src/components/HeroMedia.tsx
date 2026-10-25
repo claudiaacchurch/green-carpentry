@@ -36,11 +36,11 @@ export default function HeroMedia({
 			if (event.origin !== playerOrigin) return;
 			if (event.data?.channel !== "bunnystream") return;
 
-			if (
-				event.data.event === "play" ||
-				event.data.event === "playing" ||
-				(event.data.event === "timeupdate" && event.data.status?.playing)
-			) {
+			// Swap from the still to the video only once frames are actually
+			// moving. Bunny's "play"/"playing" can arrive before the first frame
+			// is drawn, which showed a black player for a moment on phones.
+			const currentTime = Number(event.data.status?.currentTime ?? 0);
+			if (event.data.event === "timeupdate" && currentTime > 0.1) {
 				setVideoReady(true);
 			}
 		}
@@ -75,7 +75,7 @@ export default function HeroMedia({
 				fetchPriority="high"
 				quality={88}
 				sizes="100vw"
-				className={`${styles.poster} ${imageClassName}`}
+				className={`${styles.poster}${videoReady ? ` ${styles.posterHidden}` : ""} ${imageClassName}`}
 			/>
 
 			{videoUrl && (

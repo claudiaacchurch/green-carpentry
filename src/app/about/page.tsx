@@ -1,8 +1,46 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FadeImage from "@/components/FadeImage";
-import { EMAIL, EMAIL_HREF, PHONE_DISPLAY, PHONE_HREF } from "@/lib/constants";
+import ServicesList from "@/components/ServicesList";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+	title: "About Us",
+	description:
+		"Meet Green Carpentry — a Somerset construction and renovation team covering every trade, from loft conversions and extensions to full house renovations.",
+	alternates: { canonical: "/about" },
+	openGraph: {
+		title: "About Us | Green Carpentry",
+		description:
+			"Meet Green Carpentry — a Somerset construction and renovation team covering every trade, from loft conversions and extensions to full house renovations.",
+		url: "/about",
+	},
+};
+
+const accreditations = [
+	{
+		src: "/media/partnerlogos/city-guilds.png",
+		alt: "City & Guilds",
+		href: "https://www.cityandguilds.com/",
+	},
+	{
+		src: "/media/partnerlogos/citb.png",
+		alt: "CITB",
+		href: "https://www.citb.co.uk/",
+	},
+	{
+		src: "/media/partnerlogos/cscs.png",
+		alt: "CSCS",
+		href: "https://www.cscs.uk.com/",
+	},
+	{
+		src: "/media/partnerlogos/ciat.png",
+		alt: "CIAT",
+		href: "https://architecturaltechnology.com/",
+	},
+];
 
 export default function AboutPage() {
 	return (
@@ -10,70 +48,52 @@ export default function AboutPage() {
 			<Header />
 
 			<main>
-				<section className={styles.hero}>
-					<FadeImage
-						src="/media/about.png"
-						alt="Green Carpentry team on site"
-						fill
-						priority
-						fetchPriority="high"
-						quality={88}
-						sizes="100vw"
-						className={styles.heroImage}
-					/>
-					<div className={styles.heroOverlay} />
-					<div className={styles.heroContent}>
-						<h1 className={styles.heroTitle}>About Us</h1>
+				<section className={styles.section}>
+					<h2 className={`${styles.sectionTitle} ${styles.sectionTitleSpaced}`}>
+						What we do
+					</h2>
+					<ServicesList />
+				</section>
+
+				<section className={styles.section}>
+					<h2 className={`${styles.sectionTitle} ${styles.sectionTitleSpaced}`}>
+						Qualified &amp; accredited
+					</h2>
+					<div className={styles.accreditations}>
+						{accreditations.map((item) => (
+							<a
+								key={item.alt}
+								href={item.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								className={styles.accreditationTile}
+							>
+								<FadeImage
+									src={item.src}
+									alt={item.alt}
+									width={120}
+									height={70}
+								/>
+							</a>
+						))}
 					</div>
 				</section>
 
 				<section className={styles.section}>
-					<div className={styles.servicesGrid}>
-						<div className={styles.serviceCol}>
-							<h3 className={styles.serviceColTitle}>Commercial</h3>
-							<p>
-								We work with commercial clients on all aspects of renovation and
-								refurbishment projects. With extensive experience in occupied
-								premises, we manage projects to minimise noise and disruption
-								while adhering to tight and changing schedules. Our approach
-								ensures clients can resume normal business operations as quickly
-								and smoothly as possible.
-							</p>
-						</div>
-						<div className={styles.serviceCol}>
-							<h3 className={styles.serviceColTitle}>Domestic</h3>
-							<p>
-								We take great pride in working with our customers to create
-								something special and bespoke for their homes. From built-in
-								wardrobes and storage solutions to complete loft conversions,
-								extensions, and renovations, we have extensive experience across
-								a wide range of home improvements.
-							</p>
-						</div>
-						<div className={styles.serviceCol}>
-							<h3 className={styles.serviceColTitle}>Maintenance</h3>
-							<p>
-								As a construction and building maintenance company, we
-								understand that all building materials have a finite lifespan.
-								Regular maintenance is essential to prevent consequential
-								damage, which can quickly become costly if left unaddressed. We
-								have experience maintaining a wide range of properties, from
-								modern developments to listed and historic buildings, including
-								multiple churches.
-							</p>
-						</div>
-					</div>
+					<h2 className={`${styles.sectionTitle} ${styles.sectionTitleSpaced}`}>
+						Areas we cover
+					</h2>
+					<p className={styles.areasIntro}>
+						Based in Puriton, we work across Somerset and the South West.
+					</p>
 				</section>
 
 				<section className={styles.contactBar}>
 					<p>Ready to start your project?</p>
 					<div className={styles.contactBarActions}>
-						<a href={PHONE_HREF} className={styles.primaryBtn}>
-							{PHONE_DISPLAY}
-						</a>
-						<a href={EMAIL_HREF} className={styles.secondaryBtn}>
-							{EMAIL}
-						</a>
+						<Link href="/#contact" className={styles.primaryBtn}>
+							Get in touch
+						</Link>
 					</div>
 				</section>
 			</main>

@@ -14,6 +14,7 @@ export default function Header() {
 	const pendingScrollRef = useRef<string | null>(null);
 	const [closing, setClosing] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
+	const [activeSection, setActiveSection] = useState("top");
 	const pathname = usePathname();
 
 	const navItems = [
@@ -30,6 +31,34 @@ export default function Header() {
 		window.addEventListener("scroll", onScroll, { passive: true });
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
+
+	// Highlight the nav link for the homepage section currently in view
+	useEffect(() => {
+		if (pathname !== "/") return;
+		const sectionIds = ["top", "projects", "team", "reviews", "contact"];
+
+		function update() {
+			const line = window.innerHeight * 0.35;
+			let current = sectionIds[0];
+			for (const id of sectionIds) {
+				const el = document.getElementById(id);
+				if (el && el.getBoundingClientRect().top <= line) current = id;
+			}
+			const atBottom =
+				window.innerHeight + window.scrollY >=
+				document.documentElement.scrollHeight - 4;
+			if (atBottom) current = sectionIds[sectionIds.length - 1];
+			setActiveSection(current);
+		}
+
+		update();
+		window.addEventListener("scroll", update, { passive: true });
+		window.addEventListener("resize", update);
+		return () => {
+			window.removeEventListener("scroll", update);
+			window.removeEventListener("resize", update);
+		};
+	}, [pathname]);
 
 	function startClose() {
 		if (!detailsRef.current?.open || closing) return;
@@ -88,7 +117,9 @@ export default function Header() {
 
 	function isActiveLink(href: string) {
 		if (href === "/about") return pathname === "/about";
-		if (href === "/#top") return pathname === "/";
+		if (href.startsWith("/#")) {
+			return pathname === "/" && href.slice(2) === activeSection;
+		}
 		return false;
 	}
 
@@ -97,10 +128,10 @@ export default function Header() {
 			<div className={styles.headerInner}>
 				<Link href="/#top" className={styles.logo} onClick={handleNavClick}>
 					<Image
-						src="/media/green-carpentry-logo.png"
+						src="/media/green-carpentry-logo-transparent.png"
 						alt="Green Carpentry Logo"
-						width={198}
-						height={66}
+						width={800}
+						height={403}
 						className={styles.logoImage}
 						priority
 					/>

@@ -25,6 +25,9 @@ function Stars({ rating }: { rating: number }) {
 	);
 }
 
+// Beyond this many pages the dots get too small to tap, so show "3 / 14"
+const MAX_DOTS = 6;
+
 export default function ReviewsCarousel({ reviews = [] }: { reviews?: Review[] }) {
 	const [page, setPage] = useState(0);
 	const [visible, setVisible] = useState(3);
@@ -114,16 +117,22 @@ export default function ReviewsCarousel({ reviews = [] }: { reviews?: Review[] }
 						<path d="M15 18l-6-6 6-6" />
 					</svg>
 				</button>
-				<div className={styles.reviewsDots}>
-					{Array.from({ length: pageCount }).map((_, i) => (
-						<button
-							key={i}
-							className={`${styles.reviewsDot} ${i === page ? styles.reviewsDotActive : ""}`}
-							onClick={() => navigate(i, i > page ? "left" : "right")}
-							aria-label={`Page ${i + 1}`}
-						/>
-					))}
-				</div>
+				{pageCount > MAX_DOTS ? (
+					<span className={styles.reviewsCounter} aria-live="polite">
+						{page + 1} / {pageCount}
+					</span>
+				) : (
+					<div className={styles.reviewsDots}>
+						{Array.from({ length: pageCount }).map((_, i) => (
+							<button
+								key={i}
+								className={`${styles.reviewsDot} ${i === page ? styles.reviewsDotActive : ""}`}
+								onClick={() => navigate(i, i > page ? "left" : "right")}
+								aria-label={`Page ${i + 1}`}
+							/>
+						))}
+					</div>
+				)}
 				<button
 					className={styles.reviewsBtn}
 					onClick={next}
