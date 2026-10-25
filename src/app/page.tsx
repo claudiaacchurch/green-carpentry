@@ -86,7 +86,7 @@ const team = [
 	{
 		name: "Keith",
 		role: "Architectural Designer",
-		image: "/media/team/keith.jpg",
+		image: "/media/team/keith-portrait.jpg",
 	},
 	{
 		name: "Fran",

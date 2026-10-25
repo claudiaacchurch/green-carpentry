@@ -98,13 +98,18 @@ export const projects: Project[] = [
 
 export const ongoingProjects: Project[] = [
 	{
-		slug: "house-extension-calcott",
-		title: "House Extension / Garage Conversion",
-		meta: "Calcott",
-		location: "Calcott",
+		slug: "house-extension-catcott",
+		title: "Garage Conversion / House Extension",
+		meta: "Catcott",
+		location: "Catcott",
 		year: "2026",
-		description: [""],
-		image: "/media/projects/house-extension-calcott.jpg",
+		description: [
+			"This project involved a garage conversion combined with a house extension, extending the property to connect the existing garage with the main house and create additional living space. ",
+			"The build included traditional footings and groundworks up to damp-proof course level, with all necessary drainage installed. The new structure was built using a bespoke timber frame, providing a tailored solution for the extension and converted garage. ",
+			"Internally, a new porch was created with a built-in cupboard for coat storage, providing access to the garden, original house and new extension. The additional space includes a new bedroom and bathroom, featuring a large walk-in shower and access from both the bedroom and hallway. A knock-through was also completed to connect the new space to the existing home, improving the flow between the areas. ",
+			"The project included complete electrical rewiring and new plumbing to suit the updated layout. Externally, the extension was finished with a modern render, giving the completed addition a clean and contemporary appearance.",
+		],
+		image: "/media/projects/house-extension-catcott.jpg",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/ac462cf7-0d8a-4ce7-b7b9-bfdfb65c029e?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},

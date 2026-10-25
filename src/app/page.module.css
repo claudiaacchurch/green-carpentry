@@ -2002,11 +2002,6 @@
 		gap: 6px 10px;
 	}
 
-	/* Left-aligned like the rest of mobile: drop the last-row centring offsets */
-	.partnersGrid > .partnerBarItem:nth-child(n):nth-last-child(n) {
-		grid-column: span 2;
-	}
-
 	/* Mobile tiles are ~80px: keep wide logos off the edges and pull
 	   round/square marks in so everything reads at a similar size */
 	.partnerBarItem {
