@@ -63,10 +63,10 @@
   z-index: 2;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.82) 0%,
-    rgba(0, 0, 0, 0.55) 38%,
-    rgba(0, 0, 0, 0.22) 68%,
-    rgba(0, 0, 0, 0.06) 86%,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.28) 38%,
+    rgba(0, 0, 0, 0.1) 68%,
+    rgba(0, 0, 0, 0.02) 86%,
     transparent 100%
   );
 }

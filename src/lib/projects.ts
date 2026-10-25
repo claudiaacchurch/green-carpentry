@@ -22,9 +22,9 @@ export const projects: Project[] = [
 			"Internally, new laminate flooring was installed throughout the extensions, as well as the existing hallway and downstairs toilet. The main living area features a bespoke media wall beneath a striking vaulted ceiling, complete with Velux windows to maximise natural light. A dedicated utility room was also incorporated into the design.",
 			"Externally, the driveway was fully excavated, concreted, and finished with a high-quality resin surface, completing the project to a clean and modern standard.",
 		],
-		image: "/media/projects/double-house-extension-bridgwater.jpg",
+		image: "/media/projects/double-house-extension-woolavington.jpg",
 		buildVideoEmbed:
-			"https://iframe.mediadelivery.net/embed/610237/ac0e7771-aeb2-476c-9021-a317fe81bced?autoplay=true&loop=true&muted=true&preload=true&background=true",
+			"https://iframe.mediadelivery.net/embed/610237/1b3f829b-cba7-4966-96a6-119cd62f97a2?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
 	{
 		slug: "loft-conversion-merridge",

@@ -20,10 +20,26 @@ export const metadata: Metadata = {
 };
 
 const accreditations = [
-	{ src: "/media/partnerlogos/city-guilds.png", alt: "City & Guilds", href: "https://www.cityandguilds.com/" },
-	{ src: "/media/partnerlogos/citb.png", alt: "CITB", href: "https://www.citb.co.uk/" },
-	{ src: "/media/partnerlogos/cscs.png", alt: "CSCS", href: "https://www.cscs.uk.com/" },
-	{ src: "/media/partnerlogos/ciat.png", alt: "CIAT", href: "https://architecturaltechnology.com/" },
+	{
+		src: "/media/partnerlogos/city-guilds.png",
+		alt: "City & Guilds",
+		href: "https://www.cityandguilds.com/",
+	},
+	{
+		src: "/media/partnerlogos/citb.png",
+		alt: "CITB",
+		href: "https://www.citb.co.uk/",
+	},
+	{
+		src: "/media/partnerlogos/cscs.png",
+		alt: "CSCS",
+		href: "https://www.cscs.uk.com/",
+	},
+	{
+		src: "/media/partnerlogos/ciat.png",
+		alt: "CIAT",
+		href: "https://architecturaltechnology.com/",
+	},
 ];
 
 export default function AboutPage() {
@@ -32,20 +48,6 @@ export default function AboutPage() {
 			<Header />
 
 			<main>
-				<section className={styles.hero}>
-					<FadeImage
-						src="/media/about.jpg"
-						alt="Green Carpentry team on site"
-						fill
-						priority
-						fetchPriority="high"
-						quality={88}
-						sizes="100vw"
-						className={styles.heroImage}
-					/>
-					<h1 className={styles.srOnly}>About Green Carpentry</h1>
-				</section>
-
 				<section className={styles.section}>
 					<h2 className={`${styles.sectionTitle} ${styles.sectionTitleSpaced}`}>
 						What we do
@@ -66,7 +68,12 @@ export default function AboutPage() {
 								rel="noopener noreferrer"
 								className={styles.accreditationTile}
 							>
-								<FadeImage src={item.src} alt={item.alt} width={120} height={70} />
+								<FadeImage
+									src={item.src}
+									alt={item.alt}
+									width={120}
+									height={70}
+								/>
 							</a>
 						))}
 					</div>

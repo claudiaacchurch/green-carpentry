@@ -381,10 +381,10 @@
 	pointer-events: none;
 	background: linear-gradient(
 		to top,
-		rgba(0, 0, 0, 0.82) 0%,
-		rgba(0, 0, 0, 0.58) 24%,
-		rgba(0, 0, 0, 0.24) 48%,
-		rgba(0, 0, 0, 0.06) 68%,
+		rgba(0, 0, 0, 0.45) 0%,
+		rgba(0, 0, 0, 0.32) 24%,
+		rgba(0, 0, 0, 0.13) 48%,
+		rgba(0, 0, 0, 0.03) 68%,
 		transparent 84%
 	);
 }
