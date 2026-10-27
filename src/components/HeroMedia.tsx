@@ -7,6 +7,8 @@ import styles from "./HeroMedia.module.css";
 interface HeroMediaProps {
 	alt: string;
 	poster: string;
+	/** Short label for the video player (defaults to the alt text) */
+	videoTitle?: string;
 	videoUrl?: string;
 	imageClassName?: string;
 	videoClassName?: string;
@@ -15,6 +17,7 @@ interface HeroMediaProps {
 export default function HeroMedia({
 	alt,
 	poster,
+	videoTitle,
 	videoUrl,
 	imageClassName = "",
 	videoClassName = "",
@@ -83,7 +86,7 @@ export default function HeroMedia({
 					<iframe
 						ref={iframeRef}
 						src={videoUrl}
-						title={`${alt} video`}
+						title={videoTitle ?? `${alt} video`}
 						className={`${styles.video} ${videoReady ? styles.videoReady : ""} ${videoClassName}`}
 						allow="autoplay; fullscreen; picture-in-picture"
 						loading="eager"

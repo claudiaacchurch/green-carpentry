@@ -1202,6 +1202,26 @@
 	color: #ff9f9f;
 }
 
+.formStatus a,
+.formSuccessText a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+/* Used by the loft conversions enquiry form */
+.formIntro {
+	margin: -16px 0 24px;
+	font-size: 15px;
+	line-height: 1.6;
+	color: var(--accent-warm);
+}
+
+.formSuccessText {
+	font-size: 15px;
+	line-height: 1.7;
+	color: var(--accent-warm);
+}
+
 /* ── Footer ──────────────────────────────────── */
 
 .footer {

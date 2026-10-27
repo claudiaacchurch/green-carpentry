@@ -47,6 +47,32 @@
   padding: 72px 6vw;
 }
 
+/* Page heading (no hero photo), in the site's display font */
+.pageIntro {
+  padding: 56px 6vw 0;
+}
+
+.pageLead {
+  margin-top: 18px;
+  max-width: 680px;
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.7;
+  color: var(--accent-warm);
+}
+
+.pageIntro + .section {
+  padding-top: 56px;
+}
+
+.pageTitle {
+  font-family: var(--font-display, "Bebas Neue", sans-serif);
+  font-size: clamp(44px, 5vw, 72px);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  color: var(--accent);
+}
+
 .section + .section {
   padding-top: 0;
 }
@@ -314,6 +340,18 @@
 
   .section {
     padding: 40px 5vw;
+  }
+
+  .pageIntro {
+    padding: 36px 5vw 0;
+  }
+
+  .pageIntro + .section {
+    padding-top: 40px;
+  }
+
+  .pageLead {
+    font-size: 15px;
   }
 
   /* The van (the photo's focal point) sits left of centre, so anchor the

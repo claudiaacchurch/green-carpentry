@@ -3,18 +3,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import {
-	PHONE_DISPLAY,
-	PHONE_HREF,
-	EMAIL,
-	EMAIL_HREF,
-	INSTAGRAM_URL,
-	FACEBOOK_URL,
-} from "@/lib/constants";
+import { INSTAGRAM_URL, FACEBOOK_URL } from "@/lib/constants";
 import { projects, ongoingProjects } from "@/lib/projects";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import { getGoogleReviews, staticReviews } from "@/lib/getReviews";
 import ContactForm from "@/components/ContactForm";
+import ContactDetails from "@/components/ContactDetails";
 import ScrollReveal from "@/components/ScrollReveal";
 import ScrollRowButton from "@/components/ScrollRowButton";
 import HeroMedia from "@/components/HeroMedia";
@@ -111,7 +105,7 @@ export default async function Home() {
 					<div className={styles.heroMedia}>
 						<HeroMedia
 							poster={"/media/projects/loft-conversion-north-somerset.jpg"}
-							alt="Green Carpentry construction project"
+							alt="Aerial view of the Merridge loft conversion: a new clad upper storey with a balcony and glass balustrade, set against fields in the Quantock Hills"
 							videoUrl="https://iframe.mediadelivery.net/embed/610237/71858d3d-4c6f-4a88-bae3-5de046b33908?autoplay=true&loop=true&muted=true&preload=true&background=true"
 							imageClassName={styles.heroPoster}
 							videoClassName={styles.heroVideo}
@@ -186,7 +180,7 @@ export default async function Home() {
 									<div className={styles.projectMedia}>
 										<Image
 											src={project.image}
-											alt={project.title}
+											alt={project.imageAlt}
 											fill
 											sizes="(max-width: 1100px) 50vw, 33vw"
 											className={styles.projectImage}
@@ -226,7 +220,7 @@ export default async function Home() {
 									<div className={styles.projectMedia}>
 										<Image
 											src={project.image}
-											alt={project.title}
+											alt={project.imageAlt}
 											fill
 											sizes="(max-width: 1100px) 50vw, 33vw"
 											className={styles.projectImage}
@@ -258,7 +252,7 @@ export default async function Home() {
 									<div className={styles.teamAvatar}>
 										<FadeImage
 											src={member.image}
-											alt={member.name}
+											alt={`${member.name}, ${member.role} at Green Carpentry`}
 											width={100}
 											height={100}
 											className={styles.teamAvatarImage}
@@ -300,7 +294,7 @@ export default async function Home() {
 								>
 									<FadeImage
 										src="/media/partnerlogos/tekkwise.png"
-										alt="TeKKWise"
+										alt="TeKKWise logo"
 										width={70}
 										height={70}
 										style={{ objectFit: "contain" }}
@@ -326,7 +320,7 @@ export default async function Home() {
 								>
 									<FadeImage
 										src="/media/partnerlogos/nigel-salter-joinery.png"
-										alt="Nigel Salter Joinery"
+										alt="Nigel Salter Joinery logo"
 										width={150}
 										height={50}
 										style={{ objectFit: "contain" }}
@@ -340,7 +334,7 @@ export default async function Home() {
 								>
 									<FadeImage
 										src="/media/partnerlogos/clear-view-windows.png"
-										alt="Clear View Windows"
+										alt="Clear View Windows logo"
 										width={150}
 										height={50}
 										style={{ objectFit: "contain" }}
@@ -354,7 +348,7 @@ export default async function Home() {
 								>
 									<FadeImage
 										src="/media/partnerlogos/nethercott-drones.png"
-										alt="Nethercott Drones"
+										alt="Nethercott Drones logo"
 										width={70}
 										height={70}
 										style={{ objectFit: "contain" }}
@@ -368,7 +362,7 @@ export default async function Home() {
 								>
 									<FadeImage
 										src="/media/partnerlogos/thomas-fascades.png"
-										alt="Thomas Fascades"
+										alt="Thomas Facades logo"
 										width={60}
 										height={60}
 										style={{ objectFit: "contain" }}
@@ -382,7 +376,7 @@ export default async function Home() {
 								>
 									<FadeImage
 										src="/media/partnerlogos/ironwork.png"
-										alt="Ironwork Ltd"
+										alt="Ironwork Ltd logo"
 										width={150}
 										height={50}
 										style={{ objectFit: "contain" }}
@@ -396,7 +390,7 @@ export default async function Home() {
 								>
 									<FadeImage
 										src="/media/partnerlogos/jack-lewis-electrics.png"
-										alt="Jack Lewis Electrics"
+										alt="Jack Lewis Electrics logo"
 										width={60}
 										height={60}
 										style={{ objectFit: "contain" }}
@@ -410,7 +404,7 @@ export default async function Home() {
 								>
 									<FadeImage
 										src="/media/partnerlogos/lightwork-solar.png"
-										alt="Lightwork Solar Solutions"
+										alt="Lightwork Solar Solutions logo"
 										width={60}
 										height={60}
 										style={{ objectFit: "contain" }}
@@ -424,7 +418,7 @@ export default async function Home() {
 								>
 									<FadeImage
 										src="/media/partnerlogos/alfa-resin-wide.png"
-										alt="Alfa Resin"
+										alt="Alfa Resins logo"
 										width={60}
 										height={60}
 										style={{ objectFit: "contain" }}
@@ -438,7 +432,7 @@ export default async function Home() {
 								>
 									<FadeImage
 										src="/media/partnerlogos/t-harris-plumbing.png"
-										alt="T Harris Plumbing & Heating"
+										alt="T Harris Plumbing & Heating logo"
 										width={150}
 										height={50}
 										style={{ objectFit: "contain" }}
@@ -472,70 +466,10 @@ export default async function Home() {
 									</p>
 								</div>
 
-								<div className={styles.contactDetailsGrid}>
-									<div className={styles.contactInfoSection}>
-										<strong>Business hours</strong>
-										<p>Mon-Fri, 8am-4pm</p>
-										<p>Weekends closed</p>
-									</div>
-
-									<div className={styles.contactInfoSection}>
-										<strong>Our address</strong>
-										<p>Puriton, Somerset</p>
-										<p>Serving the South West</p>
-									</div>
-								</div>
-
-								<div
-									className={`${styles.contactInfoSection} ${styles.contactMethods}`}
-								>
-									<strong>Get in touch</strong>
-									<p className={styles.contactInfoItem}>
-										<svg
-											width="16"
-											height="16"
-											viewBox="0 0 24 24"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-											aria-hidden="true"
-										>
-											<path
-												d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-												stroke="currentColor"
-												strokeWidth="2"
-												strokeLinecap="round"
-												strokeLinejoin="round"
-											/>
-										</svg>
-										<a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
-									</p>
-									<p className={styles.contactInfoItem}>
-										<svg
-											width="16"
-											height="16"
-											viewBox="0 0 24 24"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-											aria-hidden="true"
-										>
-											<path
-												d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-												stroke="currentColor"
-												strokeWidth="2"
-												strokeLinecap="round"
-												strokeLinejoin="round"
-											/>
-											<polyline
-												points="22,6 12,13 2,6"
-												stroke="currentColor"
-												strokeWidth="2"
-												strokeLinecap="round"
-												strokeLinejoin="round"
-											/>
-										</svg>
-										<a href={EMAIL_HREF}>{EMAIL}</a>
-									</p>
-								</div>
+								<ContactDetails
+									hoursNote="Weekends closed"
+									locationNote="Serving the South West"
+								/>
 
 								<div
 									className={`${styles.contactInfoSection} ${styles.contactSocialSection}`}

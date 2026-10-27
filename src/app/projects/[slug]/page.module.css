@@ -190,6 +190,23 @@
   color: var(--accent-warm);
 }
 
+.serviceLink {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 720px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--accent);
+}
+
+.serviceLink a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 /* ── Instagram callout ─────────────────────── */
 .instaCallout {
   margin: 72px 6vw;

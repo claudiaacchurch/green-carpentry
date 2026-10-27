@@ -18,16 +18,21 @@ export default function ContactForm() {
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
     };
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-    if (res.ok) {
-      setStatus("success");
-      form.reset();
-    } else {
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      // Network failure: show the error instead of sticking on "Sending…"
       setStatus("error");
     }
   }
@@ -42,12 +47,12 @@ export default function ContactForm() {
             <input id="name" name="name" type="text" autoComplete="name" required />
           </div>
           <div>
-            <label htmlFor="phone">Telephone *</label>
+            <label htmlFor="phone">Phone number *</label>
             <input id="phone" name="phone" type="tel" autoComplete="tel" required />
           </div>
         </div>
         <div>
-          <label htmlFor="email">Email *</label>
+          <label htmlFor="email">Email address *</label>
           <input id="email" name="email" type="email" autoComplete="email" required />
         </div>
         <div>

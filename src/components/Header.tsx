@@ -129,7 +129,7 @@ export default function Header() {
 				<Link href="/#top" className={styles.logo} onClick={handleNavClick}>
 					<Image
 						src="/media/green-carpentry-logo-transparent.png"
-						alt="Green Carpentry Logo"
+						alt="Green Carpentry logo"
 						width={800}
 						height={403}
 						className={styles.logoImage}

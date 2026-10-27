@@ -1,4 +1,4 @@
-export const PHONE_DISPLAY = "+44 7888 042217";
+export const PHONE_DISPLAY = "07888 042217";
 export const PHONE_HREF = "tel:+447888042217";
 
 export const EMAIL = "green.carpentry@outlook.com";

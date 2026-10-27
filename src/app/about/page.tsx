@@ -22,22 +22,22 @@ export const metadata: Metadata = {
 const accreditations = [
 	{
 		src: "/media/partnerlogos/city-guilds.png",
-		alt: "City & Guilds",
+		alt: "City & Guilds logo",
 		href: "https://www.cityandguilds.com/",
 	},
 	{
 		src: "/media/partnerlogos/citb.png",
-		alt: "CITB",
+		alt: "CITB logo",
 		href: "https://www.citb.co.uk/",
 	},
 	{
 		src: "/media/partnerlogos/cscs.png",
-		alt: "CSCS",
+		alt: "CSCS logo",
 		href: "https://www.cscs.uk.com/",
 	},
 	{
 		src: "/media/partnerlogos/ciat.png",
-		alt: "CIAT",
+		alt: "CIAT logo",
 		href: "https://architecturaltechnology.com/",
 	},
 ];
@@ -48,6 +48,15 @@ export default function AboutPage() {
 			<Header />
 
 			<main>
+				<section className={styles.pageIntro}>
+					<h1 className={styles.pageTitle}>About Us</h1>
+					<p className={styles.pageLead}>
+						Our team of skilled craftsmen covers every trade, so you won’t need
+						to deal with multiple contractors. From initial design and planning
+						permission through to completion, we manage the entire process.
+					</p>
+				</section>
+
 				<section className={styles.section}>
 					<h2 className={`${styles.sectionTitle} ${styles.sectionTitleSpaced}`}>
 						What we do

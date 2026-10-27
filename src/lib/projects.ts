@@ -6,7 +6,11 @@ export interface Project {
 	year: string;
 	description: string[];
 	image: string;
+	/** Describes what the photo actually shows (for screen readers and SEO) */
+	imageAlt: string;
 	buildVideoEmbed?: string;
+	/** Related service landing page, linked from the project page */
+	servicePage?: { href: string; label: string };
 }
 
 export const projects: Project[] = [
@@ -23,6 +27,8 @@ export const projects: Project[] = [
 			"Externally, the driveway was fully excavated, concreted, and finished with a high-quality resin surface, completing the project to a clean and modern standard.",
 		],
 		image: "/media/projects/double-house-extension-woolavington.jpg",
+		imageAlt:
+			"Open-plan living area in the Woolavington extension, with a vaulted ceiling, roof windows, pendant lights and a built-in media wall with shelving",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/1b3f829b-cba7-4966-96a6-119cd62f97a2?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -39,6 +45,12 @@ export const projects: Project[] = [
 			"A clean and efficient conversion, providing the clients with the additional room they needed while adding significant value to their home.",
 		],
 		image: "/media/projects/loft-conversion-north-somerset.jpg",
+		imageAlt:
+			"Aerial view of the Merridge loft conversion: a new clad upper storey with a balcony and glass balustrade, set against fields in the Quantock Hills",
+		servicePage: {
+			href: "/loft-conversions-somerset",
+			label: "loft conversions in Somerset",
+		},
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/1da8b603-3901-42ef-91f2-779fa3c4cbe9?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -56,6 +68,8 @@ export const projects: Project[] = [
 			"Each flat was finished to a high standard, combining practical layouts with quality materials - delivering a strong return on investment for the client.",
 		],
 		image: "/media/projects/triple-flat-conversion-watchet.jpg",
+		imageAlt:
+			"Rear of the Watchet flat conversion: rendered white walls, new roof windows and a galvanised steel walkway and staircase giving access to the flats",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/e307f6cc-5507-49eb-83c5-db1e8de37a65?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -75,6 +89,8 @@ export const projects: Project[] = [
 			"Working to a tight schedule to allow the owners to move in, our team coordinated all trades on site and delivered the project on time and within budget - a result the clients were delighted with.",
 		],
 		image: "/media/projects/house-renovation-glastonbury.jpg",
+		imageAlt:
+			"Renovated kitchen in Glastonbury with tall blue-grey units, an integrated oven, a speckled stone worktop and wood-effect flooring",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/3c07db2d-bf52-479d-98e9-777d5615753d?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -91,6 +107,8 @@ export const projects: Project[] = [
 			"The result is a bright, functional kitchen that has become the heart of the home—exactly what the clients envisioned from the initial consultation.",
 		],
 		image: "/media/projects/downstairs-renovation-taunton.jpg",
+		imageAlt:
+			"Renovated kitchen in Galmington with grey handleless units, white worktops and a glass splashback",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/d9637ff2-bc69-4e01-beda-9004f48b5c8e?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -98,10 +116,10 @@ export const projects: Project[] = [
 
 export const ongoingProjects: Project[] = [
 	{
-		slug: "house-extension-catcott",
+		slug: "house-extension-calcott",
 		title: "Garage Conversion / House Extension",
-		meta: "Catcott",
-		location: "Catcott",
+		meta: "Calcott",
+		location: "Calcott",
 		year: "2026",
 		description: [
 			"This project involved a garage conversion combined with a house extension, extending the property to connect the existing garage with the main house and create additional living space. ",
@@ -109,7 +127,9 @@ export const ongoingProjects: Project[] = [
 			"Internally, a new porch was created with a built-in cupboard for coat storage, providing access to the garden, original house and new extension. The additional space includes a new bedroom and bathroom, featuring a large walk-in shower and access from both the bedroom and hallway. A knock-through was also completed to connect the new space to the existing home, improving the flow between the areas. ",
 			"The project included complete electrical rewiring and new plumbing to suit the updated layout. Externally, the extension was finished with a modern render, giving the completed addition a clean and contemporary appearance.",
 		],
-		image: "/media/projects/house-extension-catcott.jpg",
+		image: "/media/projects/house-extension-calcott.jpg",
+		imageAlt:
+			"Aerial view of a timber-frame extension under construction at the back of a stone cottage",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/ac462cf7-0d8a-4ce7-b7b9-bfdfb65c029e?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -127,6 +147,8 @@ export const ongoingProjects: Project[] = [
 			"This is an ambitious and complex undertaking, requiring careful sequencing and close coordination across multiple trades. The project is currently ongoing and progressing well.",
 		],
 		image: "/media/projects/farmhouse-renovation-somerset.jpg",
+		imageAlt:
+			"Aerial view of the Aisholt farmhouse and barn renovation, with a stone barn beside a pond and building work around the main house",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/d366cfc2-cfe4-493b-a587-ea690bcb9efe?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -144,6 +166,8 @@ export const ongoingProjects: Project[] = [
 			"The result is a bright, contemporary living space that offers improved functionality and a more open feel throughout.",
 		],
 		image: "/media/projects/house-renovation-taunton.jpg",
+		imageAlt:
+			"Brick semi-detached house during renovation, with a new porch frame and Green Carpentry vans parked outside",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/b849c472-9446-4903-9dcd-3523438324bb?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -162,6 +186,8 @@ export const ongoingProjects: Project[] = [
 			"This project delivers a complete transformation, combining high-end finishes with practical design to create a modern, spacious, and highly functional family home.",
 		],
 		image: "/media/projects/house-extension-bridgwater.jpg",
+		imageAlt:
+			"Aerial view of a flat-roof rear extension in Puriton with a roof lantern, roof windows and dark-framed sliding doors",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/1831cec4-c4d0-4452-b4d5-9b474ce179dc?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},
@@ -179,6 +205,8 @@ export const ongoingProjects: Project[] = [
 			"This extensive renovation and extension will significantly enhance both the functionality and value of the property, delivering a bright, modern living environment that complements its prime seafront location in Burnham-on-Sea.",
 		],
 		image: "/media/projects/burnham-on-sea.jpg",
+		imageAlt:
+			"Aerial view of a house in Burnham-on-Sea with solar panels, with the team working on a rear extension",
 		buildVideoEmbed:
 			"https://iframe.mediadelivery.net/embed/610237/7f0d95c9-fcd2-4433-851b-d44e846ee1c1?autoplay=true&loop=true&muted=true&preload=true&background=true",
 	},

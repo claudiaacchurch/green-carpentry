@@ -64,7 +64,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className={styles.heroMedia}>
             <HeroMedia
               poster={project.image}
-              alt={project.title}
+              alt={project.imageAlt}
+              videoTitle={`${project.title} build video`}
               videoUrl={project.buildVideoEmbed}
               imageClassName={styles.heroImage}
               videoClassName={styles.heroVideo}
@@ -109,6 +110,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <p key={i}>{para}</p>
               ))}
             </div>
+            {project.servicePage && (
+              <p className={styles.serviceLink}>
+                Find out more about our{" "}
+                <Link href={project.servicePage.href}>
+                  {project.servicePage.label}
+                </Link>
+                .
+              </p>
+            )}
           </div>
         </section>
 
