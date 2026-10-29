@@ -154,10 +154,15 @@ export default function LoftConversionsPage() {
 					/>
 					<div className={styles.heroOverlay} />
 					<div className={styles.heroContent}>
+						{/* The <br> only takes effect on phones, for a balanced two-line title */}
+						<h1 className={styles.heroTitle}>
+							Loft Conversions{" "}
+							<br className={styles.mobileBreak} />
+							in Somerset
+						</h1>
 						<p className={styles.heroEyebrow}>
 							More space to live, in the home you love.
 						</p>
-						<h1 className={styles.heroTitle}>Loft Conversions in Somerset</h1>
 						<div className={styles.heroActions}>
 							<SmoothAnchor
 								href="#enquiry"

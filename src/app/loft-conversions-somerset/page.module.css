@@ -12,11 +12,10 @@
 }
 
 /* ── Hero ──────────────────────────────────── */
-/* Nearly full-screen, leaving a strip so the intro below peeks in and it's
-   clear the page scrolls */
+/* Hero sizing matches the homepage hero at every screen size */
 .hero {
   position: relative;
-  height: min(calc(100svh - var(--header-h) - 96px), 860px);
+  height: calc(100vh - var(--header-h));
   min-height: 460px;
   overflow: hidden;
 }
@@ -50,28 +49,32 @@
 
 .heroContent {
   position: absolute;
-  left: 6vw;
-  right: 6vw;
-  bottom: 52px;
+  left: clamp(32px, 6vw, 96px);
+  right: clamp(32px, 6vw, 96px);
+  bottom: clamp(56px, 8vh, 100px);
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: 24px;
 }
 
 .heroTitle {
   font-family: var(--font-display, "Bebas Neue", sans-serif);
-  font-size: clamp(44px, 5.5vw, 88px);
+  font-size: 59px;
   font-weight: 400;
-  line-height: 0.92;
-  letter-spacing: 0.03em;
+  line-height: 1.06;
+  letter-spacing: 0.025em;
   text-shadow:
     0 2px 10px rgba(0, 0, 0, 0.42),
     0 1px 2px rgba(0, 0, 0, 0.55);
 }
 
-/* Small label above the title, as on the project pages */
+.mobileBreak {
+  display: none;
+}
+
+/* Small line under the title (sits close to it; the gap is for the button) */
 .heroEyebrow {
   font-size: 11px;
   font-weight: 600;
@@ -81,15 +84,17 @@
   text-shadow:
     0 1px 8px rgba(0, 0, 0, 0.55),
     0 1px 2px rgba(0, 0, 0, 0.6);
+  margin-top: -14px;
 }
 
 /* Hero button sized like the homepage hero buttons */
 .heroActions {
   display: flex;
-  margin-top: 12px;
 }
 
-.heroBtn {
+.primaryBtn.heroBtn {
+  border: none;
+  font-weight: 400;
   min-width: 164px;
   padding: 12px 24px;
   font-size: 14px;
@@ -400,9 +405,18 @@
     padding: 56px 4vw;
   }
 
+  .hero {
+    height: min(70svh, 640px);
+  }
+
   .heroContent {
     left: 4vw;
     right: 4vw;
+    bottom: 40px;
+  }
+
+  .heroTitle {
+    font-size: clamp(44px, 6.5vw, 56px);
   }
 
   .cards {
@@ -434,27 +448,28 @@
   .heroContent {
     left: 5vw;
     right: 5vw;
-    bottom: 24px;
-    gap: 8px;
+    bottom: 28px;
+    gap: 16px;
   }
 
   .heroTitle {
-    font-size: clamp(32px, 9vw, 40px);
-    line-height: 1;
+    font-size: clamp(36px, 10vw, 44px);
+    line-height: 1.04;
   }
 
   .heroEyebrow {
     font-size: 10px;
+    margin-top: -8px;
   }
 
-  .heroActions {
-    margin-top: 6px;
+  .mobileBreak {
+    display: inline;
   }
 
-  .heroBtn {
+  .primaryBtn.heroBtn {
     min-width: 135px;
-    padding: 10px 14px;
-    font-size: 10.5px;
+    padding: 10px 12px;
+    font-size: clamp(10px, 1.4vw, 10.5px);
     letter-spacing: 0.055em;
     box-shadow: none;
   }
