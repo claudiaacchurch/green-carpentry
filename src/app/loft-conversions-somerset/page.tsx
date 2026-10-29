@@ -4,6 +4,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LoftEnquiryForm from "@/components/LoftEnquiryForm";
+import SmoothAnchor from "@/components/SmoothAnchor";
 import ContactDetails from "@/components/ContactDetails";
 import { getProject } from "@/lib/projects";
 import { EMAIL, SITE_URL } from "@/lib/constants";
@@ -124,9 +125,9 @@ const structuredData = [
 
 function QuoteButton({ children }: { children: React.ReactNode }) {
 	return (
-		<a href="#enquiry" className={styles.primaryBtn}>
+		<SmoothAnchor href="#enquiry" className={styles.primaryBtn}>
 			{children}
-		</a>
+		</SmoothAnchor>
 	);
 }
 
@@ -158,9 +159,12 @@ export default function LoftConversionsPage() {
 						</p>
 						<h1 className={styles.heroTitle}>Loft Conversions in Somerset</h1>
 						<div className={styles.heroActions}>
-							<a href="#enquiry" className={`${styles.primaryBtn} ${styles.heroBtn}`}>
+							<SmoothAnchor
+								href="#enquiry"
+								className={`${styles.primaryBtn} ${styles.heroBtn}`}
+							>
 								Request My Free Quote
-							</a>
+							</SmoothAnchor>
 						</div>
 					</div>
 				</section>
