@@ -153,12 +153,14 @@ export default function LoftConversionsPage() {
 					/>
 					<div className={styles.heroOverlay} />
 					<div className={styles.heroContent}>
-						<h1 className={styles.heroTitle}>Loft Conversions in Somerset</h1>
-						<p className={styles.heroLead}>
+						<p className={styles.heroEyebrow}>
 							More space to live, in the home you love.
 						</p>
+						<h1 className={styles.heroTitle}>Loft Conversions in Somerset</h1>
 						<div className={styles.heroActions}>
-							<QuoteButton>Request My Free Quote</QuoteButton>
+							<a href="#enquiry" className={`${styles.primaryBtn} ${styles.heroBtn}`}>
+								Request My Free Quote
+							</a>
 						</div>
 					</div>
 				</section>
